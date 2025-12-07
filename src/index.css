@@ -1,1 +1,103 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+/* Yin-Yang Loader Styles */
+.ball-cont {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  animation: spinThat 2s linear infinite;
+}
+
+.ball-child {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.parent {
+  height: 75px;
+  width: 75px;
+  position: relative;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  animation: scaleUp 2s ease-in-out infinite;
+}
+
+.ying-parent {
+  background: black;
+  transform: scale(3);
+  animation: scaleDown 2s ease-in-out infinite;
+  transform-origin: top;
+}
+
+.ying-ball-wing {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  height: 300px;
+  width: 150px;
+  background: white;
+}
+
+.yang-parent {
+  background: white;
+  transform-origin: bottom;
+}
+
+.yang-ball-wing {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 300px;
+  width: 150px;
+  background: black;
+}
+
+.ying {
+  background: white;
+}
+
+.yang {
+  background: black;
+}
+
+@keyframes scaleUp {
+  50% {
+    transform: scale(3);
+  }
+}
+
+@keyframes scaleDown {
+  50% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spinThat {
+  100% {
+    transform: rotate(360deg);
+  }
+}
