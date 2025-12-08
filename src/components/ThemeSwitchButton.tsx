@@ -26,7 +26,7 @@ export default function ThemeSwitchButton({
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
       whileTap={{ scale: 0.95 }}
       className={
-        "flex items-center justify-center rounded-full cursor-pointer" +
+        "flex items-center justify-center rounded-full cursor-pointer outline-none border-none" +
         className
       }
       style={{ width: size, height: size }}
