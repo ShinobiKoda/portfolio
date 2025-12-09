@@ -33,19 +33,21 @@ export default function ThemeSwitchButton({
     >
       {isDark ? (
         <SunIcon
-          className="w-5 h-5 text-white"
+          className="w-6 h-6 text-white"
           initial={{ rotate: -20, scale: 0.9 }}
           animate={{ rotate: 0, scale: 1 }}
           transition={{ duration: 0.25 }}
           aria-hidden
+          
         />
       ) : (
         <MoonIcon
-          className="w-5 h-5 text-white"
+          className="w-6 h-6 text-white"
           initial={{ rotate: 10, scale: 0.9 }}
           animate={{ rotate: 0, scale: 1 }}
           transition={{ duration: 0.25 }}
           aria-hidden
+        
         />
       )}
     </motion.button>

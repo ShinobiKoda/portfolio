@@ -1,12 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+
+:root{
+  --brand-color: #00EEFF;
+}
 
 html,
 body,
 #root {
   height: 100%;
   width: 100%;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* Yin-Yang Loader Styles */
