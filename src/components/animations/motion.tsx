@@ -1,7 +1,7 @@
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 
-// Re-export motion to keep component files clean
-export { motion };
+// Re-export motion/AnimatePresence to keep component files clean
+export { motion, AnimatePresence };
 
 // Navbar entrance: slides down and fades in, then staggers children
 export const navVariants = {
@@ -130,5 +130,146 @@ export const closeButtonVariants = {
     scale: 1,
     rotate: 0,
     transition: { type: "spring", stiffness: 220, damping: 16 },
+  },
+} as const;
+
+// =========================================
+// Home (Hero) animations
+// =========================================
+
+// Whole hero container: fade/slide and stagger children
+export const heroContainerVariants = {
+  initial: { opacity: 0, y: 10 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 220,
+      damping: 20,
+      mass: 0.9,
+      when: "beforeChildren",
+      staggerChildren: 0.08,
+    },
+  },
+} as const;
+
+// Generic child rise-in
+export const heroItemVariants = {
+  initial: { opacity: 0, y: 12 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 240, damping: 18 },
+  },
+} as const;
+
+// Social list item: slight pop and rise
+export const socialItemVariants = {
+  initial: { opacity: 0, scale: 0.9, y: 12 },
+  animate: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 260, damping: 20 },
+  },
+} as const;
+
+// Social list container: animate in and stagger children
+export const socialListVariants = {
+  initial: { opacity: 0, y: 6 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 220,
+      damping: 20,
+      when: "beforeChildren",
+      delayChildren: 0.05,
+      staggerChildren: 0.08,
+    },
+  },
+} as const;
+
+// Buttons: subtle rise-in
+export const buttonItemVariants = heroItemVariants;
+
+// Hover/tap micro-interactions for icons and buttons
+export const iconHover = { scale: 1.08, y: -2 } as const;
+export const buttonHover = { scale: 1.03 } as const;
+
+// Background overlay fade
+export const blurOverlayVariants = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: { duration: 0.3 },
+  },
+} as const;
+
+// =========================================
+// Intro (Loader + Hello) animations
+// =========================================
+
+export const introContainer = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+      when: "beforeChildren",
+      staggerChildren: 0.08,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: { duration: 0.25 },
+  },
+} as const;
+
+export const helloText = {
+  initial: { opacity: 0, y: 8 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 240, damping: 18 },
+  },
+} as const;
+
+export const helloChar = {
+  initial: { opacity: 0, y: 10, rotate: -5 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    rotate: 0,
+    transition: { type: "spring", stiffness: 300, damping: 20 },
+  },
+} as const;
+
+export const loaderIntro = {
+  initial: { opacity: 0, scale: 0.9, rotate: -10 },
+  animate: {
+    opacity: 1,
+    scale: 1,
+    rotate: 0,
+    transition: { type: "spring", stiffness: 220, damping: 18 },
+  },
+} as const;
+
+// =========================================
+// Seasonal banner (toast) animations
+// =========================================
+export const seasonalBannerVariants = {
+  initial: { opacity: 0, y: -16 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 280, damping: 22 },
+  },
+  exit: {
+    opacity: 0,
+    y: -16,
+    transition: { duration: 0.25 },
   },
 } as const;

@@ -3,7 +3,11 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadAll } from "@tsparticles/all";
 import particlesConfig from "./particleConfig";
 
-export default function ParticlesAnimation() {
+export default function ParticlesAnimation({
+  className,
+}: {
+  className?: string;
+}) {
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadAll(engine);
@@ -12,5 +16,5 @@ export default function ParticlesAnimation() {
 
   const options = useMemo(() => particlesConfig, []);
 
-  return <Particles id="tsparticles" options={options} />;
+  return <Particles id="tsparticles" className={className} options={options} />;
 }

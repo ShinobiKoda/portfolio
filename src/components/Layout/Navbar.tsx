@@ -48,7 +48,7 @@ const Navbar = () => {
       variants={navVariants}
       initial="initial"
       animate="animate"
-      className="w-full max-w-[1440px] mx-auto flex items-center justify-between px-4 lg:px-6"
+      className="w-full max-w-[1440px] mx-auto flex items-center justify-between px-4 lg:px-8"
     >
       <motion.div
         variants={logoVariants}
@@ -81,10 +81,8 @@ const Navbar = () => {
         className="lg:hidden inline-flex items-center justify-center"
         variants={menuButtonVariants}
         whileHover={menuHover}
-        whileTap={tapPress}
+        whileTap={{ ...tapPress, transition: tapTransition }}
         transition={hoverTransition}
-        // @ts-expect-error: Motion allows differing transitions per interaction
-        tapTransition={tapTransition}
         onClick={() => setIsOpen(true)}
         aria-label="Open menu"
       >

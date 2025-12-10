@@ -1,23 +1,43 @@
-import ParticlesAnimation from "./components/animations/Particles/Particles";
-import { ThemeProvider } from "./context/ThemeContext";
+import { useEffect, useState } from "react";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
 import Projects from "./components/Projects";
+import Intro from "./components/Intro";
+import SeasonalGreeting from "./components/SeasonalGreeting";
 import { Routes, Route } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
+import { ToastContainer } from "react-toastify";
 
 export default function App() {
+  const [showIntro, setShowIntro] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowIntro(false), 2200);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <ThemeProvider>
-      <ParticlesAnimation />
+    <>
       <Analytics />
-      <div className="w-full h-screen dark:bg-black bg-[#222831]">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/projects" element={<Projects />} />
-        </Routes>
-      </div>
-    </ThemeProvider>
+      <ToastContainer
+        position="top-center"
+        theme="dark"
+        closeOnClick
+        pauseOnFocusLoss
+        draggable
+      />
+      {showIntro ? (
+        <Intro />
+      ) : (
+        <div className="w-full h-screen bg-[#222831]">
+          <SeasonalGreeting delayMs={0} showMs={5000} />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/projects" element={<Projects />} />
+          </Routes>
+        </div>
+      )}
+    </>
   );
 }
