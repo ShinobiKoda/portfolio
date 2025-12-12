@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MdMenu } from "react-icons/md";
+import { RiMenu3Line } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import {
@@ -54,10 +54,13 @@ const Navbar = () => {
         variants={logoVariants}
         whileHover={logoHover}
         transition={hoverTransition}
-        className="w-[100px] h-[100px]"
+        className="py-[19px]"
       >
-        <Link to="/">
-          <img src="/images/logo.png" alt="Logo Image" className="w-full" />
+        <Link to="/" className="flex items-center">
+          <div className="w-16 h-16">
+            <img src="/images/logo.png" alt="Logo Image" className="w-full" />
+          </div>
+          <span className="font-bold text-base text-white">Praise</span>
         </Link>
       </motion.div>
 
@@ -86,7 +89,7 @@ const Navbar = () => {
         onClick={() => setIsOpen(true)}
         aria-label="Open menu"
       >
-        <MdMenu size={34} className="text-white" />
+        <RiMenu3Line size={24} className="text-white" />
       </motion.button>
 
       <motion.div

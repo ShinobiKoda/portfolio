@@ -5,20 +5,6 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { BiLogoGmail } from "react-icons/bi";
 import { FaGithub } from "react-icons/fa";
-import ParticlesAnimation from "./animations/Particles/Particles";
-import {
-  motion,
-  heroContainerVariants,
-  heroItemVariants,
-  socialItemVariants,
-  socialListVariants,
-  buttonItemVariants,
-  iconHover,
-  buttonHover,
-  tapPress,
-  hoverTransition,
-  blurOverlayVariants,
-} from "./animations/motion";
 
 const Home = () => {
   const handleDownloadCV = () => {
@@ -53,103 +39,19 @@ const Home = () => {
   ];
 
   return (
-    <div className="relative w-full min-h-screen overflow-hidden">
-      {/* Background image layer */}
-      <div
-        className="absolute inset-0 bg-cover bg-center z-0"
-        style={{ backgroundImage: "url('/images/home-bg-img.webp')" }}
-      />
+    <div className="w-full h-full">
+      <Navbar />
 
-      {/* Particles layer (above image, below blur/content) */}
-      <ParticlesAnimation className="absolute inset-0 z-15 pointer-events-none" />
+      <div className="w-full px-4">
+        <h1 className="font-semibold text-[32px] text-white">
+          Praise is a
+          <span className="text-(--text-primary)"> front-end developer</span>
+        </h1>
+        <p className="text-(--text-gray) text-base font-normal mt-[25px]">He crafts responsive websites where technologies meet creativity</p>
+      </div>
 
-      {/* Blur/tint overlay */}
-      <motion.div
-        className="absolute inset-0 z-10"
-        variants={blurOverlayVariants}
-        initial="initial"
-        animate="animate"
-        style={{
-          backdropFilter: "blur(6px)",
-          backgroundColor: "rgba(0,0,0,0.25)",
-        }}
-      />
+      <div className="px-4 mt-6 w-full">
 
-      {/* Foreground content */}
-      <div className="relative z-20">
-        <Navbar />
-        <motion.div
-          className="w-full max-w-[1440px] mx-auto px-4 lg:px-6 mt-30"
-          variants={heroContainerVariants}
-          initial="initial"
-          animate="animate"
-        >
-          <motion.h1
-            className="w-full flex flex-col max-w-[500px]"
-            variants={heroItemVariants}
-          >
-            <motion.span
-              className="w-full text-4xl sm:text-5xl lg:text-[52px] text-white font-semibold"
-              variants={heroItemVariants}
-            >
-              ADEBIYI PRAISE
-            </motion.span>
-            <motion.span
-              className="text-(--brand-color) font-semibold text-base sm:text-lg lg:text-[32px]"
-              variants={heroItemVariants}
-            >
-              FRONTEND DEV
-            </motion.span>
-          </motion.h1>
-
-          <motion.ul
-            className="w-full flex items-center flex-wrap gap-4 sm:gap-[23px] mt-7"
-            variants={socialListVariants}
-          >
-            {links.map((link, index) => (
-              <motion.li
-                key={index}
-                variants={socialItemVariants}
-                whileHover={iconHover}
-                whileTap={tapPress}
-                transition={hoverTransition}
-              >
-                <NavLink
-                  to={link.link}
-                  target="_blank"
-                  className={`h-10 w-10 rounded-full border-2 border-(--brand-color) flex items-center justify-center text-(--brand-color)`}
-                >
-                  {link.icon}
-                </NavLink>
-              </motion.li>
-            ))}
-          </motion.ul>
-
-          <motion.div
-            className="w-full mt-8 flex flex-col sm:flex-row items-stretch sm:items-center text-center gap-3 sm:gap-[43px]"
-            variants={heroItemVariants}
-          >
-            <motion.button
-              className="w-full sm:w-[172px] py-2 rounded-[19px] bg-(--brand-color) font-semibold text-sm sm:text-base cursor-pointer"
-              variants={buttonItemVariants}
-              whileHover={buttonHover}
-              whileTap={tapPress}
-              transition={hoverTransition}
-              onClick={handleDownloadCV}
-            >
-              Download CV
-            </motion.button>
-            <motion.div
-              className="w-full sm:w-[172px] py-2 rounded-[19px] bg-(--brand-color) font-semibold text-sm sm:text-base cursor-pointer"
-              variants={buttonItemVariants}
-              whileHover={buttonHover}
-              whileTap={tapPress}
-              transition={hoverTransition}
-            >
-              Portfolio
-            </motion.div>
-          </motion.div>
-        </motion.div>
       </div>
     </div>
   );
