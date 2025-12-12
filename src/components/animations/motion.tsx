@@ -133,11 +133,6 @@ export const closeButtonVariants = {
   },
 } as const;
 
-// =========================================
-// Home (Hero) animations
-// =========================================
-
-// Whole hero container: fade/slide and stagger children
 export const heroContainerVariants = {
   initial: { opacity: 0, y: 10 },
   animate: {
@@ -154,7 +149,6 @@ export const heroContainerVariants = {
   },
 } as const;
 
-// Generic child rise-in
 export const heroItemVariants = {
   initial: { opacity: 0, y: 12 },
   animate: {
@@ -164,7 +158,6 @@ export const heroItemVariants = {
   },
 } as const;
 
-// Social list item: slight pop and rise
 export const socialItemVariants = {
   initial: { opacity: 0, scale: 0.9, y: 12 },
   animate: {
@@ -175,7 +168,6 @@ export const socialItemVariants = {
   },
 } as const;
 
-// Social list container: animate in and stagger children
 export const socialListVariants = {
   initial: { opacity: 0, y: 6 },
   animate: {
@@ -192,21 +184,27 @@ export const socialListVariants = {
   },
 } as const;
 
-// Buttons: subtle rise-in
-export const buttonItemVariants = heroItemVariants;
-
-// Hover/tap micro-interactions for icons and buttons
-export const iconHover = { scale: 1.08, y: -2 } as const;
-export const buttonHover = { scale: 1.03 } as const;
-
-// Background overlay fade
-export const blurOverlayVariants = {
-  initial: { opacity: 0 },
-  animate: {
+// Social list for sidebar: uses open/closed to inherit drawer state
+export const sidebarSocialListVariants = {
+  closed: { opacity: 0, y: 6 },
+  open: {
     opacity: 1,
-    transition: { duration: 0.3 },
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 220,
+      damping: 20,
+      when: "beforeChildren",
+      delayChildren: 0.05,
+      staggerChildren: 0.08,
+    },
   },
 } as const;
+
+export const buttonItemVariants = heroItemVariants;
+
+export const iconHover = { scale: 1.08, y: -2 } as const;
+export const buttonHover = { scale: 1.03 } as const;
 
 // =========================================
 // Intro (Loader + Hello) animations
@@ -271,5 +269,22 @@ export const seasonalBannerVariants = {
     opacity: 0,
     y: -16,
     transition: { duration: 0.25 },
+  },
+} as const;
+
+// =========================================
+// Home: left links container bounce drop
+// =========================================
+export const bounceDropVariants = {
+  initial: { opacity: 0, y: -28 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      bounce: 0.35,
+      stiffness: 480,
+      damping: 20,
+    },
   },
 } as const;
