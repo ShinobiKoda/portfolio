@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { RiMenu3Line } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { GoChevronDown } from "react-icons/go";
 import {
   motion,
   navVariants,
@@ -14,25 +16,50 @@ import {
   tapPress,
   hoverTransition,
   tapTransition,
-  overlayVariants,
   sidebarVariants,
   sidebarLinkVariants,
   closeButtonVariants,
+  sidebarSocialListVariants,
+  iconHover,
 } from "../animations/motion";
 
 const Navbar = () => {
   const links = [
     {
-      label: "Projects",
+      label: "home",
+      link: "/",
+    },
+    {
+      label: "projects",
       link: "/projects",
     },
     {
-      label: "Contact",
+      label: "contact",
       link: "/contact",
+    },
+    {
+      label: "about-me",
+      link: "/about-me",
+    },
+  ];
+
+  const socials = [
+    {
+      link: "https://github.com/ShinobiKoda",
+      icon: <FaGithub size={40} />,
+    },
+    {
+      link: "https://x.com/sirp_xo",
+      icon: <FaTwitter size={40} />,
+    },
+    {
+      link: "https://www.linkedin.com/in/praise-adebiyi-b8bb72287/",
+      icon: <FaLinkedin size={40} />,
     },
   ];
 
   const [isOpen, setIsOpen] = useState(false);
+  const menuBtnRef = useRef<HTMLButtonElement>(null);
 
   // Close on Escape
   useEffect(() => {
@@ -43,12 +70,14 @@ const Navbar = () => {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  const location = useLocation();
+
   return (
     <motion.nav
       variants={navVariants}
       initial="initial"
       animate="animate"
-      className="w-full max-w-[1440px] mx-auto flex items-center justify-between px-4 lg:px-8"
+      className="w-full max-w-5xl mx-auto flex items-center justify-between px-4 lg:px-8"
     >
       <motion.div
         variants={logoVariants}
@@ -58,14 +87,14 @@ const Navbar = () => {
       >
         <Link to="/" className="flex items-center">
           <div className="w-16 h-16">
-            <img src="/images/logo.png" alt="Logo Image" className="w-full" />
+            <img src="/images/logo.webp" alt="Logo Image" className="w-full" />
           </div>
           <span className="font-bold text-base text-white">Praise</span>
         </Link>
       </motion.div>
 
       <motion.ul className="hidden lg:flex items-center gap-[54px]">
-        {links.map((link, index) => (
+        {links.map((l, index) => (
           <motion.li
             key={index}
             variants={linkVariants}
@@ -73,9 +102,18 @@ const Navbar = () => {
             transition={hoverTransition}
             className="list-none"
           >
-            <Link to={link.link} className="font-semibold text-lg text-white">
-              {link.label}
-            </Link>
+            <NavLink to={l.link} className="text-base font-medium">
+              <span className="text-(--text-primary)">#</span>
+              <span
+                className={
+                  location.pathname === l.link
+                    ? "text-white"
+                    : "text-(--text-gray)"
+                }
+              >
+                <span>{l.label}</span>
+              </span>
+            </NavLink>
           </motion.li>
         ))}
       </motion.ul>
@@ -88,48 +126,43 @@ const Navbar = () => {
         transition={hoverTransition}
         onClick={() => setIsOpen(true)}
         aria-label="Open menu"
+        ref={menuBtnRef}
       >
         <RiMenu3Line size={24} className="text-white" />
       </motion.button>
 
-      <motion.div
-        className="fixed inset-0 z-50 lg:hidden"
-        style={{ pointerEvents: isOpen ? "auto" : "none" }}
-        variants={overlayVariants}
-        initial="closed"
-        animate={isOpen ? "open" : "closed"}
-        onClick={() => setIsOpen(false)}
-      >
-        <div className="absolute inset-0 bg-black/50" />
-      </motion.div>
-
       <motion.aside
-        className="fixed top-0 right-0 h-full w-[80%] max-w-[360px] bg-neutral-900/95 backdrop-blur-md border-l border-white/10 z-50 lg:hidden flex flex-col"
+        className="fixed top-0 right-0 h-full w-full bg-(--background-color) z-50 lg:hidden flex flex-col"
         variants={sidebarVariants}
         initial="closed"
         animate={isOpen ? "open" : "closed"}
         aria-hidden={!isOpen}
+        inert={!isOpen}
         role="dialog"
         aria-label="Mobile navigation"
       >
-        <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
+        <div className="flex items-center justify-between px-4 pt-4 pb-2 border-b border-white/10">
           <motion.div variants={logoVariants} className="w-[72px] h-[72px]">
-            <img src="/images/logo.png" alt="Logo Image" className="w-full" />
+            <img src="/images/logo.webp" alt="Logo Image" className="w-full" />
           </motion.div>
           <motion.button
             variants={closeButtonVariants}
             whileHover={menuHover}
             whileTap={tapPress}
             transition={hoverTransition}
-            onClick={() => setIsOpen(false)}
+            onClick={() => {
+              setIsOpen(false);
+              // Return focus to the menu trigger to avoid hidden focus
+              menuBtnRef.current?.focus();
+            }}
             aria-label="Close menu"
-            className="p-2 rounded-md text-white"
+            className="text-[#D9D9D9]"
           >
-            <IoClose size={30} />
+            <IoClose size={24} />
           </motion.button>
         </div>
 
-        <motion.ul className="flex flex-col gap-4 px-6 py-6">
+        <motion.ul className="flex flex-col gap-8 px-4 mt-[47px]">
           {links.map((l, i) => (
             <motion.li
               key={i}
@@ -137,14 +170,51 @@ const Navbar = () => {
               whileHover={linkHover}
               transition={hoverTransition}
               className="list-none"
-              onClick={() => setIsOpen(false)}
+              onClick={() => {
+                setIsOpen(false);
+                menuBtnRef.current?.focus();
+              }}
             >
-              <Link
-                to={l.link}
-                className="block py-2 text-xl font-semibold text-white"
+              <NavLink to={l.link} className="text-[32px] font-medium">
+                <span className="text-(--text-primary)">#</span>
+                <span
+                  className={
+                    location.pathname === l.link
+                      ? "text-white"
+                      : "text-(--text-gray)"
+                  }
+                >
+                  <span>{l.label}</span>
+                </span>
+              </NavLink>
+            </motion.li>
+          ))}
+        </motion.ul>
+
+        <button className="w-full text-left px-4 mt-8 text-(--text-gray) font-medium text-[32px] flex items-center">
+          <span>EN</span>
+          <GoChevronDown size={20} className="text-(--text-gray)" />
+        </button>
+
+        <motion.ul
+          className="flex items-center gap-2 mt-[107px] justify-center"
+          variants={sidebarSocialListVariants}
+        >
+          {socials.map((social, index) => (
+            <motion.li
+              key={index}
+              variants={sidebarLinkVariants}
+              whileHover={iconHover}
+              transition={hoverTransition}
+              className="list-none"
+            >
+              <NavLink
+                to={social.link}
+                className="h-16 w-16 flex items-center justify-center text-(--text-gray)"
+                target="_blank"
               >
-                {l.label}
-              </Link>
+                {social.icon}
+              </NavLink>
             </motion.li>
           ))}
         </motion.ul>
