@@ -13,6 +13,7 @@ import {
   tapPress,
   tapTransition,
 } from "./animations/motion";
+import { TbArrowWaveRightDown } from "react-icons/tb";
 
 const Home = () => {
   const handleDownloadCV = () => {
@@ -33,7 +34,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-screen">
       <Navbar />
 
       <motion.div
@@ -126,6 +127,59 @@ const Home = () => {
             </p>
           </motion.div>
         </motion.div>
+      </div>
+
+      <motion.div
+        className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[75px] lg:mt-28"
+        variants={heroContainerVariants}
+        initial="initial"
+        animate="animate"
+      >
+        <motion.div
+          className="w-full border border-(--text-gray) p-8 relative"
+          variants={heroItemVariants}
+        >
+          <motion.p
+            className="text-(--text-gray) text-[45px] font-bold absolute -top-[21px]"
+            variants={heroItemVariants}
+          >
+            "
+          </motion.p>
+          <motion.p
+            className="text-(--text-gray) text-[45px] font-bold absolute -bottom-12 right-8"
+            variants={heroItemVariants}
+          >
+            "
+          </motion.p>
+          <motion.p
+            className="font-medium text-base lg:text-2xl text-white text-center"
+            variants={heroItemVariants}
+          >
+            With great power comes great responsibility.
+          </motion.p>
+        </motion.div>
+        <motion.div
+          className="border border-(--text-gray) p-4 w-full max-w-[200px] ml-auto font-normal text-base lg:text-2xl text-white text-nowrap"
+          variants={heroItemVariants}
+        >
+          - Uncle Ben.
+        </motion.div>
+      </motion.div>
+
+      <div className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[75px]">
+        <div className="w-full flex items-center justify-between">
+          <div className="flex items-center flex-2 gap-4">
+            <h2 className="font-medium text-[32px] text-white">
+              <span className="text-(--text-primary)">#</span>
+              <span>projects</span>
+            </h2>
+            <div className="w-[50%] h-px bg-(--text-primary) hidden lg:block"></div>
+          </div>
+          <button className="font-medium text-base text-white flex items-center">
+            <span>View all</span>
+            <TbArrowWaveRightDown size={24}/>
+          </button>
+        </div>
       </div>
     </div>
   );

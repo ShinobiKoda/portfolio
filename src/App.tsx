@@ -29,7 +29,7 @@ export default function App() {
       {showIntro ? (
         <Intro />
       ) : (
-        <div className="w-full h-screen bg-(--background-color)">
+        <div className="w-full h-full bg-(--background-color)">
           <SeasonalGreeting delayMs={0} showMs={5000} />
           <Routes>
             <Route path="/" element={<Home />} />
