@@ -1,0 +1,87 @@
+const ProjectCard = () => {
+  const projects = {
+    personal_projects: [
+      {
+        stack:
+          "Nextjs, Figma, Tailwindcss, Framer-motion, Typescript, Supabase",
+        name: "Furniro",
+        description: "A fullstack e-commerce website with supabase backend",
+        image: "/images/furniro.webp",
+        live: "https://furniro-roan-gamma.vercel.app/",
+        code: "https://github.com/ShinobiKoda/furniro",
+      },
+      {
+        stack:
+          "Nextjs, Figma, Tailwindcss, Framer-motion, Typescript, Supabase Auth.",
+        name: "Hiahmi",
+        description: "An authenticated NFT Webpage",
+        image: "/images/hihami.webp",
+        live: "https://hihami.vercel.app/",
+        code: "https://github.com/ShinobiKoda/hihami",
+      },
+      {
+        stack:
+          "React+Vite, Figma, Tailwindcss, Framer-motion, Typescript, Supabase",
+        name: "EatEasy",
+        description:
+          "A Food ordering webiste with AI for personalization (in production)",
+        image: "/images/eat-easy.webp",
+        live: "https://eat-easy.vercel.app",
+        code: "https://github.com/ShinobiKoda/eat-easy",
+      },
+      {
+        stack:
+          "React+Vite, Figma, Tailwindcss, Framer-motion, Typescript, Supabase",
+        name: "YourBank",
+        description: "Landing Page for YourBank Website",
+        image: "/images/yourbank.webp",
+        live: "https://your-bank-six.vercel.app/",
+        code: "https://github.com/ShinobiKoda/your-bank",
+      },
+      {
+        stack: "Nextjs, Figma, Tailwindcss, Framer-motion, Typescript",
+        name: "Weather",
+        description: "A website for checking the weather with dynamic data",
+        image: "/images/weather-app.webp",
+        live: "https://weather-app-main-henna.vercel.app/",
+        code: "https://github.com/ShinobiKoda/weather-app-main",
+      },
+      {
+        stack: "React+Vite, Figma, Tailwindcss, Framer-motion, Typescript",
+        name: "IP Address Tracker",
+        description: "An IP Address or domain tracker",
+        image: "/images/ip-address-tracker.webp",
+        live: "https://findcodex.netlify.app/",
+        code: "https://github.com/ShinobiKoda/Ip-Address-Tracker-main",
+      },
+    ],
+    contributed_to: [
+      {
+        stack: "Nextjs, Figma, Tailwindcss, Framer-motion, Typescript",
+        name: "Noblocks",
+        contribution: "Rebuilding the the noblocks homepage",
+        image: "/images/noblocks.webp",
+        live: "https://noblocks.xyz/",
+      },
+      {
+        stack: "Nextjs, Figma, Tailwindcss, Framer-motion, Typescript, RadixUI",
+        name: "Salvage Yard",
+        contribution: "Integrate Paystack for payment processing and Polish Cart UI",
+        image: "/images/salvage-yard.webp",
+        live: "https://salvageyardstore.com/",
+      },
+      {
+        stack: "Nextjs, Figma, Tailwindcss, Framer-motion, Typescript, RadixUI",
+        name: "Salvage Yard",
+        contribution: "Integrate Paystack for payment processing and Polish Cart UI",
+        image: "/images/salvage-yard.webp",
+        live: "https://salvageyardstore.com/",
+      },
+
+    ],
+  };
+
+  return <div>ProjectCard</div>;
+};
+
+export default ProjectCard;
