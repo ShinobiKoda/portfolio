@@ -1,7 +1,10 @@
+import Navbar from "./Layout/Navbar"
 
 const Projects = () => {
   return (
-    <div>Projects</div>
+    <div>
+      <Navbar />
+    </div>
   )
 }
 
