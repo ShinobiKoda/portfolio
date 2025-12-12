@@ -11,14 +11,14 @@ export default function Intro() {
   const text = "Hello,".split("");
   return (
     <motion.div
-      className="w-full h-screen flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 bg-[#222831] dark:bg-black px-4"
+      className="w-full h-screen flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 bg-(--background-color) px-4"
       variants={introContainer}
       initial="initial"
       animate="animate"
       exit="exit"
     >
       <motion.h1
-        className="text-3xl sm:text-4xl md:text-5xl font-semibold text-(--brand-color) tracking-wide text-center sm:text-left"
+        className="text-3xl sm:text-4xl md:text-5xl font-semibold text-(--text-primary) tracking-wide text-center sm:text-left"
         variants={helloText}
       >
         {text.map((c, i) => (
