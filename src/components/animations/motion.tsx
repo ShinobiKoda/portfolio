@@ -288,3 +288,77 @@ export const bounceDropVariants = {
     },
   },
 } as const;
+
+// =========================================
+// Projects section animations
+// =========================================
+
+// Container around the projects section
+export const projectsContainerVariants = {
+  initial: { opacity: 0, y: 8 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 220,
+      damping: 20,
+      mass: 0.9,
+      when: "beforeChildren",
+      staggerChildren: 0.06,
+    },
+  },
+} as const;
+
+export const titleLineGrowVariants = {
+  initial: { width: 0 },
+  animate: {
+    width: "50%",
+    transition: { type: "spring", stiffness: 280, damping: 24 },
+  },
+} as const;
+
+export const projectsListVariants = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      when: "beforeChildren",
+      delayChildren: 0.05,
+      staggerChildren: 0.1,
+    },
+  },
+} as const;
+
+export const projectCardVariants = {
+  initial: { opacity: 0, y: 12, scale: 0.98 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { type: "spring", stiffness: 260, damping: 22 },
+  },
+} as const;
+
+export const projectCardHover = {
+  scale: 1.01,
+  y: -3,
+} as const;
+
+
+export const stackIconTooltipVariants = {
+  rest: { opacity: 0, y: 6, scale: 0.96 },
+  hover: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { type: "spring", stiffness: 300, damping: 22 },
+  },
+} as const;
+
+export const stackIconVariants = {
+  rest: { scale: 1 },
+  hover: { scale: 1.08 },
+} as const;
+
+

@@ -12,10 +12,28 @@ import {
   buttonHover,
   tapPress,
   tapTransition,
+  projectsContainerVariants,
+  projectsListVariants,
+  titleLineGrowVariants,
 } from "./animations/motion";
 import { TbArrowWaveRightDown } from "react-icons/tb";
+import { type Projects } from "../types";
+import { FetchProjects } from "../api/FetchProjects";
+import ProjectCard from "./ProjectCard";
+import { useState, useEffect } from "react";
 
 const Home = () => {
+  const [projects, setProjects] = useState<Projects | null>(null);
+
+  useEffect(() => {
+    const getProjects = async () => {
+      const data = await FetchProjects();
+      setProjects(data);
+    };
+
+    getProjects();
+  }, []);
+
   const handleDownloadCV = () => {
     const link = document.createElement("a");
     link.href = "/my-cv.pdf";
@@ -41,7 +59,8 @@ const Home = () => {
         className="absolute top-0 left-[17px] xl:flex flex-col items-center gap-8 hidden"
         variants={bounceDropVariants}
         initial="initial"
-        animate="animate"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.2 }}
       >
         <motion.div
           className="w-px h-[191px] bg-(--text-gray)"
@@ -51,7 +70,8 @@ const Home = () => {
           className="flex flex-col gap-2"
           variants={socialListVariants}
           initial="initial"
-          animate="animate"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
         >
           {socials.map((social, index) => (
             <motion.li
@@ -71,7 +91,8 @@ const Home = () => {
           className="w-full space-y-[25px] lg:space-y-8"
           variants={heroContainerVariants}
           initial="initial"
-          animate="animate"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.3 }}
         >
           <motion.h1
             className="font-semibold text-[32px] text-white"
@@ -102,7 +123,8 @@ const Home = () => {
           className="px-4 w-full max-w-[469px] mx-auto"
           variants={heroContainerVariants}
           initial="initial"
-          animate="animate"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.3 }}
         >
           <motion.div className="w-full" variants={heroItemVariants}>
             <motion.img
@@ -130,10 +152,11 @@ const Home = () => {
       </div>
 
       <motion.div
-        className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[75px] lg:mt-28"
+        className="w-full max-w-5xl mx-auto px[4 lg:px-8 mt-[75px] lg:mt-28"
         variants={heroContainerVariants}
         initial="initial"
-        animate="animate"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.3 }}
       >
         <motion.div
           className="w-full border border-(--text-gray) p-8 relative"
@@ -166,21 +189,65 @@ const Home = () => {
         </motion.div>
       </motion.div>
 
-      <div className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[75px]">
+      <motion.div
+        className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[75px] space-y-12"
+        variants={projectsContainerVariants}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <div className="w-full flex items-center justify-between">
           <div className="flex items-center flex-2 gap-4">
             <h2 className="font-medium text-[32px] text-white">
               <span className="text-(--text-primary)">#</span>
               <span>projects</span>
             </h2>
-            <div className="w-[50%] h-px bg-(--text-primary) hidden lg:block"></div>
+            <motion.div
+              className="h-px bg-(--text-primary) hidden lg:block"
+              variants={titleLineGrowVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, amount: 0.9 }}
+            />
           </div>
-          <button className="font-medium text-base text-white flex items-center">
-            <span>View all</span>
-            <TbArrowWaveRightDown size={24}/>
-          </button>
+          <motion.div
+            whileHover={buttonHover}
+            whileTap={{ ...tapPress, transition: tapTransition }}
+            className="inline-flex"
+          >
+            <NavLink
+              to="/projects"
+              className="font-medium text-base text-white flex items-center"
+            >
+              <span>View all</span>
+              <TbArrowWaveRightDown size={24} />
+            </NavLink>
+          </motion.div>
         </div>
-      </div>
+
+        {projects && (
+          <motion.div
+            key="projects-loaded"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+            variants={projectsListVariants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            {projects.personal_projects.map((project, index) => (
+              <ProjectCard
+                key={index}
+                image={project.image}
+                name={project.name}
+                description={project.description}
+                live={project.live}
+                code={project.code}
+                stack={project.stack}
+              />
+            ))}
+          </motion.div>
+        )}
+      </motion.div>
     </div>
   );
 };

@@ -1,87 +1,202 @@
-const ProjectCard = () => {
-  const projects = {
-    personal_projects: [
-      {
-        stack:
-          "Nextjs, Figma, Tailwindcss, Framer-motion, Typescript, Supabase",
-        name: "Furniro",
-        description: "A fullstack e-commerce website with supabase backend",
-        image: "/images/furniro.webp",
-        live: "https://furniro-roan-gamma.vercel.app/",
-        code: "https://github.com/ShinobiKoda/furniro",
-      },
-      {
-        stack:
-          "Nextjs, Figma, Tailwindcss, Framer-motion, Typescript, Supabase Auth.",
-        name: "Hiahmi",
-        description: "An authenticated NFT Webpage",
-        image: "/images/hihami.webp",
-        live: "https://hihami.vercel.app/",
-        code: "https://github.com/ShinobiKoda/hihami",
-      },
-      {
-        stack:
-          "React+Vite, Figma, Tailwindcss, Framer-motion, Typescript, Supabase",
-        name: "EatEasy",
-        description:
-          "A Food ordering webiste with AI for personalization (in production)",
-        image: "/images/eat-easy.webp",
-        live: "https://eat-easy.vercel.app",
-        code: "https://github.com/ShinobiKoda/eat-easy",
-      },
-      {
-        stack:
-          "React+Vite, Figma, Tailwindcss, Framer-motion, Typescript, Supabase",
-        name: "YourBank",
-        description: "Landing Page for YourBank Website",
-        image: "/images/yourbank.webp",
-        live: "https://your-bank-six.vercel.app/",
-        code: "https://github.com/ShinobiKoda/your-bank",
-      },
-      {
-        stack: "Nextjs, Figma, Tailwindcss, Framer-motion, Typescript",
-        name: "Weather",
-        description: "A website for checking the weather with dynamic data",
-        image: "/images/weather-app.webp",
-        live: "https://weather-app-main-henna.vercel.app/",
-        code: "https://github.com/ShinobiKoda/weather-app-main",
-      },
-      {
-        stack: "React+Vite, Figma, Tailwindcss, Framer-motion, Typescript",
-        name: "IP Address Tracker",
-        description: "An IP Address or domain tracker",
-        image: "/images/ip-address-tracker.webp",
-        live: "https://findcodex.netlify.app/",
-        code: "https://github.com/ShinobiKoda/Ip-Address-Tracker-main",
-      },
-    ],
-    contributed_to: [
-      {
-        stack: "Nextjs, Figma, Tailwindcss, Framer-motion, Typescript",
-        name: "Noblocks",
-        contribution: "Rebuilding the the noblocks homepage",
-        image: "/images/noblocks.webp",
-        live: "https://noblocks.xyz/",
-      },
-      {
-        stack: "Nextjs, Figma, Tailwindcss, Framer-motion, Typescript, RadixUI",
-        name: "Salvage Yard",
-        contribution: "Integrate Paystack for payment processing and Polish Cart UI",
-        image: "/images/salvage-yard.webp",
-        live: "https://salvageyardstore.com/",
-      },
-      {
-        stack: "Nextjs, Figma, Tailwindcss, Framer-motion, Typescript, RadixUI",
-        name: "Salvage Yard",
-        contribution: "Integrate Paystack for payment processing and Polish Cart UI",
-        image: "/images/salvage-yard.webp",
-        live: "https://salvageyardstore.com/",
-      },
+import { NavLink } from "react-router-dom";
+import type { ReactNode } from "react";
+import {
+  motion,
+  projectCardVariants,
+  projectCardHover,
+  stackIconTooltipVariants,
+  stackIconVariants,
+} from "./animations/motion";
+import { TbArrowWaveRightDown } from "react-icons/tb";
+import { FaReact } from "react-icons/fa";
+import {
+  SiVite,
+  SiTypescript,
+  SiFramer,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiSupabase,
+} from "react-icons/si";
+import { IoLogoFigma } from "react-icons/io5";
 
-    ],
+interface ProjectProps {
+  image: string;
+  stack: string[];
+  name: string;
+  description?: string;
+  live: string;
+  code?: string;
+  contribution?: string;
+}
+
+const ProjectCard = ({
+  image,
+  stack,
+  name,
+  description,
+  live,
+  code,
+  contribution,
+}: ProjectProps) => {
+  const getStackItems = () => {
+    const items: Array<{ key: string; label: string; icon: ReactNode }> = [];
+    for (const technology of stack) {
+      const t = technology.toLowerCase();
+      if (t.includes("react") && t.includes("vite")) {
+        items.push({
+          key: `${technology}-react`,
+          label: "React",
+          icon: <FaReact size={20} />,
+        });
+        items.push({
+          key: `${technology}-vite`,
+          label: "Vite",
+          icon: <SiVite size={20} />,
+        });
+        continue;
+      }
+
+      switch (true) {
+        case t.includes("next"):
+          items.push({
+            key: technology,
+            label: "Next.js",
+            icon: <SiNextdotjs size={20} />,
+          });
+          break;
+        case t.includes("react"):
+          items.push({
+            key: technology,
+            label: "React",
+            icon: <FaReact size={20} />,
+          });
+          break;
+        case t.includes("tailwind"):
+          items.push({
+            key: technology,
+            label: "Tailwind CSS",
+            icon: <SiTailwindcss size={20} />,
+          });
+          break;
+        case t.includes("supabase"):
+          items.push({
+            key: technology,
+            label: "Supabase",
+            icon: <SiSupabase size={20} />,
+          });
+          break;
+        case t.includes("typescript"):
+          items.push({
+            key: technology,
+            label: "TypeScript",
+            icon: <SiTypescript size={20} />,
+          });
+          break;
+        case t.includes("figma"):
+          items.push({
+            key: technology,
+            label: "Figma",
+            icon: <IoLogoFigma size={20} />,
+          });
+          break;
+        case t.includes("framer"):
+          items.push({
+            key: technology,
+            label: "Framer Motion",
+            icon: <SiFramer size={20} />,
+          });
+          break;
+        case t.includes("vite"):
+          items.push({
+            key: technology,
+            label: "Vite",
+            icon: <SiVite size={20} />,
+          });
+          break;
+        default:
+          items.push({
+            key: technology,
+            label: technology,
+            icon: (
+              <span className="text-(--text-gray) text-sm">{technology}</span>
+            ),
+          });
+          break;
+      }
+    }
+    return items;
   };
 
-  return <div>ProjectCard</div>;
+  const stackItems = getStackItems();
+
+  return (
+    <motion.div
+      className="min-h-[422px] border border-(--text-gray)"
+      variants={projectCardVariants}
+      whileHover={projectCardHover}
+    >
+      <div className="w-full h-[200px]">
+        <img src={image} alt="Project Image" className="w-full h-full" />
+      </div>
+      <ul className="flex items-center gap-3 p-2 border-y border-(--text-gray)">
+        {stackItems.map((item) => (
+          <motion.li
+            key={item.key}
+            className="relative flex items-center justify-center cursor-pointer"
+            initial="rest"
+            animate="rest"
+            whileHover="hover"
+          >
+            <motion.div
+              className="text-(--text-gray)"
+              variants={stackIconVariants}
+            >
+              {item.icon}
+            </motion.div>
+
+            <motion.span
+              className="pointer-events-none absolute -top-7 left-1/2 -translate-x-1/2
+                   px-2 py-1 rounded-sm bg-[#1a1a20]
+                   border border-(--text-gray)
+                   text-(--text-gray) text-xs whitespace-nowrap"
+              variants={stackIconTooltipVariants}
+            >
+              {item.label}
+            </motion.span>
+          </motion.li>
+        ))}
+      </ul>
+      <div className="p-4 space-y-[18px]">
+        <h3 className="font-medium text-2xl text-white">{name}</h3>
+        {description && (
+          <p className="font-normal text-base text-(--text-gray)">
+            {description}
+          </p>
+        )}
+        {contribution && (
+          <p className="font-normal text-base text-(--text-gray)">
+            {contribution}
+          </p>
+        )}
+        <div className="flex items-center gap-4">
+          <NavLink
+            to={live}
+            className="border border-(--text-gray) py-2 px-4 font-medium text-base text-white flex items-center gap-1"
+          >
+            <span>Live </span> <TbArrowWaveRightDown size={16} />
+          </NavLink>
+          {code && (
+            <NavLink
+              to={code}
+              className="border border-(--text-gray) py-2 px-4 font-medium text-base text-white flex items-center gap-1"
+            >
+              <span>Code </span> <TbArrowWaveRightDown size={16} />
+            </NavLink>
+          )}
+        </div>
+      </div>
+    </motion.div>
+  );
 };
 
 export default ProjectCard;
