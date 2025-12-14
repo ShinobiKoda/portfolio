@@ -1,9 +1,7 @@
 import { motion, AnimatePresence } from "motion/react";
 
-// Re-export motion/AnimatePresence to keep component files clean
 export { motion, AnimatePresence };
 
-// Navbar entrance: slides down and fades in, then staggers children
 export const navVariants = {
   initial: { y: -24, opacity: 0 },
 
@@ -21,7 +19,6 @@ export const navVariants = {
   },
 } as const;
 
-// Logo: subtle pop-in with a slight rotation settle
 export const logoVariants = {
   initial: { opacity: 0, scale: 0.9, rotate: -8 },
   animate: {
@@ -37,7 +34,6 @@ export const logoHover = {
   rotate: 0.5,
 } as const;
 
-// Nav links: rise and fade in; hover gives a gentle emphasis
 export const linkVariants = {
   initial: { opacity: 0, y: 10 },
   animate: {
@@ -51,7 +47,6 @@ export const linkHover = {
   scale: 1.05,
 } as const;
 
-// Mobile menu button: fades in, rotates slightly on hover, taps down on press
 export const menuButtonVariants = {
   initial: { opacity: 0, x: 12 },
   animate: {
@@ -70,7 +65,6 @@ export const tapPress = {
   scale: 0.94,
 } as const;
 
-// Common snappy hover/tap transition
 export const hoverTransition = {
   type: "spring",
   stiffness: 500,
@@ -82,7 +76,6 @@ export const tapTransition = {
   damping: 28,
 } as const;
 
-// Sidebar overlay: fades in under the drawer
 export const overlayVariants = {
   closed: { opacity: 0 },
   open: {
@@ -91,7 +84,6 @@ export const overlayVariants = {
   },
 } as const;
 
-// Sidebar drawer: slides in from the right with spring
 export const sidebarVariants = {
   closed: {
     x: "100%",
@@ -112,7 +104,6 @@ export const sidebarVariants = {
   },
 } as const;
 
-// Sidebar link items: staggered rise
 export const sidebarLinkVariants = {
   closed: { opacity: 0, y: 10 },
   open: {
@@ -122,7 +113,6 @@ export const sidebarLinkVariants = {
   },
 } as const;
 
-// Close button: subtle pop
 export const closeButtonVariants = {
   closed: { opacity: 0, scale: 0.95, rotate: -6 },
   open: {
@@ -184,7 +174,6 @@ export const socialListVariants = {
   },
 } as const;
 
-// Social list for sidebar: uses open/closed to inherit drawer state
 export const sidebarSocialListVariants = {
   closed: { opacity: 0, y: 6 },
   open: {
@@ -205,10 +194,6 @@ export const buttonItemVariants = heroItemVariants;
 
 export const iconHover = { scale: 1.08, y: -2 } as const;
 export const buttonHover = { scale: 1.03 } as const;
-
-// =========================================
-// Intro (Loader + Hello) animations
-// =========================================
 
 export const introContainer = {
   initial: { opacity: 0 },
@@ -255,9 +240,6 @@ export const loaderIntro = {
   },
 } as const;
 
-// =========================================
-// Seasonal banner (toast) animations
-// =========================================
 export const seasonalBannerVariants = {
   initial: { opacity: 0, y: -16 },
   animate: {
@@ -272,9 +254,6 @@ export const seasonalBannerVariants = {
   },
 } as const;
 
-// =========================================
-// Home: left links container bounce drop
-// =========================================
 export const bounceDropVariants = {
   initial: { opacity: 0, y: -28 },
   animate: {
@@ -289,11 +268,6 @@ export const bounceDropVariants = {
   },
 } as const;
 
-// =========================================
-// Projects section animations
-// =========================================
-
-// Container around the projects section
 export const projectsContainerVariants = {
   initial: { opacity: 0, y: 8 },
   animate: {
