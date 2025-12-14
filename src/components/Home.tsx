@@ -1,26 +1,34 @@
 import Navbar from "../components/Layout/Navbar";
-import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import {
   motion,
   heroContainerVariants,
   heroItemVariants,
-  socialListVariants,
-  socialItemVariants,
-  iconHover,
-  bounceDropVariants,
   buttonHover,
   tapPress,
   tapTransition,
   projectsContainerVariants,
   projectsListVariants,
   titleLineGrowVariants,
+  skillsContainerVariants,
+  skillsGridVariants,
+  skillCategoryVariants,
+  skillItemVariants,
+  skillItemHover,
 } from "./animations/motion";
 import { TbArrowWaveRightDown } from "react-icons/tb";
 import { type Projects } from "../types";
 import { FetchProjects } from "../api/FetchProjects";
 import ProjectCard from "./ProjectCard";
 import { useState, useEffect } from "react";
+
+const skills = {
+  languages: ["Typescript", "Lua", "Python", "Javascript"],
+  databases: ["Supabase", "Postgre SQL", "Mongo"],
+  other: ["HTML", "CSS", "Tailwindcss", "REST"],
+  tools: ["VSCode", "NeoVim", "Linux", "Figma", "Copilot"],
+  frameworks: ["React", "Nextjs", "Vite", "Express.js", "Vue"],
+};
 
 const Home = () => {
   const [projects, setProjects] = useState<Projects | null>(null);
@@ -42,50 +50,10 @@ const Home = () => {
     link.click();
     document.body.removeChild(link);
   };
-  const socials = [
-    { link: "https://github.com/ShinobiKoda", icon: <FaGithub size={32} /> },
-    { link: "https://x.com/sirp_xo", icon: <FaTwitter size={32} /> },
-    {
-      link: "https://www.linkedin.com/in/praise-adebiyi-b8bb72287/",
-      icon: <FaLinkedin size={32} />,
-    },
-  ];
 
   return (
     <div className="w-full h-screen">
       <Navbar />
-
-      <motion.div
-        className="absolute top-0 left-[17px] xl:flex flex-col items-center gap-8 hidden"
-        variants={bounceDropVariants}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <motion.div
-          className="w-px h-[191px] bg-(--text-gray)"
-          variants={heroItemVariants}
-        />
-        <motion.ul
-          className="flex flex-col gap-2"
-          variants={socialListVariants}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {socials.map((social, index) => (
-            <motion.li
-              key={index}
-              variants={socialItemVariants}
-              whileHover={iconHover}
-              className="text-(--text-gray)"
-            >
-              <NavLink to={social.link}>{social.icon}</NavLink>
-            </motion.li>
-          ))}
-        </motion.ul>
-      </motion.div>
-
       <div className=" w-full px-4 lg:px-8 max-w-5xl mx-auto space-y-6 lg:flex lg:mt-[62px] lg:items-center">
         <motion.div
           className="w-full space-y-[25px] lg:space-y-8"
@@ -109,7 +77,7 @@ const Home = () => {
           </motion.p>
 
           <motion.button
-            className="hidden lg:block px-4 py-2 border border-(--text-primary) font-medium text-base cursor-pointer text-white"
+            className="px-4 py-2 border border-(--text-primary) font-medium text-base cursor-pointer text-white"
             variants={heroItemVariants}
             whileHover={buttonHover}
             whileTap={{ ...tapPress, transition: tapTransition }}
@@ -152,7 +120,7 @@ const Home = () => {
       </div>
 
       <motion.div
-        className="w-full max-w-5xl mx-auto px[4 lg:px-8 mt-[75px] lg:mt-28"
+        className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[75px] lg:mt-28"
         variants={heroContainerVariants}
         initial="initial"
         whileInView="animate"
@@ -224,29 +192,180 @@ const Home = () => {
             </NavLink>
           </motion.div>
         </div>
+        <div className="w-full">
+          {projects && (
+            <motion.div
+              key="projects-loaded"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+              variants={projectsListVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              {projects.personal_projects.map((project, index) => (
+                <ProjectCard
+                  key={index}
+                  image={project.image}
+                  name={project.name}
+                  description={project.description}
+                  live={project.live}
+                  code={project.code}
+                  stack={project.stack}
+                />
+              ))}
+            </motion.div>
+          )}
+        </div>
+      </motion.div>
 
-        {projects && (
+      <motion.div
+        className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[106px] space-y-3"
+        variants={projectsContainerVariants}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <div className="flex items-center gap-4 w-full max-w-[391px]">
+          <h2 className="font-medium text-[32px] text-white">
+            <span className="text-(--text-primary)">#</span>
+            <span>skills</span>
+          </h2>
           <motion.div
-            key="projects-loaded"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-            variants={projectsListVariants}
+            className="h-px bg-(--text-primary) hidden lg:block"
+            variants={titleLineGrowVariants}
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.9 }}
+          />
+        </div>
+
+        <motion.div
+          className="w-full grid grid-cols-1 lg:grid-cols-2 gap-[59px]"
+          variants={skillsContainerVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.div
+            className="w-[349px] h-[282px] bg-center bg-cover"
+            style={{
+              backgroundImage: "url('/images/skills-illustration.webp')",
+            }}
+            variants={heroItemVariants}
+          ></motion.div>
+
+          <motion.div
+            className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 items-start"
+            variants={skillsGridVariants}
           >
-            {projects.personal_projects.map((project, index) => (
-              <ProjectCard
-                key={index}
-                image={project.image}
-                name={project.name}
-                description={project.description}
-                live={project.live}
-                code={project.code}
-                stack={project.stack}
-              />
-            ))}
+            <motion.div
+              className="border border-(--text-gray) py-2 max-w-[178px] mx-auto"
+              variants={skillCategoryVariants}
+            >
+              <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
+                Languages
+              </h3>
+              <div className="w-full p-2 flex items-center flex-wrap gap-2">
+                {skills.languages.map((item) => (
+                  <motion.span
+                    key={item}
+                    className="font-normal text-base text-(--text-gray)"
+                    variants={skillItemVariants}
+                    whileHover={skillItemHover}
+                  >
+                    {item}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.div>
+
+            <div className="grid grid-row-2 gap-4 max-w-[178px] mx-auto">
+              <motion.div
+                className="border border-(--text-gray) py-2"
+                variants={skillCategoryVariants}
+              >
+                <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
+                  Databases
+                </h3>
+                <div className="w-full p-2 flex items-center flex-wrap gap-2">
+                  {skills.databases.map((item) => (
+                    <motion.span
+                      key={item}
+                      className="font-normal text-base text-(--text-gray)"
+                      variants={skillItemVariants}
+                      whileHover={skillItemHover}
+                    >
+                      {item}
+                    </motion.span>
+                  ))}
+                </div>
+              </motion.div>
+              <motion.div
+                className="border border-(--text-gray) py-2"
+                variants={skillCategoryVariants}
+              >
+                <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
+                  Other
+                </h3>
+                <div className="w-full p-2 flex items-center flex-wrap gap-2">
+                  {skills.other.map((item) => (
+                    <motion.span
+                      key={item}
+                      className="font-normal text-base text-(--text-gray)"
+                      variants={skillItemVariants}
+                      whileHover={skillItemHover}
+                    >
+                      {item}
+                    </motion.span>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+
+            <div className="grid grid-row-2 gap-4 max-w-[178px] mx-auto">
+              <motion.div
+                className="border border-(--text-gray) py-2"
+                variants={skillCategoryVariants}
+              >
+                <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
+                  Tools
+                </h3>
+                <div className="w-full p-2 flex items-center flex-wrap gap-2">
+                  {skills.tools.map((item) => (
+                    <motion.span
+                      key={item}
+                      className="font-normal text-base text-(--text-gray)"
+                      variants={skillItemVariants}
+                      whileHover={skillItemHover}
+                    >
+                      {item}
+                    </motion.span>
+                  ))}
+                </div>
+              </motion.div>
+              <motion.div
+                className="border border-(--text-gray) py-2"
+                variants={skillCategoryVariants}
+              >
+                <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
+                  Frameworks
+                </h3>
+                <div className="w-full p-2 flex items-center flex-wrap gap-2">
+                  {skills.frameworks.map((item) => (
+                    <motion.span
+                      key={item}
+                      className="font-normal text-base text-(--text-gray)"
+                      variants={skillItemVariants}
+                      whileHover={skillItemHover}
+                    >
+                      {item}
+                    </motion.span>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
-        )}
+        </motion.div>
       </motion.div>
     </div>
   );
