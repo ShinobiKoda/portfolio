@@ -345,7 +345,6 @@ export const projectCardHover = {
   y: -3,
 } as const;
 
-
 export const stackIconTooltipVariants = {
   rest: { opacity: 0, y: 6, scale: 0.96 },
   hover: {
@@ -361,4 +360,53 @@ export const stackIconVariants = {
   hover: { scale: 1.08 },
 } as const;
 
+// =========================================
+// Skills section animations
+// =========================================
+export const skillsContainerVariants = {
+  initial: { opacity: 0, y: 8 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 220,
+      damping: 20,
+      when: "beforeChildren",
+      staggerChildren: 0.08,
+    },
+  },
+} as const;
 
+export const skillsGridVariants = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      when: "beforeChildren",
+      delayChildren: 0.05,
+      staggerChildren: 0.08,
+    },
+  },
+} as const;
+
+export const skillCategoryVariants = {
+  initial: { opacity: 0, y: 12, scale: 0.98 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { type: "spring", stiffness: 260, damping: 22 },
+  },
+} as const;
+
+export const skillItemVariants = {
+  initial: { opacity: 0, y: 8 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 280, damping: 22 },
+  },
+} as const;
+
+export const skillItemHover = { scale: 1.03, y: -2 } as const;
