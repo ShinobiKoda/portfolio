@@ -131,7 +131,7 @@ const ProjectCard = ({
 
   return (
     <motion.div
-      className="min-h-[422px] border border-(--text-gray)"
+      className="min-h-[422px] border border-(--text-gray) w-full max-w-[330px] mx-auto"
       variants={projectCardVariants}
       whileHover={projectCardHover}
     >
@@ -181,6 +181,7 @@ const ProjectCard = ({
         <div className="flex items-center gap-4">
           <NavLink
             to={live}
+            target="_blank"
             className="border border-(--text-gray) py-2 px-4 font-medium text-base text-white flex items-center gap-1"
           >
             <span>Live </span> <TbArrowWaveRightDown size={16} />
@@ -188,6 +189,7 @@ const ProjectCard = ({
           {code && (
             <NavLink
               to={code}
+              target="_blank"
               className="border border-(--text-gray) py-2 px-4 font-medium text-base text-white flex items-center gap-1"
             >
               <span>Code </span> <TbArrowWaveRightDown size={16} />
