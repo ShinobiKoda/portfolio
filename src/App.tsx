@@ -5,6 +5,7 @@ import Projects from "./components/Projects";
 import Intro from "./components/Intro";
 import SeasonalGreeting from "./components/SeasonalGreeting";
 import { Routes, Route } from "react-router-dom";
+import SocialBar from "./components/Layout/SocialBar";
 import { Analytics } from "@vercel/analytics/react";
 import { ToastContainer } from "react-toastify";
 
@@ -30,6 +31,7 @@ export default function App() {
         <Intro />
       ) : (
         <div className="w-full h-full bg-(--background-color)">
+          <SocialBar />
           <SeasonalGreeting delayMs={0} showMs={5000} />
           <Routes>
             <Route path="/" element={<Home />} />
