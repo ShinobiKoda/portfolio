@@ -134,7 +134,7 @@ const ContactForm = () => {
       <motion.button
         type="submit"
         disabled={loading}
-        className="px-4 py-2 border border-(--text-primary) text-white font-normal text-base disabled:opacity-60 cursor-pointer"
+        className="px-4 py-2 border border-(--text-primary) text-white font-normal text-base disabled:opacity-30 cursor-pointer disabled:cursor-not-allowed"
         variants={buttonItemVariants}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.96 }}
