@@ -268,7 +268,7 @@ export const bounceDropVariants = {
   },
 } as const;
 
-export const projectsContainerVariants = {
+export const sectionContainerVariants = {
   initial: { opacity: 0, y: 8 },
   animate: {
     opacity: 1,
@@ -292,7 +292,7 @@ export const titleLineGrowVariants = {
   },
 } as const;
 
-export const projectsListVariants = {
+export const listStaggerVariants = {
   initial: { opacity: 0 },
   animate: {
     opacity: 1,
