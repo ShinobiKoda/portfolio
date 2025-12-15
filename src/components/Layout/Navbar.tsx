@@ -46,15 +46,15 @@ const Navbar = () => {
   const socials = [
     {
       link: "https://github.com/ShinobiKoda",
-      icon: <FaGithub size={40} />,
+      icon: <FaGithub size={24} />,
     },
     {
       link: "https://x.com/sirp_xo",
-      icon: <FaTwitter size={40} />,
+      icon: <FaTwitter size={24} />,
     },
     {
       link: "https://www.linkedin.com/in/praise-adebiyi-b8bb72287/",
-      icon: <FaLinkedin size={40} />,
+      icon: <FaLinkedin size={24} />,
     },
   ];
 
