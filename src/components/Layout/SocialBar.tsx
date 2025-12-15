@@ -12,11 +12,11 @@ import {
 
 const SocialBar = () => {
   const socials = [
-    { link: "https://github.com/ShinobiKoda", icon: <FaGithub size={32} /> },
-    { link: "https://x.com/sirp_xo", icon: <FaXTwitter size={32} /> },
+    { link: "https://github.com/ShinobiKoda", icon: <FaGithub size={24} /> },
+    { link: "https://x.com/sirp_xo", icon: <FaXTwitter size={24} /> },
     {
       link: "https://www.linkedin.com/in/praise-adebiyi-b8bb72287/",
-      icon: <FaLinkedin size={32} />,
+      icon: <FaLinkedin size={24} />,
     },
   ];
 
