@@ -1,5 +1,6 @@
 import Navbar from "../components/Layout/Navbar";
 import { NavLink } from "react-router-dom";
+import Footer from "./Layout/Footer";
 import {
   motion,
   heroContainerVariants,
@@ -28,11 +29,11 @@ import { useState, useEffect } from "react";
 import ContactForm from "./ContactForm";
 
 const skills = {
-  languages: ["Typescript", "Lua", "Python", "Javascript"],
-  databases: ["Supabase", "Postgre SQL", "Mongo"],
-  other: ["HTML", "CSS", "Tailwindcss", "REST"],
-  tools: ["VSCode", "NeoVim", "Linux", "Figma", "Copilot"],
-  frameworks: ["React", "Nextjs", "Vite", "Express.js", "Vue"],
+  languages: ["Typescript", "Javascript"],
+  databases: ["REST", "axios", "nodejs"],
+  other: ["HTML", "CSS", "Supabase"],
+  tools: ["VSCode", "Linux", "Figma", "Vercel"],
+  frameworks: ["React", "Nextjs", "Vite", "Express.js", "Tailwindcss"],
 };
 
 const Home = () => {
@@ -309,7 +310,7 @@ const Home = () => {
                 variants={skillCategoryVariants}
               >
                 <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
-                  Databases
+                  APIs
                 </h3>
                 <div className="w-full p-2 flex items-center flex-wrap gap-2">
                   {skills.databases.map((item) => (
@@ -428,9 +429,9 @@ const Home = () => {
                   className="flex flex-col gap-4 text-(--text-gray) text-base font-normal"
                   variants={heroItemVariants}
                 >
-                  <span>Hello, i&apos;m Praise!</span>
+                  <span>Hello, I&apos;m Praise!</span>
                   <span>
-                    I&apos;m a self-taught front-end developer based in Nigeria.
+                    I&apos;m a front-end developer based in Nigeria.
                     I can develop responsive websites from scratch and raise
                     them into modern user-friendly web experiences.
                   </span>
@@ -572,6 +573,9 @@ const Home = () => {
           </div>
         </motion.div>
       )}
+      <div className="mt-[145px]">
+        <Footer />
+      </div>
     </div>
   );
 };
