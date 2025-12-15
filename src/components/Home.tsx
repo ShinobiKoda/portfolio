@@ -7,20 +7,25 @@ import {
   buttonHover,
   tapPress,
   tapTransition,
-  projectsContainerVariants,
-  projectsListVariants,
+  sectionContainerVariants,
+  listStaggerVariants,
   titleLineGrowVariants,
   skillsContainerVariants,
   skillsGridVariants,
   skillCategoryVariants,
   skillItemVariants,
   skillItemHover,
+  iconHover,
 } from "./animations/motion";
 import { TbArrowWaveRightDown } from "react-icons/tb";
+import { FaArrowRight } from "react-icons/fa6";
+import { IoMdMail } from "react-icons/io";
+import { FaDiscord, FaTelegram } from "react-icons/fa";
 import { type Projects } from "../types";
 import { FetchProjects } from "../api/FetchProjects";
 import ProjectCard from "./ProjectCard";
 import { useState, useEffect } from "react";
+import ContactForm from "./ContactForm";
 
 const skills = {
   languages: ["Typescript", "Lua", "Python", "Javascript"],
@@ -32,6 +37,10 @@ const skills = {
 
 const Home = () => {
   const [projects, setProjects] = useState<Projects | null>(null);
+  const [copied, setCopied] = useState<{ message: string; visible: boolean }>({
+    message: "",
+    visible: false,
+  });
 
   useEffect(() => {
     const getProjects = async () => {
@@ -49,6 +58,21 @@ const Home = () => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  };
+
+  const handleCopy = async (text: string, label: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied({ message: `${label} copied`, visible: true });
+      setTimeout(() => {
+        setCopied((prev) => ({ ...prev, visible: false }));
+      }, 2000);
+    } catch (e) {
+      setCopied({ message: `Failed to copy ${label}`, visible: true });
+      setTimeout(() => {
+        setCopied((prev) => ({ ...prev, visible: false }));
+      }, 2000);
+    }
   };
 
   return (
@@ -159,7 +183,7 @@ const Home = () => {
 
       <motion.div
         className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[75px] space-y-12"
-        variants={projectsContainerVariants}
+        variants={sectionContainerVariants}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.2 }}
@@ -197,7 +221,7 @@ const Home = () => {
             <motion.div
               key="projects-loaded"
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-              variants={projectsListVariants}
+              variants={listStaggerVariants}
               initial="initial"
               whileInView="animate"
               viewport={{ once: true, amount: 0.2 }}
@@ -220,7 +244,7 @@ const Home = () => {
 
       <motion.div
         className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[106px] space-y-3"
-        variants={projectsContainerVariants}
+        variants={sectionContainerVariants}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.2 }}
@@ -367,6 +391,187 @@ const Home = () => {
           </motion.div>
         </motion.div>
       </motion.div>
+
+      <motion.div
+        className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-28"
+        variants={sectionContainerVariants}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <motion.div
+          className="w-full grid grid-cols-1 lg:grid-cols-2"
+          variants={listStaggerVariants}
+        >
+          <motion.div className="space-y-[23px]" variants={heroItemVariants}>
+            <div className="w-full">
+              <div className="flex items-center flex-2 gap-4 w-full max-w-[391px]">
+                <motion.h2
+                  className="font-medium text-[32px] text-white"
+                  variants={heroItemVariants}
+                >
+                  <span className="text-(--text-primary)">#</span>
+                  <span>about-me</span>
+                </motion.h2>
+                <motion.div
+                  className="h-px bg-(--text-primary) hidden lg:block"
+                  variants={titleLineGrowVariants}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true, amount: 0.9 }}
+                />
+              </div>
+            </div>
+            <div className="w-full">
+              <div className="flex flex-col gap-[27px]">
+                <motion.p
+                  className="flex flex-col gap-4 text-(--text-gray) text-base font-normal"
+                  variants={heroItemVariants}
+                >
+                  <span>Hello, i&apos;m Praise!</span>
+                  <span>
+                    I&apos;m a self-taught front-end developer based in Nigeria.
+                    I can develop responsive websites from scratch and raise
+                    them into modern user-friendly web experiences.
+                  </span>
+                  <span>
+                    Transforming my creativity and knowledge into a websites has
+                    been my passion for over a year. I have been helping various
+                    clients to establish their presence online. I always strive
+                    to learn about the newest technologies and frameworks.
+                  </span>
+                </motion.p>
+                <motion.button
+                  className="flex items-center gap-2 border border-(--text-primary) px-4 py-2 font-medium text-base text-white max-w-[148px] cursor-pointer"
+                  variants={heroItemVariants}
+                  whileHover={buttonHover}
+                  whileTap={{ ...tapPress, transition: tapTransition }}
+                >
+                  <span>Read More</span>
+                  <motion.span whileHover={iconHover}>
+                    <FaArrowRight />
+                  </motion.span>
+                </motion.button>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="w-full max-w-[343px] mx-auto"
+            variants={heroItemVariants}
+          >
+            <img
+              src="/images/about-me-illustration.webp"
+              alt="About me Illustration"
+              className="object-cover"
+            />
+          </motion.div>
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[75px] space-y-12"
+        variants={sectionContainerVariants}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <motion.div
+          className="flex items-center flex-2 gap-4 w-full max-w-[391px]"
+          variants={heroContainerVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.h2
+            className="font-medium text-[32px] text-white"
+            variants={heroItemVariants}
+          >
+            <span className="text-(--text-primary)">#</span>
+            <span>contacts</span>
+          </motion.h2>
+          <motion.div
+            className="h-px bg-(--text-primary) hidden lg:block"
+            variants={titleLineGrowVariants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.9 }}
+          />
+        </motion.div>
+
+        <motion.div
+          className="w-full grid grid-cols-1 lg:grid-cols-2 items-start gap-8"
+          variants={listStaggerVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.div
+            className="border border-(--text-gray) p-4 space-y-4"
+            variants={heroItemVariants}
+          >
+            <motion.h4
+              className="font-semibold text-base text-white"
+              variants={heroItemVariants}
+            >
+              Message me here
+            </motion.h4>
+            <motion.ul
+              className="flex flex-col gap-4"
+              variants={listStaggerVariants}
+            >
+              <motion.li
+                className="flex items-center text-(--text-gray) font-normal text-base gap-2 cursor-pointer"
+                variants={heroItemVariants}
+                whileHover={buttonHover}
+                onClick={() => handleCopy("sirp_57021", "Discord handle")}
+                title="Click to copy"
+              >
+                <FaDiscord size={24} />
+                <span>sirp_57021</span>
+              </motion.li>
+              <motion.li
+                className="flex items-center text-(--text-gray) font-normal text-base gap-2 cursor-pointer"
+                variants={heroItemVariants}
+                whileHover={buttonHover}
+                onClick={() => handleCopy("@sirp_dev", "Telegram handle")}
+                title="Click to copy"
+              >
+                <FaTelegram size={24} />
+                <span>@sirp_dev</span>
+              </motion.li>
+              <motion.li
+                className="flex items-center text-(--text-gray) font-normal text-base gap-2 cursor-pointer"
+                variants={heroItemVariants}
+                whileHover={buttonHover}
+                onClick={() => handleCopy("sirp2804@gmail.com", "Email")}
+                title="Click to copy"
+              >
+                <IoMdMail size={24} />
+                <span>sirp2804@gmail.com</span>
+              </motion.li>
+            </motion.ul>
+          </motion.div>
+          <motion.div variants={heroItemVariants}>
+            <ContactForm />
+          </motion.div>
+        </motion.div>
+      </motion.div>
+
+      {copied.visible && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          transition={{ type: "spring", stiffness: 300, damping: 24 }}
+          className="fixed bottom-6 left-1/2 -translate-x-1/2 px-4 py-2 border border-(--text-primary) bg-(--bg-primary,#0a0a0a) text-white shadow-md"
+        >
+          <div className="flex items-center gap-2">
+            <span className="inline-block h-2 w-2 bg-(--text-primary)"></span>
+            <span className="text-sm font-medium">{copied.message}</span>
+          </div>
+        </motion.div>
+      )}
     </div>
   );
 };
