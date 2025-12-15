@@ -136,7 +136,7 @@ const ProjectCard = ({
       whileHover={projectCardHover}
     >
       <div className="w-full h-[200px]">
-        <img src={image} alt="Project Image" className="w-full h-full" />
+        <img src={image} alt="Project Image" className="w-full h-full object-cover" />
       </div>
       <ul className="flex items-center gap-3 p-2 border-y border-(--text-gray)">
         {stackItems.map((item) => (
