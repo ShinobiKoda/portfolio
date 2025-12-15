@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema, type ContactFormData } from "../schema/contactSchema";
+import sendContact from "../api/contact";
 import { ClipLoader } from "react-spinners";
 import { useState } from "react";
 import { motion } from "./animations/motion";
@@ -23,14 +24,24 @@ const ContactForm = () => {
   });
 
   const [loading, setLoading] = useState<boolean>(false);
+  const [status, setStatus] = useState<null | { ok: boolean; message: string }>(
+    null
+  );
 
   const onSubmit = async (data: ContactFormData) => {
-    console.log("Contact form submitted:", data);
+    setStatus(null);
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    const res = await sendContact(data);
+    setLoading(false);
+    if (res.ok) {
+      setStatus({ ok: true, message: res.message ?? "Message sent" });
       reset();
-    }, 3000);
+    } else {
+      setStatus({
+        ok: false,
+        message: (res.message as string) ?? "Failed to send. Please try again.",
+      });
+    }
   };
 
   return (
@@ -151,6 +162,16 @@ const ContactForm = () => {
           "Send"
         )}
       </motion.button>
+      {status && (
+        <p
+          className={`text-sm ${
+            status.ok ? "text-(--text-primary)" : "text-red-500"
+          }`}
+          aria-live="polite"
+        >
+          {status.message}
+        </p>
+      )}
     </motion.form>
   );
 };
