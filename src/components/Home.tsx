@@ -84,8 +84,7 @@ const Home = () => {
           className="w-full space-y-[25px] lg:space-y-8"
           variants={heroContainerVariants}
           initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, amount: 0.3 }}
+          animate="animate"
         >
           <motion.h1
             className="font-semibold text-[32px] text-white"
@@ -116,8 +115,7 @@ const Home = () => {
           className="px-4 w-full max-w-[469px] mx-auto"
           variants={heroContainerVariants}
           initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, amount: 0.3 }}
+          animate="animate"
         >
           <motion.div className="w-full" variants={heroItemVariants}>
             <motion.img
