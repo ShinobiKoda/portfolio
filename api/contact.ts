@@ -1,8 +1,6 @@
 import { Resend } from "resend";
 import { contactSchema } from "../src/schema/contactSchema";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const COLORS = {
   background: "#282c33",
   primary: "#C778DD",
@@ -105,6 +103,7 @@ export default async function handler(req: any, res: any) {
   if (!process.env.RESEND_API_KEY) {
     return res.status(500).json({ error: "Missing RESEND_API_KEY" });
   }
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
   const FROM_EMAIL =
     process.env.CONTACT_FROM_EMAIL || "contact@yourdomain.tech";
