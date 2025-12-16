@@ -1,13 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
-import Projects from "./components/Projects";
+const ProjectsPage = lazy(() => import("./components/Projects"));
 import Intro from "./components/Intro";
-import SeasonalGreeting from "./components/SeasonalGreeting";
 import { Routes, Route } from "react-router-dom";
 import SocialBar from "./components/Layout/SocialBar";
 import { Analytics } from "@vercel/analytics/react";
-import { ToastContainer } from "react-toastify";
 
 export default function App() {
   const [showIntro, setShowIntro] = useState(true);
@@ -20,23 +18,23 @@ export default function App() {
   return (
     <>
       <Analytics />
-      <ToastContainer
-        position="top-center"
-        theme="dark"
-        closeOnClick
-        pauseOnFocusLoss
-        draggable
-      />
+
       {showIntro ? (
         <Intro />
       ) : (
-        <div className="w-full h-full bg-(--background-color)">
+        <div className="w-full h-full bg-(--background-color) relative">
           <SocialBar />
-          <SeasonalGreeting delayMs={0} showMs={5000} />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/projects" element={<Projects />} />
+            <Route
+              path="/projects"
+              element={
+                <Suspense fallback={null}>
+                  <ProjectsPage />
+                </Suspense>
+              }
+            />
           </Routes>
         </div>
       )}
