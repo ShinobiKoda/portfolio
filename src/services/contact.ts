@@ -6,7 +6,6 @@ export type ContactResponse = {
   errors?: unknown;
 };
 
-
 export async function sendContact(
   data: ContactFormData
 ): Promise<ContactResponse> {
