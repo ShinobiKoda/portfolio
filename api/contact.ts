@@ -2,7 +2,8 @@ export const config = {
   runtime: "nodejs",
 };
 import { Resend } from "resend";
-import { contactSchema } from "./contactSchema";
+// Use explicit .js extension for ESM runtime after TS transpilation
+import { contactSchema } from "./contactSchema.js";
 
 function adminEmailTemplate({
   name,
