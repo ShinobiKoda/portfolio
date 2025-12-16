@@ -5,57 +5,6 @@ export const config = {
 import { Resend } from "resend";
 import { contactSchema } from "../src/schema/contactSchema";
 
-const COLORS = {
-  background: "#282c33",
-  primary: "#C778DD",
-  gray: "#ABB2BF",
-  white: "#ffffff",
-  black: "#000000",
-};
-
-function baseEmailLayout(content: string, heading?: string) {
-  return `
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>${heading ?? "Message"}</title>
-      <style>
-        @media (max-width: 480px) {
-          .card { padding: 16px !important; }
-          .heading { font-size: 18px !important; }
-        }
-      </style>
-    </head>
-    <body style="margin:0; padding:24px; background:${
-      COLORS.background
-    }; color:${
-    COLORS.gray
-  }; font-family:'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">
-      <div style="max-width:640px; margin:0 auto;">
-        <div class="card" style="background:${
-          COLORS.background
-        }; border:1px solid ${COLORS.gray}; border-top:3px solid ${
-    COLORS.primary
-  }; padding:24px;">
-          ${
-            heading
-              ? `<h2 class="heading" style="margin:0 0 12px; color:${COLORS.primary}; font-weight:600;">${heading}</h2>`
-              : ""
-          }
-          ${content}
-        </div>
-        <p style="text-align:center; color:${
-          COLORS.gray
-        }; font-size:12px; margin-top:12px; opacity:0.8;">
-          Sent via ${process.env.SITE_NAME || "Portfolio"}
-        </p>
-      </div>
-    </body>
-  </html>`;
-}
-
 function adminEmailTemplate({
   name,
   email,
@@ -67,29 +16,70 @@ function adminEmailTemplate({
   title: string;
   message: string;
 }) {
-  const content = `
-    <p style="margin:0 0 8px;">You received a new message:</p>
-    <div style="margin:12px 0; padding:12px; border:1px dashed ${COLORS.primary};">
-      <p style="margin:0 0 6px;"><strong style="color:${COLORS.white};">From:</strong> <span style="color:${COLORS.gray};">${name} &lt;${email}&gt;</span></p>
-      <p style="margin:0 0 6px;"><strong style="color:${COLORS.white};">Title:</strong> <span style="color:${COLORS.gray};">${title}</span></p>
-      <p style="margin:8px 0 0;"><strong style="color:${COLORS.white};">Message:</strong></p>
-      <pre style="white-space:pre-wrap; color:${COLORS.gray}; margin:6px 0 0;">${message}</pre>
-    </div>
+  return `
+  <!DOCTYPE html>
+  <html>
+    <body style="margin:0; padding:24px; background:#f5f7fa; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color:#111;">
+      <div style="max-width:680px; margin:0 auto; background:#ffffff; border:1px solid #e5e7eb; border-radius:8px; padding:24px;">
+        
+        <h2 style="margin:0 0 16px; font-size:20px; font-weight:600;">
+          New contact form submission
+        </h2>
+
+        <div style="margin-bottom:16px; font-size:14px;">
+          <p style="margin:0 0 6px;"><strong>Name:</strong> ${name}</p>
+          <p style="margin:0 0 6px;"><strong>Email:</strong> ${email}</p>
+          <p style="margin:0;"><strong>Subject:</strong> ${title}</p>
+        </div>
+
+        <div style="margin-top:20px;">
+          <p style="margin:0 0 8px; font-weight:500;">Message</p>
+          <div style="white-space:pre-wrap; background:#f9fafb; border:1px solid #e5e7eb; border-radius:6px; padding:12px; font-size:14px; line-height:1.6;">
+            ${message}
+          </div>
+        </div>
+
+        <p style="margin-top:24px; font-size:12px; color:#6b7280;">
+          This message was sent from your website contact form.
+        </p>
+
+      </div>
+    </body>
+  </html>
   `;
-  return baseEmailLayout(content, "New Contact Message");
 }
 
 function userThankYouTemplate({ name }: { name: string }) {
-  const site = process.env.SITE_NAME || "Portfolio";
-  const content = `
-    <p style="margin:0 0 12px;">Hi <span style="color:${COLORS.white};">${name}</span>,</p>
-    <p style="margin:0 0 12px;">Thanks for reaching out! Your message has been received and I'll get back to you shortly.</p>
-    <div style="margin:16px 0; padding:12px; border-left:3px solid ${COLORS.primary}; background:rgba(199,120,221,0.06);">
-      <p style="margin:0; color:${COLORS.gray};">In the meantime, feel free to reply to this email if you want to add anything.</p>
-    </div>
-    <p style="margin:16px 0 0;">— ${site}</p>
+  const site = process.env.SITE_NAME || "sir-p.tech";
+
+  return `
+  <!DOCTYPE html>
+  <html>
+    <body style="margin:0; padding:24px; background:#f5f7fa; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color:#111;">
+      <div style="max-width:680px; margin:0 auto; background:#ffffff; border:1px solid #e5e7eb; border-radius:8px; padding:24px;">
+        
+        <p style="margin:0 0 12px; font-size:15px;">
+          Hi ${name},
+        </p>
+
+        <p style="margin:0 0 12px; font-size:15px; line-height:1.6;">
+          Thank you for reaching out through my website.
+          I’ve received your message and will get back to you as soon as possible.
+        </p>
+
+        <p style="margin:0 0 20px; font-size:15px; line-height:1.6;">
+          If you’d like to add more details, you can reply directly to this email.
+        </p>
+
+        <p style="margin:0; font-size:14px;">
+          Best regards,<br />
+          <strong>${site}</strong>
+        </p>
+
+      </div>
+    </body>
+  </html>
   `;
-  return baseEmailLayout(content, `Thanks for contacting ${site}`);
 }
 
 export default async function handler(req: any, res: any) {
