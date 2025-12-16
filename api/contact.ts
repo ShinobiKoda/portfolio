@@ -1,3 +1,7 @@
+export const config = {
+  runtime: "nodejs",
+};
+
 import { Resend } from "resend";
 import { contactSchema } from "../src/schema/contactSchema";
 
