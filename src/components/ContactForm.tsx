@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema, type ContactFormData } from "../schema/contactSchema";
-import sendContact from "../api/contact";
+import sendContact from "../services/contact";
 import { ClipLoader } from "react-spinners";
 import { useState } from "react";
 import { motion } from "./animations/motion";

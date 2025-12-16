@@ -23,7 +23,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import { FaDiscord, FaTelegram } from "react-icons/fa";
 import { type Projects } from "../types";
-import { FetchProjects } from "../api/FetchProjects";
+import { FetchProjects } from "../services/FetchProjects";
 import ProjectCard from "./ProjectCard";
 import { useState, useEffect } from "react";
 import ContactForm from "./ContactForm";
@@ -431,9 +431,9 @@ const Home = () => {
                 >
                   <span>Hello, I&apos;m Praise!</span>
                   <span>
-                    I&apos;m a front-end developer based in Nigeria.
-                    I can develop responsive websites from scratch and raise
-                    them into modern user-friendly web experiences.
+                    I&apos;m a front-end developer based in Nigeria. I can
+                    develop responsive websites from scratch and raise them into
+                    modern user-friendly web experiences.
                   </span>
                   <span>
                     Transforming my creativity and knowledge into a websites has
