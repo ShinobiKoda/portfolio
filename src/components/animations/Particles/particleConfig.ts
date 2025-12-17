@@ -1,4 +1,9 @@
 import type { ISourceOptions } from "@tsparticles/engine";
-import config from "./particlesjs-config.json";
+import baseConfig from "./particlesjs-config.json";
 
-export default config as ISourceOptions;
+const config: ISourceOptions = {
+  ...(baseConfig as unknown as ISourceOptions),
+  fullScreen: { enable: true, zIndex: -1 },
+};
+
+export default config;
