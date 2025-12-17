@@ -3,7 +3,6 @@ import { RiMenu3Line } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
 import { useEffect, useState, useRef } from "react";
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
-import { GoChevronDown } from "react-icons/go";
 import {
   motion,
   navVariants,
@@ -37,24 +36,20 @@ const Navbar = () => {
       label: "contact",
       link: "/contact",
     },
-    {
-      label: "about-me",
-      link: "/about-me",
-    },
   ];
 
   const socials = [
     {
       link: "https://github.com/ShinobiKoda",
-      icon: <FaGithub size={24} />,
+      icon: <FaGithub size={30} />,
     },
     {
       link: "https://x.com/sirp_xo",
-      icon: <FaTwitter size={24} />,
+      icon: <FaTwitter size={30} />,
     },
     {
       link: "https://www.linkedin.com/in/praise-adebiyi-b8bb72287/",
-      icon: <FaLinkedin size={24} />,
+      icon: <FaLinkedin size={30} />,
     },
   ];
 
@@ -175,7 +170,7 @@ const Navbar = () => {
                 menuBtnRef.current?.focus();
               }}
             >
-              <NavLink to={l.link} className="text-[32px] font-medium">
+              <NavLink to={l.link} className="text-base font-medium">
                 <span className="text-(--text-primary)">#</span>
                 <span
                   className={
@@ -190,11 +185,6 @@ const Navbar = () => {
             </motion.li>
           ))}
         </motion.ul>
-
-        <button className="w-full text-left px-4 mt-8 text-(--text-gray) font-medium text-[32px] flex items-center">
-          <span>EN</span>
-          <GoChevronDown size={20} className="text-(--text-gray)" />
-        </button>
 
         <motion.ul
           className="flex items-center gap-2 mt-[107px] justify-center"
