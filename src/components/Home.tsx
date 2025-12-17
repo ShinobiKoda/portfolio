@@ -16,10 +16,9 @@ import {
   skillCategoryVariants,
   skillItemVariants,
   skillItemHover,
-  iconHover,
 } from "./animations/motion";
 import { TbArrowWaveRightDown } from "react-icons/tb";
-import { FaArrowRight } from "react-icons/fa6";
+
 import { IoMdMail } from "react-icons/io";
 import { FaDiscord, FaTelegram } from "react-icons/fa";
 import { type Projects } from "../types";
@@ -440,17 +439,6 @@ const Home = () => {
                     to learn about the newest technologies and frameworks.
                   </span>
                 </motion.p>
-                <motion.button
-                  className="flex items-center gap-2 border border-(--text-primary) px-4 py-2 font-medium text-base text-white max-w-[148px] cursor-pointer"
-                  variants={heroItemVariants}
-                  whileHover={buttonHover}
-                  whileTap={{ ...tapPress, transition: tapTransition }}
-                >
-                  <span>Read More</span>
-                  <motion.span whileHover={iconHover}>
-                    <FaArrowRight />
-                  </motion.span>
-                </motion.button>
               </div>
             </div>
           </motion.div>
