@@ -11,12 +11,24 @@ import Toast from "./components/Toast";
 import NotFound from "./components/NotFound";
 
 export default function App() {
-  const [showIntro, setShowIntro] = useState(true);
+  const [showIntro, setShowIntro] = useState<boolean>(() => {
+    try {
+      return sessionStorage.getItem("introShown") !== "true";
+    } catch {
+      return true;
+    }
+  });
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowIntro(false), 2200);
+    if (!showIntro) return;
+    const timer = setTimeout(() => {
+      setShowIntro(false);
+      try {
+        sessionStorage.setItem("introShown", "true");
+      } catch {}
+    }, 2200);
     return () => clearTimeout(timer);
-  }, []);
+  }, [showIntro]);
 
   return (
     <>
