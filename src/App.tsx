@@ -6,6 +6,9 @@ import Intro from "./components/Intro";
 import { Routes, Route } from "react-router-dom";
 import SocialBar from "./components/Layout/SocialBar";
 import { Analytics } from "@vercel/analytics/react";
+import ParticlesAnimation from "./components/animations/Particles/Particles";
+import Toast from "./components/Toast";
+import NotFound from "./components/NotFound";
 
 export default function App() {
   const [showIntro, setShowIntro] = useState(true);
@@ -22,20 +25,27 @@ export default function App() {
       {showIntro ? (
         <Intro />
       ) : (
-        <div className="w-full h-full bg-(--background-color) relative">
-          <SocialBar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route
-              path="/projects"
-              element={
-                <Suspense fallback={null}>
-                  <ProjectsPage />
-                </Suspense>
-              }
-            />
-          </Routes>
+        <div className="w-full min-h-screen bg-(--background-color) relative">
+          {new Date().getMonth() === 11 && (
+            <ParticlesAnimation className="absolute inset-0 w-full h-full z-20" />
+          )}
+          <div className="relative z-30">
+            <Toast />
+            <SocialBar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route
+                path="/projects"
+                element={
+                  <Suspense fallback={null}>
+                    <ProjectsPage />
+                  </Suspense>
+                }
+              />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
         </div>
       )}
     </>
