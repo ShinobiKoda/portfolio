@@ -6,10 +6,10 @@ import ProjectCard from "./ProjectCard";
 import Footer from "./Layout/Footer";
 import { type Projects } from "../types";
 import { motion } from "./animations/motion";
+import { ClipLoader } from "react-spinners";
 import {
   sectionContainerVariants,
   listStaggerVariants,
-  heroItemVariants,
 } from "./animations/motion";
 
 const Projects = () => {
@@ -38,13 +38,24 @@ const Projects = () => {
         viewport={{ once: true, amount: 0.2 }}
         className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[68px] space-y-12"
       >
-        <motion.h2
-          variants={heroItemVariants}
-          className="font-medium text-2xl lg:text-[32px]"
-        >
+        <h2 className="font-medium text-2xl lg:text-[32px]">
           <span className="text-(--text-primary)">#</span>
           <span className="text-white">apps</span>
-        </motion.h2>
+        </h2>
+        {!projects && (
+          <div
+            className="w-full flex items-center justify-center py-16 gap-2"
+            role="status"
+            aria-live="polite"
+          >
+            <ClipLoader
+              color="var(--text-primary)"
+              size={24}
+              speedMultiplier={1}
+            />
+            <span className="text-white">Loading...</span>
+          </div>
+        )}
         {projects && (
           <motion.div
             variants={listStaggerVariants}
@@ -75,13 +86,24 @@ const Projects = () => {
         viewport={{ once: true, amount: 0.2 }}
         className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[68px] space-y-12"
       >
-        <motion.h2
-          variants={heroItemVariants}
-          className="font-medium text-2xl lg:text-[32px]"
-        >
+        <h2 className="font-medium text-2xl lg:text-[32px]">
           <span className="text-(--text-primary)">#</span>
           <span className="text-white">contributions</span>
-        </motion.h2>
+        </h2>
+        {!projects && (
+          <div
+            className="w-full flex items-center justify-center py-16 gap-2"
+            role="status"
+            aria-live="polite"
+          >
+            <ClipLoader
+              color="var(--text-primary)"
+              size={24}
+              speedMultiplier={1}
+            />
+            <span className="text-white">Loading...</span>
+          </div>
+        )}
         {projects && (
           <motion.div
             variants={listStaggerVariants}

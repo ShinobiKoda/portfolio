@@ -19,7 +19,7 @@
     {
       "stack": ["React+Vite", "Figma", "Tailwindcss", "Framer-motion", "Typescript", "Supabase"],
       "name": "EatEasy",
-      "description": "A Food ordering webiste with AI for personalization (in production)",
+      "description": "A Food ordering website with AI for personalization (in production)",
       "image": "/images/eat-easy.webp",
       "live": "https://eat-easy.vercel.app",
       "code": "https://github.com/ShinobiKoda/eat-easy"
