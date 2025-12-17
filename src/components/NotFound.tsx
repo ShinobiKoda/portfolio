@@ -65,7 +65,7 @@ export default function NotFound() {
           />
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-3 items-center justify-center mt-1"
+            className="flex flex-col sm:flex-row gap-6 items-center justify-center mt-1"
             variants={heroItemVariants}
           >
             <motion.div
