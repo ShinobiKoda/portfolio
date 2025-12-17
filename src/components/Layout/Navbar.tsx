@@ -65,6 +65,23 @@ const Navbar = () => {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  // Prevent background scroll when sidebar is open
+  useEffect(() => {
+    const root = document.documentElement;
+    const body = document.body;
+    if (isOpen) {
+      root.classList.add("no-scroll");
+      body.classList.add("no-scroll");
+    } else {
+      root.classList.remove("no-scroll");
+      body.classList.remove("no-scroll");
+    }
+    return () => {
+      root.classList.remove("no-scroll");
+      body.classList.remove("no-scroll");
+    };
+  }, [isOpen]);
+
   const location = useLocation();
 
   return (
@@ -134,7 +151,7 @@ const Navbar = () => {
         </div>
 
         <motion.aside
-          className="fixed top-0 right-0 h-full w-full bg-(--background-color) z-50 lg:hidden flex flex-col"
+          className="fixed top-0 right-0 h-screen w-full bg-(--background-color) z-50 lg:hidden flex flex-col"
           variants={sidebarVariants}
           initial="closed"
           animate={isOpen ? "open" : "closed"}

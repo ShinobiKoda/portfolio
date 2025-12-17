@@ -4,8 +4,8 @@
 
 :root {
   --background-color: #282c33;
-  --text-primary: #C778DD;
-  --text-gray: #ABB2BF;
+  --text-primary: #c778dd;
+  --text-gray: #abb2bf;
 }
 
 html,
@@ -15,7 +15,12 @@ body,
   width: 100%;
   font-family: "Fira Code", sans-serif;
   background-color: var(--background-color);
-  
+}
+
+/* Prevent background scroll when overlays/menus are open */
+.no-scroll {
+  overflow: hidden !important;
+  overscroll-behavior: contain;
 }
 
 /* Yin-Yang Loader Styles */

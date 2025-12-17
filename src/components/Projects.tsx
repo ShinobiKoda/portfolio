@@ -16,6 +16,10 @@ const Projects = () => {
   const [projects, setProjects] = useState<Projects | null>(null);
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
+
+  useEffect(() => {
     const getProjects = async () => {
       const data = await FetchProjects();
       setProjects(data);
