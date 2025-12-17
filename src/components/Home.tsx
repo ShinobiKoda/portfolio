@@ -89,14 +89,14 @@ const Home = () => {
             className="font-semibold text-[32px] text-white"
             variants={heroItemVariants}
           >
-            Praise is a
+            I'm a <br />
             <span className="text-(--text-primary)"> front-end developer</span>
           </motion.h1>
           <motion.p
             className="text-(--text-gray) text-base font-normal"
             variants={heroItemVariants}
           >
-            He crafts responsive websites where technologies meet creativity
+            I craft responsive websites where technologies meet creativity
           </motion.p>
 
           <motion.button
