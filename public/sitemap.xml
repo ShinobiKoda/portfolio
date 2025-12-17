@@ -15,10 +15,4 @@
     <loc>https://sir-p.tech/contact</loc>
     <priority>0.6</priority>
   </url>
-
-  <url>
-    <loc>https://sir-p.tech/about-me</loc>
-    <priority>0.7</priority>
-  </url>
-
 </urlset>
