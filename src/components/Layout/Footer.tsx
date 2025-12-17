@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import {
   motion,
   sectionContainerVariants,
@@ -18,7 +19,7 @@ const Footer = () => {
     },
     {
       link: "https://x.com/sirp_xo",
-      icon: <FaTwitter size={24} />,
+      icon: <FaXTwitter size={24} />,
     },
     {
       link: "https://www.linkedin.com/in/praise-adebiyi-b8bb72287/",

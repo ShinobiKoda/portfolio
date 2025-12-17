@@ -2,7 +2,8 @@ import { NavLink, Link, useLocation } from "react-router-dom";
 import { RiMenu3Line } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
 import { useEffect, useState, useRef } from "react";
-import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import {
   motion,
   navVariants,
@@ -45,7 +46,7 @@ const Navbar = () => {
     },
     {
       link: "https://x.com/sirp_xo",
-      icon: <FaTwitter size={30} />,
+      icon: <FaXTwitter size={30} />,
     },
     {
       link: "https://www.linkedin.com/in/praise-adebiyi-b8bb72287/",
