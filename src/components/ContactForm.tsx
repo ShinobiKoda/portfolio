@@ -3,7 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema, type ContactFormData } from "../schema/contactSchema";
 import sendContact from "../services/contact";
 import { ClipLoader } from "react-spinners";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "./animations/motion";
 import {
   sectionContainerVariants,
@@ -27,6 +27,12 @@ const ContactForm = () => {
   const [status, setStatus] = useState<null | { ok: boolean; message: string }>(
     null
   );
+
+  useEffect(() => {
+    if (!status) return;
+    const timer = setTimeout(() => setStatus(null), 4000);
+    return () => clearTimeout(timer);
+  }, [status]);
 
   const onSubmit = async (data: ContactFormData) => {
     setStatus(null);
