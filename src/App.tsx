@@ -38,9 +38,7 @@ export default function App() {
         <Intro />
       ) : (
         <div className="w-full min-h-screen bg-(--background-color) relative">
-          {new Date().getMonth() === 11 && (
-            <ParticlesAnimation className="absolute inset-0 w-full h-full z-20" />
-          )}
+          <ParticlesAnimation className="absolute inset-0 w-full h-full z-20" />
           <div className="relative z-30">
             <Toast />
             <SocialBar />
