@@ -11,6 +11,11 @@ import Toast from "./components/Toast";
 import NotFound from "./components/NotFound";
 
 export default function App() {
+  const isHolidaySeason = () => {
+    // Match particleConfig logic: show particles in December only
+    return new Date().getMonth() === 11;
+  };
+
   const [showIntro, setShowIntro] = useState<boolean>(() => {
     try {
       return sessionStorage.getItem("introShown") !== "true";
@@ -38,7 +43,9 @@ export default function App() {
         <Intro />
       ) : (
         <div className="w-full min-h-screen bg-(--background-color) relative">
-          <ParticlesAnimation className="absolute inset-0 w-full h-full z-20" />
+          {isHolidaySeason() && (
+            <ParticlesAnimation className="absolute inset-0 w-full h-full z-20" />
+          )}
           <div className="relative z-30">
             <Toast />
             <SocialBar />

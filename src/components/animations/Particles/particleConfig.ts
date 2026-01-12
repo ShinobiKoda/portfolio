@@ -1,13 +1,5 @@
 import type { ISourceOptions } from "@tsparticles/engine";
 import holidayConfig from "./particlesjs-config.json";
-import regularConfig from "./particlesjs-config-1.json";
-
-const isHolidaySeason = () => {
-  const now = new Date();
-  return now.getMonth() === 11; // December
-};
-
-const selectedBase = isHolidaySeason() ? holidayConfig : regularConfig;
 
 function normalizeConfig(raw: unknown): ISourceOptions {
   const base: any = JSON.parse(JSON.stringify(raw ?? {}));
@@ -87,6 +79,6 @@ function normalizeConfig(raw: unknown): ISourceOptions {
   return normalized;
 }
 
-const config: ISourceOptions = normalizeConfig(selectedBase);
+const config: ISourceOptions = normalizeConfig(holidayConfig);
 
 export default config;

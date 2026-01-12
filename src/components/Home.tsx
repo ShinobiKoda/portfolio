@@ -89,8 +89,8 @@ const Home = () => {
             className="font-semibold text-[32px] text-white"
             variants={heroItemVariants}
           >
-            I'm a <br />
-            <span className="text-(--text-primary)"> front-end developer</span>
+            I'm Adebiyi Praise, <br />
+            <span className="text-(--text-primary)">a front-end developer</span>
           </motion.h1>
           <motion.p
             className="text-(--text-gray) text-base font-normal"
@@ -168,14 +168,14 @@ const Home = () => {
             className="font-medium text-base lg:text-2xl text-white text-center"
             variants={heroItemVariants}
           >
-            With great power comes great responsibility.
+            The Price of freedom is steep
           </motion.p>
         </motion.div>
         <motion.div
           className="border border-(--text-gray) p-4 w-full max-w-[200px] ml-auto font-normal text-base lg:text-2xl text-white text-nowrap"
           variants={heroItemVariants}
         >
-          - Uncle Ben.
+          - Zack Fair.
         </motion.div>
       </motion.div>
 
@@ -428,7 +428,7 @@ const Home = () => {
                 >
                   <span>Hello, I&apos;m Praise!</span>
                   <span>
-                    I&apos;m a front-end developer based in Nigeria. I can
+                    I&apos;m a front-end developer. I can
                     develop responsive websites from scratch and raise them into
                     modern user-friendly web experiences.
                   </span>
