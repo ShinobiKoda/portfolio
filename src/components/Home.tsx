@@ -134,7 +134,7 @@ const Home = () => {
                 Currently working on
               </span>
               <span className="font-semibold text-base text-white">
-                Portfolio
+                Mobile App Development
               </span>
             </p>
           </motion.div>
