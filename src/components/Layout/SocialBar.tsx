@@ -46,7 +46,12 @@ const SocialBar = () => {
             whileHover={iconHover}
             className="text-(--text-gray)"
           >
-            <NavLink to={social.link} target="_blank" rel="noopener noreferrer">
+            <NavLink
+              to={social.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit my social profile"
+            >
               {social.icon}
             </NavLink>
           </motion.li>

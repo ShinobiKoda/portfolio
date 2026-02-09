@@ -384,3 +384,24 @@ export const skillItemVariants = {
 } as const;
 
 export const skillItemHover = { scale: 1.03, y: -2 } as const;
+
+export const navLinkVariants = {
+  initial: { opacity: 0, y: 10 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 200, damping: 18 },
+  },
+  hover: {
+    scale: 1.05,
+    transition: { type: "spring", stiffness: 400, damping: 10 },
+  },
+} as const;
+
+export const navLinkUnderlineVariants = {
+  initial: { width: "0%" },
+  hover: {
+    width: "100%",
+    transition: { type: "spring", stiffness: 300, damping: 20 },
+  },
+} as const;

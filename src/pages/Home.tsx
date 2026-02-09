@@ -495,12 +495,12 @@ const Home = () => {
             className="border border-(--text-gray) p-4 space-y-4"
             variants={heroItemVariants}
           >
-            <motion.h4
+            <motion.h3
               className="font-semibold text-base text-white"
               variants={heroItemVariants}
             >
               Message me here
-            </motion.h4>
+            </motion.h3>
             <motion.ul
               className="flex flex-col gap-4"
               variants={listStaggerVariants}

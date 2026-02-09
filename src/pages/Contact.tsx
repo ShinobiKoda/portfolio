@@ -68,12 +68,12 @@ const Contact = () => {
           className="border border-(--text-gray) p-4 space-y-4"
           variants={heroItemVariants}
         >
-          <motion.h4
+          <motion.h2
             className="font-semibold text-base text-white"
             variants={heroItemVariants}
           >
             Message me here
-          </motion.h4>
+          </motion.h2>
           <motion.ul
             className="flex flex-col gap-4"
             variants={listStaggerVariants}
@@ -145,6 +145,7 @@ const Contact = () => {
                 to={social.link}
                 className="text-(--text-gray)"
                 target="_blank"
+                aria-label="Visit my social profile"
               >
                 {social.icon}
               </NavLink>

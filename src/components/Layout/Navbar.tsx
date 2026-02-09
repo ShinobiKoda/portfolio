@@ -9,7 +9,6 @@ import {
   navVariants,
   logoVariants,
   logoHover,
-  linkVariants,
   linkHover,
   menuButtonVariants,
   menuHover,
@@ -21,6 +20,8 @@ import {
   closeButtonVariants,
   sidebarSocialListVariants,
   iconHover,
+  navLinkVariants,
+  navLinkUnderlineVariants,
 } from "../animations/motion";
 
 const Navbar = () => {
@@ -100,7 +101,7 @@ const Navbar = () => {
             transition={hoverTransition}
             className="py-[19px]"
           >
-            <Link to="/" className="flex items-center">
+            <Link to="/" className="flex items-center" aria-label="Home">
               <div className="w-16 h-16">
                 <img
                   src="/images/logo.webp"
@@ -116,12 +117,17 @@ const Navbar = () => {
             {links.map((l, index) => (
               <motion.li
                 key={index}
-                variants={linkVariants}
-                whileHover={linkHover}
-                transition={hoverTransition}
-                className="list-none"
+                variants={navLinkVariants}
+                initial="initial"
+                animate="animate"
+                whileHover="hover"
+                className="list-none relative"
               >
-                <NavLink to={l.link} className="text-base font-medium">
+                <NavLink
+                  to={l.link}
+                  className="text-base font-medium relative"
+                  aria-label={`Navigate to ${l.label}`}
+                >
                   <span className="text-(--text-primary)">#</span>
                   <span
                     className={
@@ -132,6 +138,10 @@ const Navbar = () => {
                   >
                     <span>{l.label}</span>
                   </span>
+                  <motion.div
+                    className="absolute left-0 -bottom-1 h-px bg-(--text-primary)"
+                    variants={navLinkUnderlineVariants}
+                  />
                 </NavLink>
               </motion.li>
             ))}
@@ -199,7 +209,11 @@ const Navbar = () => {
                   menuBtnRef.current?.focus();
                 }}
               >
-                <NavLink to={l.link} className="text-base font-medium">
+                <NavLink
+                  to={l.link}
+                  className="text-base font-medium"
+                  aria-label={`Navigate to ${l.label}`}
+                >
                   <span className="text-(--text-primary)">#</span>
                   <span
                     className={
@@ -231,6 +245,7 @@ const Navbar = () => {
                   to={social.link}
                   className="h-16 w-16 flex items-center justify-center text-(--text-gray)"
                   target="_blank"
+                  aria-label="Visit my social profile"
                 >
                   {social.icon}
                 </NavLink>

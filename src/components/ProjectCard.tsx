@@ -136,7 +136,11 @@ const ProjectCard = ({
       whileHover={projectCardHover}
     >
       <div className="w-full h-[200px]">
-        <img src={image} alt="Project Image" className="w-full h-full object-cover" />
+        <img
+          src={image}
+          alt="Project Image"
+          className="w-full h-full object-cover"
+        />
       </div>
       <ul className="flex items-center gap-3 p-2 border-y border-(--text-gray)">
         {stackItems.map((item) => (
@@ -183,6 +187,7 @@ const ProjectCard = ({
             to={live}
             target="_blank"
             className="border border-(--text-gray) py-2 px-4 font-medium text-base text-white flex items-center gap-1"
+            aria-label={`Live demo of ${name}`}
           >
             <span>Live </span> <TbArrowWaveRightDown size={16} />
           </NavLink>
@@ -191,6 +196,7 @@ const ProjectCard = ({
               to={code}
               target="_blank"
               className="border border-(--text-gray) py-2 px-4 font-medium text-base text-white flex items-center gap-1"
+              aria-label={`Source code for ${name}`}
             >
               <span>Code </span> <TbArrowWaveRightDown size={16} />
             </NavLink>

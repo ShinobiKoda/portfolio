@@ -49,7 +49,7 @@ const Footer = () => {
               variants={heroContainerVariants}
             >
               <motion.div variants={heroItemVariants}>
-                <Link to="/" className="flex items-center">
+                <Link to="/" className="flex items-center" aria-label="Home">
                   <div className="w-8 h-8">
                     <img
                       src="/images/logo.webp"
@@ -76,12 +76,12 @@ const Footer = () => {
           </motion.div>
 
           <motion.div className="space-y-3" variants={heroItemVariants}>
-            <motion.h3
+            <motion.h2
               className="font-medium text-2xl text-white"
               variants={heroItemVariants}
             >
               Media
-            </motion.h3>
+            </motion.h2>
             <motion.ul
               className="flex items-center gap-2"
               variants={socialListVariants}
@@ -95,7 +95,7 @@ const Footer = () => {
                   className="text-(--text-gray)"
                   variants={socialItemVariants}
                 >
-                  <Link to={link.link}>
+                  <Link to={link.link} aria-label="Visit my profile">
                     <motion.span whileHover={iconHover}>
                       {link.icon}
                     </motion.span>
