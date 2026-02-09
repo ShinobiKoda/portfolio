@@ -5,13 +5,13 @@ import { Analytics } from "@vercel/analytics/react";
 import Toast from "./components/Toast";
 import Navbar from "./components/Layout/Navbar";
 import LoadingSpinner from "./components/ui/LoadingSpinner";
+import Intro from "./components/Intro";
 
 // Lazy load pages
 const Home = lazy(() => import("./pages/Home"));
 const Contact = lazy(() => import("./pages/Contact"));
 const ProjectsPage = lazy(() => import("./pages/Projects"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-const Intro = lazy(() => import("./components/Intro"));
 
 // Lazy load heavy components
 const ParticlesAnimation = lazy(
@@ -48,9 +48,7 @@ export default function App() {
       <Analytics />
 
       {showIntro ? (
-        <Suspense fallback={<LoadingSpinner />}>
-          <Intro />
-        </Suspense>
+        <Intro />
       ) : (
         <div className="w-full min-h-screen bg-(--background-color) relative">
           {isHolidaySeason() && (
