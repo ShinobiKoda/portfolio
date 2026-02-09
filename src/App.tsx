@@ -24,7 +24,14 @@ export default function App() {
     return new Date().getMonth() === 11;
   };
 
-  const [showIntro, setShowIntro] = useState<boolean>(false);
+  const [showIntro, setShowIntro] = useState<boolean>(() => {
+    try {
+      // Check if intro has already been shown in this session
+      return sessionStorage.getItem("introShown") !== "true";
+    } catch {
+      return true;
+    }
+  });
 
   useEffect(() => {
     if (!showIntro) return;
