@@ -24,13 +24,7 @@ export default function App() {
     return new Date().getMonth() === 11;
   };
 
-  const [showIntro, setShowIntro] = useState<boolean>(() => {
-    try {
-      return sessionStorage.getItem("introShown") !== "true";
-    } catch {
-      return true;
-    }
-  });
+  const [showIntro, setShowIntro] = useState<boolean>(false);
 
   useEffect(() => {
     if (!showIntro) return;

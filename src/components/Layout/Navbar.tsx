@@ -107,6 +107,8 @@ const Navbar = () => {
                   src="/images/logo.webp"
                   alt="Logo Image"
                   className="w-full"
+                  width="64"
+                  height="64"
                 />
               </div>
               <span className="font-bold text-base text-white">Praise</span>
@@ -177,6 +179,8 @@ const Navbar = () => {
                 src="/images/logo.webp"
                 alt="Logo Image"
                 className="w-full"
+                width="64"
+                height="64"
               />
             </motion.div>
             <motion.button

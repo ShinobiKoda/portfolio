@@ -140,6 +140,9 @@ const ProjectCard = ({
           src={image}
           alt="Project Image"
           className="w-full h-full object-cover"
+          loading="lazy"
+          width="400"
+          height="200"
         />
       </div>
       <ul className="flex items-center gap-3 p-2 border-y border-(--text-gray)">

@@ -55,6 +55,8 @@ const Footer = () => {
                       src="/images/logo.webp"
                       alt="Logo Image"
                       className="w-full"
+                      width="32"
+                      height="32"
                     />
                   </div>
                   <span className="font-bold text-base text-white">Praise</span>

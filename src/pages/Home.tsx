@@ -97,22 +97,22 @@ const Home = () => {
           </motion.button>
         </motion.div>
 
-        <motion.div
-          className="px-4 w-full max-w-[469px] mx-auto"
-          initial="initial"
-          animate="animate"
-        >
+        <div className="px-4 w-full max-w-[469px] mx-auto">
           <div className="w-full">
             <img
               src="/images/hero-img.webp"
               alt="Hero Image"
               className="w-full"
               fetchPriority="high"
+              width="469"
+              height="469"
             />
           </div>
           <motion.div
             className="p-2 border border-(--text-gray) flex items-center gap-[13px]"
             variants={heroItemVariants}
+            initial="initial"
+            animate="animate"
           >
             <div className="h-4 w-4 bg-(--text-primary)"></div>
             <p className="flex flex-col">
@@ -124,7 +124,7 @@ const Home = () => {
               </span>
             </p>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
 
       <motion.div
