@@ -1,29 +1,17 @@
 import Header from "../components/Layout/Header";
-import { useState, useEffect } from "react";
-import { FetchProjects } from "../services/FetchProjects";
+import { useEffect } from "react";
+import { projects } from "../services/FetchProjects";
 import ProjectCard from "../components/ProjectCard";
 import Footer from "../components/Layout/Footer";
-import { type Projects } from "../types";
 import { motion } from "../components/animations/motion";
-import { ClipLoader } from "react-spinners";
 import {
   sectionContainerVariants,
   listStaggerVariants,
 } from "../components/animations/motion";
 
 const Projects = () => {
-  const [projects, setProjects] = useState<Projects | null>(null);
-
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  }, []);
-
-  useEffect(() => {
-    const getProjects = async () => {
-      const data = await FetchProjects();
-      setProjects(data);
-    };
-    getProjects();
   }, []);
 
   return (
@@ -40,41 +28,25 @@ const Projects = () => {
           <span className="text-(--text-primary)">#</span>
           <span className="text-white">apps</span>
         </h2>
-        {!projects && (
-          <div
-            className="w-full flex items-center justify-center py-16 gap-2"
-            role="status"
-            aria-live="polite"
-          >
-            <ClipLoader
-              color="var(--text-primary)"
-              size={24}
-              speedMultiplier={1}
+        <motion.div
+          variants={listStaggerVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
+        >
+          {projects.personal_projects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              image={project.image}
+              code={project.code}
+              live={project.live}
+              description={project.description}
+              name={project.name}
+              stack={project.stack}
             />
-            <span className="text-white">Loading...</span>
-          </div>
-        )}
-        {projects && (
-          <motion.div
-            variants={listStaggerVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.2 }}
-            className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
-          >
-            {projects?.personal_projects.map((project, index) => (
-              <ProjectCard
-                key={index}
-                image={project.image}
-                code={project.code}
-                live={project.live}
-                description={project.description}
-                name={project.name}
-                stack={project.stack}
-              />
-            ))}
-          </motion.div>
-        )}
+          ))}
+        </motion.div>
       </motion.section>
 
       <motion.section
@@ -88,40 +60,24 @@ const Projects = () => {
           <span className="text-(--text-primary)">#</span>
           <span className="text-white">contributions</span>
         </h2>
-        {!projects && (
-          <div
-            className="w-full flex items-center justify-center py-16 gap-2"
-            role="status"
-            aria-live="polite"
-          >
-            <ClipLoader
-              color="var(--text-primary)"
-              size={24}
-              speedMultiplier={1}
+        <motion.div
+          variants={listStaggerVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
+        >
+          {projects.contributed_to.map((project, index) => (
+            <ProjectCard
+              key={index}
+              image={project.image}
+              live={project.live}
+              contribution={project.contribution}
+              name={project.name}
+              stack={project.stack}
             />
-            <span className="text-white">Loading...</span>
-          </div>
-        )}
-        {projects && (
-          <motion.div
-            variants={listStaggerVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.2 }}
-            className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
-          >
-            {projects?.contributed_to.map((project, index) => (
-              <ProjectCard
-                key={index}
-                image={project.image}
-                live={project.live}
-                contribution={project.contribution}
-                name={project.name}
-                stack={project.stack}
-              />
-            ))}
-          </motion.div>
-        )}
+          ))}
+        </motion.div>
       </motion.section>
 
       <div className="mt-[187px]">

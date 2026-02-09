@@ -20,10 +20,9 @@ import { TbArrowWaveRightDown } from "react-icons/tb";
 
 import { IoMdMail } from "react-icons/io";
 import { FaDiscord, FaTelegram } from "react-icons/fa";
-import { type Projects } from "../types";
-import { FetchProjects } from "../services/FetchProjects";
+import { projects } from "../services/FetchProjects";
 import ProjectCard from "../components/ProjectCard";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ContactForm from "../components/ContactForm";
 
 const skills = {
@@ -35,20 +34,10 @@ const skills = {
 };
 
 const Home = () => {
-  const [projects, setProjects] = useState<Projects | null>(null);
   const [copied, setCopied] = useState<{ message: string; visible: boolean }>({
     message: "",
     visible: false,
   });
-
-  useEffect(() => {
-    const getProjects = async () => {
-      const data = await FetchProjects();
-      setProjects(data);
-    };
-
-    getProjects();
-  }, []);
 
   const handleDownloadCV = () => {
     const link = document.createElement("a");
@@ -213,28 +202,26 @@ const Home = () => {
           </motion.div>
         </div>
         <div className="w-full">
-          {projects && (
-            <motion.div
-              key="projects-loaded"
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-              variants={listStaggerVariants}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              {projects.personal_projects.map((project, index) => (
-                <ProjectCard
-                  key={index}
-                  image={project.image}
-                  name={project.name}
-                  description={project.description}
-                  live={project.live}
-                  code={project.code}
-                  stack={project.stack}
-                />
-              ))}
-            </motion.div>
-          )}
+          <motion.div
+            key="projects-loaded"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+            variants={listStaggerVariants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            {projects.personal_projects.map((project, index) => (
+              <ProjectCard
+                key={index}
+                image={project.image}
+                name={project.name}
+                description={project.description}
+                live={project.live}
+                code={project.code}
+                stack={project.stack}
+              />
+            ))}
+          </motion.div>
         </div>
       </motion.div>
 
