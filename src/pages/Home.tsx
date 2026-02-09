@@ -99,18 +99,17 @@ const Home = () => {
 
         <motion.div
           className="px-4 w-full max-w-[469px] mx-auto"
-          variants={heroContainerVariants}
           initial="initial"
           animate="animate"
         >
-          <motion.div className="w-full" variants={heroItemVariants}>
-            <motion.img
+          <div className="w-full">
+            <img
               src="/images/hero-img.webp"
               alt="Hero Image"
               className="w-full"
-              variants={heroItemVariants}
+              fetchPriority="high"
             />
-          </motion.div>
+          </div>
           <motion.div
             className="p-2 border border-(--text-gray) flex items-center gap-[13px]"
             variants={heroItemVariants}
