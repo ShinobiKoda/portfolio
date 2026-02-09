@@ -112,7 +112,7 @@ const Footer = () => {
           whileInView="animate"
           viewport={{ once: true, amount: 0.2 }}
         >
-          &copy;Copyright 2026. Made by Shinobikoda
+          &copy;Copyright {new Date().getFullYear()}. Made by Shinobikoda
         </motion.p>
       </div>
     </motion.div>
