@@ -1,4 +1,4 @@
-import Footer from "./Layout/Footer";
+import Footer from "../components/Layout/Footer";
 import { NavLink } from "react-router-dom";
 import {
   motion,
@@ -9,7 +9,7 @@ import {
   tapPress,
   tapTransition,
   titleLineGrowVariants,
-} from "./animations/motion";
+} from "../components/animations/motion";
 
 export default function NotFound() {
   const digits = ["4", "0", "4"];

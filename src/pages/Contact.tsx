@@ -1,5 +1,5 @@
-import Header from "./Layout/Header";
-import ContactForm from "./ContactForm";
+import Header from "../components/Layout/Header";
+import ContactForm from "../components/ContactForm";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { RiTwitterXFill } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
@@ -13,11 +13,11 @@ import {
   socialItemVariants,
   iconHover,
   hoverTransition,
-} from "./animations/motion";
+} from "../components/animations/motion";
 import { FaDiscord, FaTelegram } from "react-icons/fa";
 import { useState } from "react";
 import { IoMdMail } from "react-icons/io";
-import Footer from "./Layout/Footer";
+import Footer from "../components/Layout/Footer";
 
 const Contact = () => {
   const socials = [

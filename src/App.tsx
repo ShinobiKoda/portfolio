@@ -1,14 +1,14 @@
 import { useEffect, useState, lazy, Suspense } from "react";
-import Home from "./components/Home";
-import Contact from "./components/Contact";
-const ProjectsPage = lazy(() => import("./components/Projects"));
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
+const ProjectsPage = lazy(() => import("./pages/Projects"));
 import Intro from "./components/Intro";
 import { Routes, Route } from "react-router-dom";
 import SocialBar from "./components/Layout/SocialBar";
 import { Analytics } from "@vercel/analytics/react";
 import ParticlesAnimation from "./components/animations/Particles/Particles";
 import Toast from "./components/Toast";
-import NotFound from "./components/NotFound";
+import NotFound from "./pages/NotFound";
 import Navbar from "./components/Layout/Navbar";
 
 export default function App() {

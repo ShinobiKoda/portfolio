@@ -1,15 +1,15 @@
-import Header from "./Layout/Header";
+import Header from "../components/Layout/Header";
 import { useState, useEffect } from "react";
 import { FetchProjects } from "../services/FetchProjects";
-import ProjectCard from "./ProjectCard";
-import Footer from "./Layout/Footer";
+import ProjectCard from "../components/ProjectCard";
+import Footer from "../components/Layout/Footer";
 import { type Projects } from "../types";
-import { motion } from "./animations/motion";
+import { motion } from "../components/animations/motion";
 import { ClipLoader } from "react-spinners";
 import {
   sectionContainerVariants,
   listStaggerVariants,
-} from "./animations/motion";
+} from "../components/animations/motion";
 
 const Projects = () => {
   const [projects, setProjects] = useState<Projects | null>(null);

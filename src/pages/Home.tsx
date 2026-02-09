@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import Footer from "./Layout/Footer";
+import Footer from "../components/Layout/Footer";
 import {
   motion,
   heroContainerVariants,
@@ -15,16 +15,16 @@ import {
   skillCategoryVariants,
   skillItemVariants,
   skillItemHover,
-} from "./animations/motion";
+} from "../components/animations/motion";
 import { TbArrowWaveRightDown } from "react-icons/tb";
 
 import { IoMdMail } from "react-icons/io";
 import { FaDiscord, FaTelegram } from "react-icons/fa";
 import { type Projects } from "../types";
 import { FetchProjects } from "../services/FetchProjects";
-import ProjectCard from "./ProjectCard";
+import ProjectCard from "../components/ProjectCard";
 import { useState, useEffect } from "react";
-import ContactForm from "./ContactForm";
+import ContactForm from "../components/ContactForm";
 
 const skills = {
   languages: ["Typescript", "Javascript"],
