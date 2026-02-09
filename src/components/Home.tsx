@@ -1,4 +1,3 @@
-import Navbar from "../components/Layout/Navbar";
 import { NavLink } from "react-router-dom";
 import Footer from "./Layout/Footer";
 import {
@@ -77,7 +76,6 @@ const Home = () => {
 
   return (
     <div className="w-full h-screen">
-      <Navbar />
       <div className=" w-full px-4 lg:px-8 max-w-5xl mx-auto space-y-6 lg:flex lg:mt-[62px] lg:items-center">
         <motion.div
           className="w-full space-y-[25px] lg:space-y-8"
@@ -428,9 +426,9 @@ const Home = () => {
                 >
                   <span>Hello, I&apos;m Praise!</span>
                   <span>
-                    I&apos;m a front-end developer. I can
-                    develop responsive websites from scratch and raise them into
-                    modern user-friendly web experiences.
+                    I&apos;m a front-end developer. I can develop responsive
+                    websites from scratch and raise them into modern
+                    user-friendly web experiences.
                   </span>
                   <span>
                     Transforming my creativity and knowledge into a websites has

@@ -1,4 +1,3 @@
-import Navbar from "./Layout/Navbar";
 import Footer from "./Layout/Footer";
 import { NavLink } from "react-router-dom";
 import {
@@ -17,8 +16,6 @@ export default function NotFound() {
 
   return (
     <div className="w-full min-h-screen bg-(--background-color)">
-      <Navbar />
-
       <motion.section
         className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-16 lg:mt-28"
         variants={heroContainerVariants}

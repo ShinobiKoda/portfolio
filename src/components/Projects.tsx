@@ -1,4 +1,3 @@
-import Navbar from "./Layout/Navbar";
 import Header from "./Layout/Header";
 import { useState, useEffect } from "react";
 import { FetchProjects } from "../services/FetchProjects";
@@ -29,7 +28,6 @@ const Projects = () => {
 
   return (
     <div className="w-full">
-      <Navbar />
       <Header title="projects" description="List of my projects" />
       <motion.section
         variants={sectionContainerVariants}

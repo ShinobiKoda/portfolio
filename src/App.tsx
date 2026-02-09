@@ -9,6 +9,7 @@ import { Analytics } from "@vercel/analytics/react";
 import ParticlesAnimation from "./components/animations/Particles/Particles";
 import Toast from "./components/Toast";
 import NotFound from "./components/NotFound";
+import Navbar from "./components/Layout/Navbar";
 
 export default function App() {
   const isHolidaySeason = () => {
@@ -48,6 +49,7 @@ export default function App() {
           )}
           <div className="relative z-30">
             <Toast />
+            <Navbar />
             <SocialBar />
             <Routes>
               <Route path="/" element={<Home />} />

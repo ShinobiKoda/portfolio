@@ -1,5 +1,4 @@
 import Header from "./Layout/Header";
-import Navbar from "./Layout/Navbar";
 import ContactForm from "./ContactForm";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { RiTwitterXFill } from "react-icons/ri";
@@ -57,7 +56,6 @@ const Contact = () => {
   };
   return (
     <div className="w-full">
-      <Navbar />
       <Header title="contact" description="contact-me" />
       <motion.section
         variants={sectionContainerVariants}
