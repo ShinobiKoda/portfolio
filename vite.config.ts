@@ -63,5 +63,8 @@ export default defineConfig(({ mode }) => {
         },
       },
     ],
+    build: {
+      minify: "esbuild",
+    },
   };
 });
