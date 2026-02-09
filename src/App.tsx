@@ -1,15 +1,22 @@
 import { useEffect, useState, lazy, Suspense } from "react";
-import Home from "./pages/Home";
-import Contact from "./pages/Contact";
-const ProjectsPage = lazy(() => import("./pages/Projects"));
-import Intro from "./components/Intro";
 import { Routes, Route } from "react-router-dom";
 import SocialBar from "./components/Layout/SocialBar";
 import { Analytics } from "@vercel/analytics/react";
-import ParticlesAnimation from "./components/animations/Particles/Particles";
 import Toast from "./components/Toast";
-import NotFound from "./pages/NotFound";
 import Navbar from "./components/Layout/Navbar";
+import LoadingSpinner from "./components/ui/LoadingSpinner";
+
+// Lazy load pages
+const Home = lazy(() => import("./pages/Home"));
+const Contact = lazy(() => import("./pages/Contact"));
+const ProjectsPage = lazy(() => import("./pages/Projects"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const Intro = lazy(() => import("./components/Intro"));
+
+// Lazy load heavy components
+const ParticlesAnimation = lazy(
+  () => import("./components/animations/Particles/Particles"),
+);
 
 export default function App() {
   const isHolidaySeason = () => {
@@ -41,29 +48,28 @@ export default function App() {
       <Analytics />
 
       {showIntro ? (
-        <Intro />
+        <Suspense fallback={<LoadingSpinner />}>
+          <Intro />
+        </Suspense>
       ) : (
         <div className="w-full min-h-screen bg-(--background-color) relative">
           {isHolidaySeason() && (
-            <ParticlesAnimation className="absolute inset-0 w-full h-full z-20" />
+            <Suspense fallback={null}>
+              <ParticlesAnimation className="absolute inset-0 w-full h-full z-20" />
+            </Suspense>
           )}
           <div className="relative z-30">
             <Toast />
             <Navbar />
             <SocialBar />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route
-                path="/projects"
-                element={
-                  <Suspense fallback={null}>
-                    <ProjectsPage />
-                  </Suspense>
-                }
-              />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <Suspense fallback={<LoadingSpinner />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/projects" element={<ProjectsPage />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
           </div>
         </div>
       )}
