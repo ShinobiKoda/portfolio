@@ -33,7 +33,7 @@ const Footer = () => {
       variants={sectionContainerVariants}
       initial="initial"
       whileInView="animate"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.05 }}
     >
       <div className="w-full py-8 max-w-5xl mx-auto px-4 lg:px-8">
         <motion.div
@@ -41,7 +41,7 @@ const Footer = () => {
           variants={heroContainerVariants}
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.05 }}
         >
           <motion.div className="space-y-4" variants={heroItemVariants}>
             <motion.div
@@ -89,7 +89,7 @@ const Footer = () => {
               variants={socialListVariants}
               initial="initial"
               whileInView="animate"
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.05 }}
             >
               {media_links.map((link, index) => (
                 <motion.li
@@ -112,7 +112,7 @@ const Footer = () => {
           variants={heroItemVariants}
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.05 }}
         >
           &copy;Copyright {new Date().getFullYear()}. Made by Shinobikoda
         </motion.p>

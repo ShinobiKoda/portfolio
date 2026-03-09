@@ -14,7 +14,7 @@ export const navVariants = {
       damping: 16,
       mass: 0.9,
       when: "beforeChildren",
-      staggerChildren: 0.06,
+      staggerChildren: 0.015,
     },
   },
 } as const;
@@ -99,7 +99,7 @@ export const sidebarVariants = {
       damping: 22,
       mass: 0.9,
       when: "beforeChildren",
-      staggerChildren: 0.05,
+      staggerChildren: 0.015,
     },
   },
 } as const;
@@ -124,22 +124,20 @@ export const closeButtonVariants = {
 } as const;
 
 export const pageTransitionVariants = {
-  initial: { opacity: 0, y: 16 },
+  initial: { opacity: 0, y: 12 },
   animate: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.4,
+      duration: 0.35,
       ease: [0.25, 0.1, 0.25, 1],
-      when: "beforeChildren",
-      staggerChildren: 0.04,
     },
   },
   exit: {
     opacity: 0,
-    y: -10,
+    y: -8,
     transition: {
-      duration: 0.25,
+      duration: 0.2,
       ease: [0.25, 0.1, 0.25, 1],
     },
   },
@@ -152,31 +150,31 @@ export const heroContainerVariants = {
     y: 0,
     transition: {
       type: "spring",
-      stiffness: 220,
-      damping: 20,
-      mass: 0.9,
+      stiffness: 260,
+      damping: 22,
+      mass: 0.8,
       when: "beforeChildren",
-      staggerChildren: 0.04,
+      staggerChildren: 0.02,
     },
   },
 } as const;
 
 export const heroItemVariants = {
-  initial: { opacity: 0, y: 12 },
+  initial: { opacity: 0, y: 6 },
   animate: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring", stiffness: 240, damping: 18 },
+    transition: { type: "spring", stiffness: 350, damping: 20 },
   },
 } as const;
 
 export const socialItemVariants = {
-  initial: { opacity: 0, scale: 0.9, y: 12 },
+  initial: { opacity: 0, scale: 0.95, y: 6 },
   animate: {
     opacity: 1,
     scale: 1,
     y: 0,
-    transition: { type: "spring", stiffness: 260, damping: 20 },
+    transition: { type: "spring", stiffness: 350, damping: 20 },
   },
 } as const;
 
@@ -187,11 +185,11 @@ export const socialListVariants = {
     y: 0,
     transition: {
       type: "spring",
-      stiffness: 220,
-      damping: 20,
+      stiffness: 260,
+      damping: 22,
       when: "beforeChildren",
-      delayChildren: 0.05,
-      staggerChildren: 0.08,
+      delayChildren: 0,
+      staggerChildren: 0.02,
     },
   },
 } as const;
@@ -203,11 +201,11 @@ export const sidebarSocialListVariants = {
     y: 0,
     transition: {
       type: "spring",
-      stiffness: 220,
-      damping: 20,
+      stiffness: 260,
+      damping: 22,
       when: "beforeChildren",
-      delayChildren: 0.05,
-      staggerChildren: 0.08,
+      delayChildren: 0,
+      staggerChildren: 0.02,
     },
   },
 } as const;
@@ -224,7 +222,7 @@ export const introContainer = {
     transition: {
       duration: 0.3,
       when: "beforeChildren",
-      staggerChildren: 0.08,
+      staggerChildren: 0.02,
     },
   },
   exit: {
@@ -234,74 +232,74 @@ export const introContainer = {
 } as const;
 
 export const helloText = {
-  initial: { opacity: 0, y: 8 },
+  initial: { opacity: 0, y: 4 },
   animate: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring", stiffness: 240, damping: 18 },
+    transition: { type: "spring", stiffness: 350, damping: 20 },
   },
 } as const;
 
 export const helloChar = {
-  initial: { opacity: 0, y: 10, rotate: -5 },
+  initial: { opacity: 0, y: 6, rotate: -2 },
   animate: {
     opacity: 1,
     y: 0,
     rotate: 0,
-    transition: { type: "spring", stiffness: 300, damping: 20 },
+    transition: { type: "spring", stiffness: 400, damping: 22 },
   },
 } as const;
 
 export const loaderIntro = {
-  initial: { opacity: 0, scale: 0.9, rotate: -10 },
+  initial: { opacity: 0, scale: 0.95, rotate: -5 },
   animate: {
     opacity: 1,
     scale: 1,
     rotate: 0,
-    transition: { type: "spring", stiffness: 220, damping: 18 },
+    transition: { type: "spring", stiffness: 350, damping: 20 },
   },
 } as const;
 
 export const seasonalBannerVariants = {
-  initial: { opacity: 0, y: -16 },
+  initial: { opacity: 0, y: -8 },
   animate: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring", stiffness: 280, damping: 22 },
+    transition: { type: "spring", stiffness: 350, damping: 22 },
   },
   exit: {
     opacity: 0,
-    y: -16,
-    transition: { duration: 0.25 },
+    y: -8,
+    transition: { duration: 0.2 },
   },
 } as const;
 
 export const bounceDropVariants = {
-  initial: { opacity: 0, y: -28 },
+  initial: { opacity: 0, y: -16 },
   animate: {
     opacity: 1,
     y: 0,
     transition: {
       type: "spring",
-      bounce: 0.35,
-      stiffness: 480,
-      damping: 20,
+      bounce: 0.2,
+      stiffness: 400,
+      damping: 24,
     },
   },
 } as const;
 
 export const sectionContainerVariants = {
-  initial: { opacity: 0, y: 8 },
+  initial: { opacity: 0, y: 6 },
   animate: {
     opacity: 1,
     y: 0,
     transition: {
       type: "spring",
-      stiffness: 220,
-      damping: 22,
-      mass: 0.9,
+      stiffness: 260,
+      damping: 24,
+      mass: 0.8,
       when: "beforeChildren",
-      staggerChildren: 0.03,
+      staggerChildren: 0.015,
     },
   },
 } as const;
@@ -320,19 +318,19 @@ export const listStaggerVariants = {
     opacity: 1,
     transition: {
       when: "beforeChildren",
-      delayChildren: 0.02,
-      staggerChildren: 0.05,
+      delayChildren: 0,
+      staggerChildren: 0.02,
     },
   },
 } as const;
 
 export const projectCardVariants = {
-  initial: { opacity: 0, y: 12, scale: 0.98 },
+  initial: { opacity: 0, y: 6, scale: 0.98 },
   animate: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { type: "spring", stiffness: 260, damping: 22 },
+    transition: { type: "spring", stiffness: 350, damping: 22 },
   },
 } as const;
 
@@ -360,16 +358,16 @@ export const stackIconVariants = {
 // Skills section animations
 // =========================================
 export const skillsContainerVariants = {
-  initial: { opacity: 0, y: 8 },
+  initial: { opacity: 0, y: 6 },
   animate: {
     opacity: 1,
     y: 0,
     transition: {
       type: "spring",
-      stiffness: 220,
-      damping: 22,
+      stiffness: 260,
+      damping: 24,
       when: "beforeChildren",
-      staggerChildren: 0.04,
+      staggerChildren: 0.015,
     },
   },
 } as const;
@@ -380,39 +378,39 @@ export const skillsGridVariants = {
     opacity: 1,
     transition: {
       when: "beforeChildren",
-      delayChildren: 0.02,
-      staggerChildren: 0.04,
+      delayChildren: 0,
+      staggerChildren: 0.015,
     },
   },
 } as const;
 
 export const skillCategoryVariants = {
-  initial: { opacity: 0, y: 12, scale: 0.98 },
+  initial: { opacity: 0, y: 6, scale: 0.95 },
   animate: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { type: "spring", stiffness: 260, damping: 22 },
+    transition: { type: "spring", stiffness: 350, damping: 22 },
   },
 } as const;
 
 export const skillItemVariants = {
-  initial: { opacity: 0, y: 8 },
+  initial: { opacity: 0, y: 4 },
   animate: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring", stiffness: 280, damping: 22 },
+    transition: { type: "spring", stiffness: 380, damping: 22 },
   },
 } as const;
 
 export const skillItemHover = { scale: 1.03, y: -2 } as const;
 
 export const navLinkVariants = {
-  initial: { opacity: 0, y: 10 },
+  initial: { opacity: 0, y: 6 },
   animate: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring", stiffness: 200, damping: 18 },
+    transition: { type: "spring", stiffness: 300, damping: 18 },
   },
   hover: {
     scale: 1.05,

@@ -21,7 +21,7 @@ const Projects = () => {
         variants={sectionContainerVariants}
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.05 }}
         className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[68px] space-y-12"
       >
         <h2 className="font-medium text-2xl lg:text-[32px]">
@@ -32,7 +32,7 @@ const Projects = () => {
           variants={listStaggerVariants}
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.05 }}
           className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
         >
           {projects.personal_projects.map((project, index) => (
@@ -48,7 +48,6 @@ const Projects = () => {
           ))}
         </motion.div>
       </motion.section>
-
 
       <div className="mt-[187px]">
         <Footer />

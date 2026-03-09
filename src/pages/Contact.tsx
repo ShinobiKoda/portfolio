@@ -61,7 +61,7 @@ const Contact = () => {
         variants={sectionContainerVariants}
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.05 }}
         className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[46px] grid grid-cols-1 md:grid-cols-2 gap-8 items-start"
       >
         <motion.div
@@ -119,7 +119,7 @@ const Contact = () => {
         variants={sectionContainerVariants}
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.05 }}
         className="mt-[25px] w-full px-4 lg:px-8 max-w-5xl mx-auto space-y-[22px]"
       >
         <motion.h2

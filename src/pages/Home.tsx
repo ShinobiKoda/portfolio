@@ -170,7 +170,7 @@ const Home = () => {
         variants={sectionContainerVariants}
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.05 }}
       >
         <div className="w-full flex items-center justify-between">
           <div className="flex items-center flex-2 gap-4">
@@ -207,7 +207,7 @@ const Home = () => {
             variants={listStaggerVariants}
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.05 }}
           >
             {projects.personal_projects.slice(0, 3).map((project, index) => (
               <ProjectCard
@@ -229,7 +229,7 @@ const Home = () => {
         variants={sectionContainerVariants}
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.05 }}
       >
         <div className="flex items-center gap-4 w-full max-w-[391px]">
           <h2 className="font-medium text-[32px] text-white">
@@ -250,7 +250,7 @@ const Home = () => {
           variants={skillsContainerVariants}
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.05 }}
         >
           <motion.div
             className="w-[349px] h-[282px] bg-center bg-cover"
@@ -379,7 +379,7 @@ const Home = () => {
         variants={sectionContainerVariants}
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.05 }}
       >
         <motion.div
           className="w-full grid grid-cols-1 lg:grid-cols-2"
@@ -445,7 +445,7 @@ const Home = () => {
         variants={sectionContainerVariants}
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.05 }}
       >
         <motion.div
           className="flex items-center flex-2 gap-4 w-full max-w-[391px]"
@@ -475,7 +475,7 @@ const Home = () => {
           variants={listStaggerVariants}
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.05 }}
         >
           <motion.div
             className="border border-(--text-gray) p-4 space-y-4"
