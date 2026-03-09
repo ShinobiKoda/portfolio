@@ -78,7 +78,9 @@ const Home = () => {
             className="text-(--text-gray) text-base font-normal"
             variants={fadeUp}
           >
-            I craft responsive websites where technologies meet creativity
+            Frontend engineer specializing in Next.js and TypeScript. I build
+            fast, accessible, production-ready web products — from fintech
+            platforms to enterprise dashboards
           </motion.p>
 
           <motion.button
@@ -381,15 +383,18 @@ const Home = () => {
                 <p className="flex flex-col gap-4 text-(--text-gray) text-base font-normal">
                   <span>Hello, I&apos;m Praise!</span>
                   <span>
-                    I&apos;m a front-end developer. I can develop responsive
-                    websites from scratch and raise them into modern
-                    user-friendly web experiences.
+                    I&pos;m a frontend engineer with 2+ years building
+                    production-grade applications for fintech, e-commerce, and
+                    enterprise clients. I've shipped features to live products
+                    used by real users — including Noblocks, an open-source
+                    crypto-to-fiat dApp, and Nook, a full rental platform with
+                    real-time messaging and Stripe-powered payments.
                   </span>
                   <span>
-                    Transforming my creativity and knowledge into a websites has
-                    been my passion for over a year. I have been helping various
-                    clients to establish their presence online. I always strive
-                    to learn about the newest technologies and frameworks.
+                    I&pos;m currently studying Computer Science at FUTA (graduating
+                    2027) and actively taking on remote contracts and freelance
+                    projects. I care about performance, clean architecture, and
+                    UX that actually works.
                   </span>
                 </p>
               </div>
