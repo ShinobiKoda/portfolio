@@ -4,13 +4,7 @@ import { contactSchema, type ContactFormData } from "../schema/contactSchema";
 import sendContact from "../services/contact";
 import { ClipLoader } from "react-spinners";
 import { useState, useEffect } from "react";
-import { motion } from "./animations/motion";
-import {
-  sectionContainerVariants,
-  listStaggerVariants,
-  heroItemVariants,
-  buttonItemVariants,
-} from "./animations/motion";
+import { motion, sectionReveal, fadeUp } from "./animations/motion";
 
 const ContactForm = () => {
   const {
@@ -25,7 +19,7 @@ const ContactForm = () => {
 
   const [loading, setLoading] = useState<boolean>(false);
   const [status, setStatus] = useState<null | { ok: boolean; message: string }>(
-    null
+    null,
   );
 
   useEffect(() => {
@@ -55,25 +49,16 @@ const ContactForm = () => {
       onSubmit={handleSubmit(onSubmit)}
       noValidate
       className="w-full space-y-4"
-      variants={sectionContainerVariants}
+      variants={sectionReveal}
       initial="initial"
       whileInView="animate"
       viewport={{ once: true, amount: 0.2 }}
     >
       <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 gap-4"
-        variants={listStaggerVariants}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeUp}
       >
-        <motion.div
-          className="flex flex-col gap-1"
-          variants={heroItemVariants}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
-        >
+        <div className="flex flex-col gap-1">
           <input
             type="text"
             id="name"
@@ -85,14 +70,8 @@ const ContactForm = () => {
           {errors.name?.message && (
             <span className="text-red-500 text-sm">{errors.name.message}</span>
           )}
-        </motion.div>
-        <motion.div
-          className="flex flex-col gap-1"
-          variants={heroItemVariants}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
-        >
+        </div>
+        <div className="flex flex-col gap-1">
           <input
             type="email"
             id="email"
@@ -104,16 +83,10 @@ const ContactForm = () => {
           {errors.email?.message && (
             <span className="text-red-500 text-sm">{errors.email.message}</span>
           )}
-        </motion.div>
+        </div>
       </motion.div>
 
-      <motion.div
-        className="flex flex-col gap-1"
-        variants={heroItemVariants}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true, amount: 0.2 }}
-      >
+      <motion.div className="flex flex-col gap-1" variants={fadeUp}>
         <input
           type="text"
           id="title"
@@ -127,13 +100,7 @@ const ContactForm = () => {
         )}
       </motion.div>
 
-      <motion.div
-        className="flex flex-col gap-1"
-        variants={heroItemVariants}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true, amount: 0.2 }}
-      >
+      <motion.div className="flex flex-col gap-1" variants={fadeUp}>
         <textarea
           id="message"
           placeholder="Message"
@@ -152,12 +119,9 @@ const ContactForm = () => {
         type="submit"
         disabled={loading}
         className="px-4 py-2 border border-(--text-primary) text-white font-normal text-base disabled:opacity-30 cursor-pointer disabled:cursor-not-allowed"
-        variants={buttonItemVariants}
+        variants={fadeUp}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.96 }}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true, amount: 0.2 }}
       >
         {loading ? (
           <p className="flex items-center gap-1">

@@ -2,18 +2,13 @@ import { NavLink } from "react-router-dom";
 import Footer from "../components/Layout/Footer";
 import {
   motion,
-  heroContainerVariants,
-  heroItemVariants,
-  buttonHover,
+  sectionReveal,
+  staggerContainer,
+  fadeUp,
+  lineGrow,
+  hoverScale,
   tapPress,
   tapTransition,
-  sectionContainerVariants,
-  listStaggerVariants,
-  titleLineGrowVariants,
-  skillsContainerVariants,
-  skillsGridVariants,
-  skillCategoryVariants,
-  skillItemVariants,
   skillItemHover,
 } from "../components/animations/motion";
 import { TbArrowWaveRightDown } from "react-icons/tb";
@@ -68,28 +63,28 @@ const Home = () => {
       <div className=" w-full px-4 lg:px-8 max-w-5xl mx-auto space-y-6 lg:flex lg:mt-[62px] lg:items-center">
         <motion.div
           className="w-full space-y-[25px] lg:space-y-8"
-          variants={heroContainerVariants}
+          variants={staggerContainer}
           initial="initial"
           animate="animate"
         >
           <motion.h1
             className="font-semibold text-[32px] text-white"
-            variants={heroItemVariants}
+            variants={fadeUp}
           >
             I'm Adebiyi Praise, <br />
             <span className="text-(--text-primary)">a front-end developer</span>
           </motion.h1>
           <motion.p
             className="text-(--text-gray) text-base font-normal"
-            variants={heroItemVariants}
+            variants={fadeUp}
           >
             I craft responsive websites where technologies meet creativity
           </motion.p>
 
           <motion.button
             className="px-4 py-2 border border-(--text-primary) font-medium text-base cursor-pointer text-white"
-            variants={heroItemVariants}
-            whileHover={buttonHover}
+            variants={fadeUp}
+            whileHover={hoverScale}
             whileTap={{ ...tapPress, transition: tapTransition }}
             onClick={handleDownloadCV}
           >
@@ -110,7 +105,7 @@ const Home = () => {
           </div>
           <motion.div
             className="p-2 border border-(--text-gray) flex items-center gap-[13px]"
-            variants={heroItemVariants}
+            variants={fadeUp}
             initial="initial"
             animate="animate"
           >
@@ -129,37 +124,31 @@ const Home = () => {
 
       <motion.div
         className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[75px] lg:mt-28"
-        variants={heroContainerVariants}
+        variants={sectionReveal}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.3 }}
       >
         <motion.div
           className="w-full border border-(--text-gray) p-8 relative"
-          variants={heroItemVariants}
+          variants={fadeUp}
         >
-          <motion.p
-            className="text-(--text-gray) text-[45px] font-bold absolute -top-[21px]"
-            variants={heroItemVariants}
-          >
+          <p className="text-(--text-gray) text-[45px] font-bold absolute -top-[21px]">
             "
-          </motion.p>
-          <motion.p
-            className="text-(--text-gray) text-[45px] font-bold absolute -bottom-12 right-8"
-            variants={heroItemVariants}
-          >
+          </p>
+          <p className="text-(--text-gray) text-[45px] font-bold absolute -bottom-12 right-8">
             "
-          </motion.p>
+          </p>
           <motion.p
             className="font-medium text-base lg:text-2xl text-white text-center"
-            variants={heroItemVariants}
+            variants={fadeUp}
           >
             The Price of freedom is steep
           </motion.p>
         </motion.div>
         <motion.div
           className="border border-(--text-gray) p-4 w-full max-w-[200px] ml-auto font-normal text-base lg:text-2xl text-white text-nowrap"
-          variants={heroItemVariants}
+          variants={fadeUp}
         >
           - Zack Fair.
         </motion.div>
@@ -167,7 +156,7 @@ const Home = () => {
 
       <motion.div
         className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[75px] space-y-12"
-        variants={sectionContainerVariants}
+        variants={sectionReveal}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.05 }}
@@ -180,14 +169,14 @@ const Home = () => {
             </h2>
             <motion.div
               className="h-px bg-(--text-primary) hidden lg:block"
-              variants={titleLineGrowVariants}
+              variants={lineGrow}
               initial="initial"
               whileInView="animate"
               viewport={{ once: true, amount: 0.9 }}
             />
           </div>
           <motion.div
-            whileHover={buttonHover}
+            whileHover={hoverScale}
             whileTap={{ ...tapPress, transition: tapTransition }}
             className="inline-flex"
           >
@@ -200,33 +189,30 @@ const Home = () => {
             </NavLink>
           </motion.div>
         </div>
-        <div className="w-full">
-          <motion.div
-            key="projects-loaded"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-            variants={listStaggerVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.05 }}
-          >
-            {projects.personal_projects.slice(0, 3).map((project, index) => (
-              <ProjectCard
-                key={index}
-                image={project.image}
-                name={project.name}
-                description={project.description}
-                live={project.live}
-                code={project.code}
-                stack={project.stack}
-              />
-            ))}
-          </motion.div>
-        </div>
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.05 }}
+        >
+          {projects.personal_projects.slice(0, 3).map((project, index) => (
+            <ProjectCard
+              key={index}
+              image={project.image}
+              name={project.name}
+              description={project.description}
+              live={project.live}
+              code={project.code}
+              stack={project.stack}
+            />
+          ))}
+        </motion.div>
       </motion.div>
 
       <motion.div
         className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[106px] space-y-3"
-        variants={sectionContainerVariants}
+        variants={sectionReveal}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.05 }}
@@ -238,7 +224,7 @@ const Home = () => {
           </h2>
           <motion.div
             className="h-px bg-(--text-primary) hidden lg:block"
-            variants={titleLineGrowVariants}
+            variants={lineGrow}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, amount: 0.9 }}
@@ -247,7 +233,7 @@ const Home = () => {
 
         <motion.div
           className="w-full grid grid-cols-1 lg:grid-cols-2 gap-[59px]"
-          variants={skillsContainerVariants}
+          variants={staggerContainer}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true, amount: 0.05 }}
@@ -257,16 +243,13 @@ const Home = () => {
             style={{
               backgroundImage: "url('/images/skills-illustration.webp')",
             }}
-            variants={heroItemVariants}
+            variants={fadeUp}
           ></motion.div>
 
-          <motion.div
-            className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 items-start"
-            variants={skillsGridVariants}
-          >
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 items-start">
             <motion.div
               className="border border-(--text-gray) py-2 max-w-[178px] mx-auto"
-              variants={skillCategoryVariants}
+              variants={fadeUp}
             >
               <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
                 Languages
@@ -276,7 +259,6 @@ const Home = () => {
                   <motion.span
                     key={item}
                     className="font-normal text-base text-(--text-gray)"
-                    variants={skillItemVariants}
                     whileHover={skillItemHover}
                   >
                     {item}
@@ -288,7 +270,7 @@ const Home = () => {
             <div className="grid grid-row-2 gap-4 max-w-[178px] mx-auto">
               <motion.div
                 className="border border-(--text-gray) py-2"
-                variants={skillCategoryVariants}
+                variants={fadeUp}
               >
                 <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
                   APIs
@@ -298,7 +280,6 @@ const Home = () => {
                     <motion.span
                       key={item}
                       className="font-normal text-base text-(--text-gray)"
-                      variants={skillItemVariants}
                       whileHover={skillItemHover}
                     >
                       {item}
@@ -308,7 +289,7 @@ const Home = () => {
               </motion.div>
               <motion.div
                 className="border border-(--text-gray) py-2"
-                variants={skillCategoryVariants}
+                variants={fadeUp}
               >
                 <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
                   Other
@@ -318,7 +299,6 @@ const Home = () => {
                     <motion.span
                       key={item}
                       className="font-normal text-base text-(--text-gray)"
-                      variants={skillItemVariants}
                       whileHover={skillItemHover}
                     >
                       {item}
@@ -331,7 +311,7 @@ const Home = () => {
             <div className="grid grid-row-2 gap-4 max-w-[178px] mx-auto">
               <motion.div
                 className="border border-(--text-gray) py-2"
-                variants={skillCategoryVariants}
+                variants={fadeUp}
               >
                 <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
                   Tools
@@ -341,7 +321,6 @@ const Home = () => {
                     <motion.span
                       key={item}
                       className="font-normal text-base text-(--text-gray)"
-                      variants={skillItemVariants}
                       whileHover={skillItemHover}
                     >
                       {item}
@@ -351,7 +330,7 @@ const Home = () => {
               </motion.div>
               <motion.div
                 className="border border-(--text-gray) py-2"
-                variants={skillCategoryVariants}
+                variants={fadeUp}
               >
                 <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
                   Frameworks
@@ -361,7 +340,6 @@ const Home = () => {
                     <motion.span
                       key={item}
                       className="font-normal text-base text-(--text-gray)"
-                      variants={skillItemVariants}
                       whileHover={skillItemHover}
                     >
                       {item}
@@ -370,34 +348,28 @@ const Home = () => {
                 </div>
               </motion.div>
             </div>
-          </motion.div>
+          </div>
         </motion.div>
       </motion.div>
 
       <motion.div
         className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-28"
-        variants={sectionContainerVariants}
+        variants={sectionReveal}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.05 }}
       >
-        <motion.div
-          className="w-full grid grid-cols-1 lg:grid-cols-2"
-          variants={listStaggerVariants}
-        >
-          <motion.div className="space-y-[23px]" variants={heroItemVariants}>
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2">
+          <motion.div className="space-y-[23px]" variants={fadeUp}>
             <div className="w-full">
               <div className="flex items-center flex-2 gap-4 w-full max-w-[391px]">
-                <motion.h2
-                  className="font-medium text-[32px] text-white"
-                  variants={heroItemVariants}
-                >
+                <h2 className="font-medium text-[32px] text-white">
                   <span className="text-(--text-primary)">#</span>
                   <span>about-me</span>
-                </motion.h2>
+                </h2>
                 <motion.div
                   className="h-px bg-(--text-primary) hidden lg:block"
-                  variants={titleLineGrowVariants}
+                  variants={lineGrow}
                   initial="initial"
                   whileInView="animate"
                   viewport={{ once: true, amount: 0.9 }}
@@ -406,10 +378,7 @@ const Home = () => {
             </div>
             <div className="w-full">
               <div className="flex flex-col gap-[27px]">
-                <motion.p
-                  className="flex flex-col gap-4 text-(--text-gray) text-base font-normal"
-                  variants={heroItemVariants}
-                >
+                <p className="flex flex-col gap-4 text-(--text-gray) text-base font-normal">
                   <span>Hello, I&apos;m Praise!</span>
                   <span>
                     I&apos;m a front-end developer. I can develop responsive
@@ -422,14 +391,14 @@ const Home = () => {
                     clients to establish their presence online. I always strive
                     to learn about the newest technologies and frameworks.
                   </span>
-                </motion.p>
+                </p>
               </div>
             </div>
           </motion.div>
 
           <motion.div
             className="w-full max-w-[343px] mx-auto"
-            variants={heroItemVariants}
+            variants={fadeUp}
           >
             <img
               src="/images/about-me-illustration.webp"
@@ -437,64 +406,49 @@ const Home = () => {
               className="object-cover"
             />
           </motion.div>
-        </motion.div>
+        </div>
       </motion.div>
 
       <motion.div
         className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[75px] space-y-12"
-        variants={sectionContainerVariants}
+        variants={sectionReveal}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.05 }}
       >
-        <motion.div
-          className="flex items-center flex-2 gap-4 w-full max-w-[391px]"
-          variants={heroContainerVariants}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <motion.h2
-            className="font-medium text-[32px] text-white"
-            variants={heroItemVariants}
-          >
+        <div className="flex items-center flex-2 gap-4 w-full max-w-[391px]">
+          <h2 className="font-medium text-[32px] text-white">
             <span className="text-(--text-primary)">#</span>
             <span>contacts</span>
-          </motion.h2>
+          </h2>
           <motion.div
             className="h-px bg-(--text-primary) hidden lg:block"
-            variants={titleLineGrowVariants}
+            variants={lineGrow}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, amount: 0.9 }}
           />
-        </motion.div>
+        </div>
 
         <motion.div
           className="w-full grid grid-cols-1 lg:grid-cols-2 items-start gap-8"
-          variants={listStaggerVariants}
+          variants={staggerContainer}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true, amount: 0.05 }}
         >
           <motion.div
             className="border border-(--text-gray) p-4 space-y-4"
-            variants={heroItemVariants}
+            variants={fadeUp}
           >
-            <motion.h3
-              className="font-semibold text-base text-white"
-              variants={heroItemVariants}
-            >
+            <h3 className="font-semibold text-base text-white">
               Message me here
-            </motion.h3>
-            <motion.ul
-              className="flex flex-col gap-4"
-              variants={listStaggerVariants}
-            >
+            </h3>
+            <ul className="flex flex-col gap-4">
               <motion.li
                 className="flex items-center text-(--text-gray) font-normal text-base gap-2 cursor-pointer"
-                variants={heroItemVariants}
-                whileHover={buttonHover}
+                variants={fadeUp}
+                whileHover={hoverScale}
                 onClick={() => handleCopy("sirp_57021", "Discord handle")}
                 title="Click to copy"
               >
@@ -503,8 +457,8 @@ const Home = () => {
               </motion.li>
               <motion.li
                 className="flex items-center text-(--text-gray) font-normal text-base gap-2 cursor-pointer"
-                variants={heroItemVariants}
-                whileHover={buttonHover}
+                variants={fadeUp}
+                whileHover={hoverScale}
                 onClick={() => handleCopy("@sirp_dev", "Telegram handle")}
                 title="Click to copy"
               >
@@ -513,17 +467,17 @@ const Home = () => {
               </motion.li>
               <motion.li
                 className="flex items-center text-(--text-gray) font-normal text-base gap-2 cursor-pointer"
-                variants={heroItemVariants}
-                whileHover={buttonHover}
+                variants={fadeUp}
+                whileHover={hoverScale}
                 onClick={() => handleCopy("sirp2804@gmail.com", "Email")}
                 title="Click to copy"
               >
                 <IoMdMail size={24} />
                 <span>sirp2804@gmail.com</span>
               </motion.li>
-            </motion.ul>
+            </ul>
           </motion.div>
-          <motion.div variants={heroItemVariants}>
+          <motion.div variants={fadeUp}>
             <ContactForm />
           </motion.div>
         </motion.div>
@@ -534,7 +488,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
-          transition={{ type: "spring", stiffness: 300, damping: 24 }}
+          transition={{ duration: 0.25, ease: [0.25, 0, 0.35, 1] }}
           className="fixed bottom-6 left-1/2 -translate-x-1/2 px-4 py-2 border border-(--text-primary) bg-(--bg-primary,#0a0a0a) text-white shadow-md"
         >
           <div className="flex items-center gap-2">

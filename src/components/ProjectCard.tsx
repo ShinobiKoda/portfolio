@@ -2,10 +2,10 @@ import { NavLink } from "react-router-dom";
 import type { ReactNode } from "react";
 import {
   motion,
-  projectCardVariants,
-  projectCardHover,
-  stackIconTooltipVariants,
-  stackIconVariants,
+  fadeUp,
+  cardHover,
+  tooltipVariants,
+  tooltipIconVariants,
 } from "./animations/motion";
 import { TbArrowWaveRightDown } from "react-icons/tb";
 import { FaReact } from "react-icons/fa";
@@ -132,8 +132,8 @@ const ProjectCard = ({
   return (
     <motion.div
       className="min-h-[422px] border border-(--text-gray) w-full max-w-[330px] mx-auto"
-      variants={projectCardVariants}
-      whileHover={projectCardHover}
+      variants={fadeUp}
+      whileHover={cardHover}
     >
       <div className="w-full h-[200px]">
         <img
@@ -156,7 +156,7 @@ const ProjectCard = ({
           >
             <motion.div
               className="text-(--text-gray)"
-              variants={stackIconVariants}
+              variants={tooltipIconVariants}
             >
               {item.icon}
             </motion.div>
@@ -166,7 +166,7 @@ const ProjectCard = ({
                    px-2 py-1 rounded-sm bg-[#1a1a20]
                    border border-(--text-gray)
                    text-(--text-gray) text-xs whitespace-nowrap"
-              variants={stackIconTooltipVariants}
+              variants={tooltipVariants}
             >
               {item.label}
             </motion.span>

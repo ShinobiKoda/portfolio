@@ -2,13 +2,12 @@ import Footer from "../components/Layout/Footer";
 import { NavLink } from "react-router-dom";
 import {
   motion,
-  heroContainerVariants,
-  heroItemVariants,
-  bounceDropVariants,
-  buttonHover,
+  staggerContainer,
+  fadeUp,
+  lineGrow,
+  hoverScale,
   tapPress,
   tapTransition,
-  titleLineGrowVariants,
 } from "../components/animations/motion";
 
 export default function NotFound() {
@@ -18,19 +17,19 @@ export default function NotFound() {
     <div className="w-full min-h-screen bg-(--background-color)">
       <motion.section
         className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-16 lg:mt-28"
-        variants={heroContainerVariants}
+        variants={staggerContainer}
         initial="initial"
         animate="animate"
       >
         <motion.div
           className="flex flex-col items-center text-center gap-5"
-          variants={heroItemVariants}
+          variants={fadeUp}
         >
           <div className="flex items-end justify-center gap-2 select-none">
             {digits.map((d, i) => (
               <motion.span
                 key={i}
-                variants={bounceDropVariants}
+                variants={fadeUp}
                 className={
                   "font-bold leading-none " +
                   (i === 1
@@ -44,29 +43,29 @@ export default function NotFound() {
           </div>
           <motion.h1
             className="text-white text-2xl sm:text-3xl md:text-4xl font-semibold"
-            variants={heroItemVariants}
+            variants={fadeUp}
           >
             Page not found
           </motion.h1>
 
           <motion.p
             className="text-(--text-gray) text-base max-w-xl"
-            variants={heroItemVariants}
+            variants={fadeUp}
           >
-            The page you’re looking for doesn’t exist or has been moved.
+            The page you're looking for doesn't exist or has been moved.
           </motion.p>
 
           <motion.div
             className="h-px bg-(--text-primary) w-24 sm:w-32"
-            variants={titleLineGrowVariants}
+            variants={lineGrow}
           />
 
           <motion.div
             className="flex flex-col sm:flex-row gap-6 items-center justify-center mt-1"
-            variants={heroItemVariants}
+            variants={fadeUp}
           >
             <motion.div
-              whileHover={buttonHover}
+              whileHover={hoverScale}
               whileTap={{ ...tapPress, transition: tapTransition }}
             >
               <NavLink
@@ -77,7 +76,7 @@ export default function NotFound() {
               </NavLink>
             </motion.div>
             <motion.div
-              whileHover={buttonHover}
+              whileHover={hoverScale}
               whileTap={{ ...tapPress, transition: tapTransition }}
             >
               <NavLink
@@ -91,7 +90,7 @@ export default function NotFound() {
 
           <motion.div
             className="mt-8 w-full max-w-xl border border-white/10 bg-white/5 backdrop-blur px-4 py-3 text-left"
-            variants={heroItemVariants}
+            variants={fadeUp}
           >
             <div className="flex items-center gap-3">
               <span

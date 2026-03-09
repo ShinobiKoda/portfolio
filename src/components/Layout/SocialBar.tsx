@@ -1,14 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import {
-  motion,
-  bounceDropVariants,
-  heroItemVariants,
-  socialListVariants,
-  socialItemVariants,
-  iconHover,
-} from "../animations/motion";
+import { motion, fadeUp, staggerFast, hoverLift } from "../animations/motion";
 
 const SocialBar = () => {
   const socials = [
@@ -23,27 +16,22 @@ const SocialBar = () => {
   return (
     <motion.div
       className="fixed top-0 left-[17px] xl:flex flex-col items-center gap-8 hidden z-50"
-      variants={bounceDropVariants}
+      variants={fadeUp}
       initial="initial"
-      whileInView="animate"
-      viewport={{ once: true, amount: 0.2 }}
+      animate="animate"
     >
-      <motion.div
-        className="w-px h-[191px] bg-(--text-gray)"
-        variants={heroItemVariants}
-      />
+      <div className="w-px h-[191px] bg-(--text-gray)" />
       <motion.ul
         className="flex flex-col gap-2"
-        variants={socialListVariants}
+        variants={staggerFast}
         initial="initial"
-        whileInView="animate"
-        viewport={{ once: true, amount: 0.2 }}
+        animate="animate"
       >
         {socials.map((social, index) => (
           <motion.li
             key={index}
-            variants={socialItemVariants}
-            whileHover={iconHover}
+            variants={fadeUp}
+            whileHover={hoverLift}
             className="text-(--text-gray)"
           >
             <NavLink

@@ -6,38 +6,24 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import {
   motion,
-  navVariants,
-  logoVariants,
-  logoHover,
-  linkHover,
-  menuButtonVariants,
-  menuHover,
+  navEnter,
+  scaleIn,
+  hoverScale,
+  hoverLift,
   tapPress,
   hoverTransition,
   tapTransition,
-  sidebarVariants,
+  slideIn,
   sidebarLinkVariants,
-  closeButtonVariants,
-  sidebarSocialListVariants,
-  iconHover,
   navLinkVariants,
   navLinkUnderlineVariants,
 } from "../animations/motion";
 
 const Navbar = () => {
   const links = [
-    {
-      label: "home",
-      link: "/",
-    },
-    {
-      label: "projects",
-      link: "/projects",
-    },
-    {
-      label: "contact",
-      link: "/contact",
-    },
+    { label: "home", link: "/" },
+    { label: "projects", link: "/projects" },
+    { label: "contact", link: "/contact" },
   ];
 
   const socials = [
@@ -89,15 +75,17 @@ const Navbar = () => {
   return (
     <>
       <motion.nav
-        variants={navVariants}
+        variants={navEnter}
         initial="initial"
         animate="animate"
         className="fixed top-0 inset-x-0 z-40 backdrop-blur-md bg-transparent"
       >
         <div className="w-full max-w-5xl mx-auto flex items-center justify-between px-4 lg:px-8 h-20">
           <motion.div
-            variants={logoVariants}
-            whileHover={logoHover}
+            variants={scaleIn}
+            initial="initial"
+            animate="animate"
+            whileHover={hoverScale}
             transition={hoverTransition}
             className="py-[19px]"
           >
@@ -151,10 +139,11 @@ const Navbar = () => {
 
           <motion.button
             className="lg:hidden inline-flex items-center justify-center"
-            variants={menuButtonVariants}
-            whileHover={menuHover}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.25 }}
+            whileHover={{ rotate: 8, scale: 1.05 }}
             whileTap={{ ...tapPress, transition: tapTransition }}
-            transition={hoverTransition}
             onClick={() => setIsOpen(true)}
             aria-label="Open menu"
             ref={menuBtnRef}
@@ -165,7 +154,7 @@ const Navbar = () => {
 
         <motion.aside
           className="fixed top-0 right-0 h-screen w-full bg-(--background-color) z-50 lg:hidden flex flex-col"
-          variants={sidebarVariants}
+          variants={slideIn}
           initial="closed"
           animate={isOpen ? "open" : "closed"}
           aria-hidden={!isOpen}
@@ -174,7 +163,7 @@ const Navbar = () => {
           aria-label="Mobile navigation"
         >
           <div className="flex items-center justify-between px-4 pt-4 pb-2 border-b border-white/10">
-            <motion.div variants={logoVariants} className="w-[72px] h-[72px]">
+            <div className="w-[72px] h-[72px]">
               <img
                 src="/images/logo.webp"
                 alt="Logo Image"
@@ -182,15 +171,14 @@ const Navbar = () => {
                 width="64"
                 height="64"
               />
-            </motion.div>
+            </div>
             <motion.button
-              variants={closeButtonVariants}
-              whileHover={menuHover}
+              variants={sidebarLinkVariants}
+              whileHover={{ rotate: 8, scale: 1.05 }}
               whileTap={tapPress}
               transition={hoverTransition}
               onClick={() => {
                 setIsOpen(false);
-                // Return focus to the menu trigger to avoid hidden focus
                 menuBtnRef.current?.focus();
               }}
               aria-label="Close menu"
@@ -205,7 +193,7 @@ const Navbar = () => {
               <motion.li
                 key={i}
                 variants={sidebarLinkVariants}
-                whileHover={linkHover}
+                whileHover={hoverScale}
                 transition={hoverTransition}
                 className="list-none"
                 onClick={() => {
@@ -233,15 +221,12 @@ const Navbar = () => {
             ))}
           </motion.ul>
 
-          <motion.ul
-            className="flex items-center gap-2 mt-[107px] justify-center"
-            variants={sidebarSocialListVariants}
-          >
+          <motion.ul className="flex items-center gap-2 mt-[107px] justify-center">
             {socials.map((social, index) => (
               <motion.li
                 key={index}
                 variants={sidebarLinkVariants}
-                whileHover={iconHover}
+                whileHover={hoverLift}
                 transition={hoverTransition}
                 className="list-none"
               >

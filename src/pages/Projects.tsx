@@ -3,10 +3,10 @@ import { useEffect } from "react";
 import { projects } from "../services/FetchProjects";
 import ProjectCard from "../components/ProjectCard";
 import Footer from "../components/Layout/Footer";
-import { motion } from "../components/animations/motion";
 import {
-  sectionContainerVariants,
-  listStaggerVariants,
+  motion,
+  sectionReveal,
+  staggerContainer,
 } from "../components/animations/motion";
 
 const Projects = () => {
@@ -18,7 +18,7 @@ const Projects = () => {
     <div className="w-full">
       <Header title="projects" description="List of my projects" />
       <motion.section
-        variants={sectionContainerVariants}
+        variants={sectionReveal}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.05 }}
@@ -29,7 +29,7 @@ const Projects = () => {
           <span className="text-white">apps</span>
         </h2>
         <motion.div
-          variants={listStaggerVariants}
+          variants={staggerContainer}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true, amount: 0.05 }}

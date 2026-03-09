@@ -5,14 +5,12 @@ import { RiTwitterXFill } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
 import {
   motion,
-  heroItemVariants,
-  listStaggerVariants,
-  buttonHover,
-  sectionContainerVariants,
-  socialListVariants,
-  socialItemVariants,
-  iconHover,
-  hoverTransition,
+  fadeUp,
+  sectionReveal,
+  staggerContainer,
+  staggerFast,
+  hoverScale,
+  hoverLift,
 } from "../components/animations/motion";
 import { FaDiscord, FaTelegram } from "react-icons/fa";
 import { useState } from "react";
@@ -58,7 +56,7 @@ const Contact = () => {
     <div className="w-full">
       <Header title="contact" description="contact-me" />
       <motion.section
-        variants={sectionContainerVariants}
+        variants={sectionReveal}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.05 }}
@@ -66,22 +64,16 @@ const Contact = () => {
       >
         <motion.div
           className="border border-(--text-gray) p-4 space-y-4"
-          variants={heroItemVariants}
+          variants={fadeUp}
         >
-          <motion.h2
-            className="font-semibold text-base text-white"
-            variants={heroItemVariants}
-          >
+          <h2 className="font-semibold text-base text-white">
             Message me here
-          </motion.h2>
-          <motion.ul
-            className="flex flex-col gap-4"
-            variants={listStaggerVariants}
-          >
+          </h2>
+          <ul className="flex flex-col gap-4">
             <motion.li
               className="flex items-center text-(--text-gray) font-normal text-base gap-2 cursor-pointer"
-              variants={heroItemVariants}
-              whileHover={buttonHover}
+              variants={fadeUp}
+              whileHover={hoverScale}
               onClick={() => handleCopy("sirp_57021", "Discord handle")}
               title="Click to copy"
             >
@@ -90,8 +82,8 @@ const Contact = () => {
             </motion.li>
             <motion.li
               className="flex items-center text-(--text-gray) font-normal text-base gap-2 cursor-pointer"
-              variants={heroItemVariants}
-              whileHover={buttonHover}
+              variants={fadeUp}
+              whileHover={hoverScale}
               onClick={() => handleCopy("@sirp_dev", "Telegram handle")}
               title="Click to copy"
             >
@@ -100,23 +92,23 @@ const Contact = () => {
             </motion.li>
             <motion.li
               className="flex items-center text-(--text-gray) font-normal text-base gap-2 cursor-pointer"
-              variants={heroItemVariants}
-              whileHover={buttonHover}
+              variants={fadeUp}
+              whileHover={hoverScale}
               onClick={() => handleCopy("sirp2804@gmail.com", "Email")}
               title="Click to copy"
             >
               <IoMdMail size={24} />
               <span>sirp2804@gmail.com</span>
             </motion.li>
-          </motion.ul>
+          </ul>
         </motion.div>
-        <motion.div variants={heroItemVariants}>
+        <motion.div variants={fadeUp}>
           <ContactForm />
         </motion.div>
       </motion.section>
 
       <motion.section
-        variants={sectionContainerVariants}
+        variants={sectionReveal}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.05 }}
@@ -124,21 +116,17 @@ const Contact = () => {
       >
         <motion.h2
           className="font-medium text-2xl lg:text-[32px]"
-          variants={heroItemVariants}
+          variants={fadeUp}
         >
           <span className="text-(--text-primary)">#</span>
           <span className="text-white">all-media</span>
         </motion.h2>
-        <motion.ul
-          className="flex items-center gap-4"
-          variants={socialListVariants}
-        >
+        <motion.ul className="flex items-center gap-4" variants={staggerFast}>
           {socials.map((social, index) => (
             <motion.li
               key={index}
-              variants={socialItemVariants}
-              whileHover={iconHover}
-              transition={hoverTransition}
+              variants={fadeUp}
+              whileHover={hoverLift}
               className="list-none"
             >
               <NavLink
@@ -158,7 +146,7 @@ const Contact = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
-          transition={{ type: "spring", stiffness: 300, damping: 24 }}
+          transition={{ duration: 0.25, ease: [0.25, 0, 0.35, 1] }}
           className="fixed bottom-6 left-1/2 -translate-x-1/2 px-4 py-2 border border-(--text-primary) bg-(--bg-primary,#0a0a0a) text-white shadow-md"
         >
           <div className="flex items-center gap-2">
