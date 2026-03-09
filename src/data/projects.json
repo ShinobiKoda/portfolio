@@ -37,7 +37,7 @@
         "Stripe"
       ],
       "name": "Nook",
-      "description": "End-to-end rental platform built from scratch — Stripe-powered rent collection, real-time landlord-tenant messaging, and automated email workflows. Full monorepo architecture with Turborepo and automated email workflows via Resend.",
+      "description": "End-to-end rental platform built from scratch — Stripe-powered rent collection, real-time landlord-tenant messaging, and automated email workflows. Full monorepo architecture with Turborepo.",
       "image": "/images/nook.png",
       "live": "https://www.rentwithnook.com/"
     },
