@@ -209,7 +209,7 @@ const Home = () => {
             whileInView="animate"
             viewport={{ once: true, amount: 0.2 }}
           >
-            {projects.personal_projects.map((project, index) => (
+            {projects.personal_projects.slice(0, 3).map((project, index) => (
               <ProjectCard
                 key={index}
                 image={project.image}

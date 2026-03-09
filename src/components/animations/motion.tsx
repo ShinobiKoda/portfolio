@@ -123,6 +123,28 @@ export const closeButtonVariants = {
   },
 } as const;
 
+export const pageTransitionVariants = {
+  initial: { opacity: 0, y: 16 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: [0.25, 0.1, 0.25, 1],
+      when: "beforeChildren",
+      staggerChildren: 0.04,
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: -10,
+    transition: {
+      duration: 0.25,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  },
+} as const;
+
 export const heroContainerVariants = {
   initial: { opacity: 0, y: 10 },
   animate: {
@@ -134,7 +156,7 @@ export const heroContainerVariants = {
       damping: 20,
       mass: 0.9,
       when: "beforeChildren",
-      staggerChildren: 0.08,
+      staggerChildren: 0.04,
     },
   },
 } as const;
@@ -276,10 +298,10 @@ export const sectionContainerVariants = {
     transition: {
       type: "spring",
       stiffness: 220,
-      damping: 20,
+      damping: 22,
       mass: 0.9,
       when: "beforeChildren",
-      staggerChildren: 0.06,
+      staggerChildren: 0.03,
     },
   },
 } as const;
@@ -298,8 +320,8 @@ export const listStaggerVariants = {
     opacity: 1,
     transition: {
       when: "beforeChildren",
-      delayChildren: 0.05,
-      staggerChildren: 0.1,
+      delayChildren: 0.02,
+      staggerChildren: 0.05,
     },
   },
 } as const;
@@ -345,9 +367,9 @@ export const skillsContainerVariants = {
     transition: {
       type: "spring",
       stiffness: 220,
-      damping: 20,
+      damping: 22,
       when: "beforeChildren",
-      staggerChildren: 0.08,
+      staggerChildren: 0.04,
     },
   },
 } as const;
@@ -358,8 +380,8 @@ export const skillsGridVariants = {
     opacity: 1,
     transition: {
       when: "beforeChildren",
-      delayChildren: 0.05,
-      staggerChildren: 0.08,
+      delayChildren: 0.02,
+      staggerChildren: 0.04,
     },
   },
 } as const;

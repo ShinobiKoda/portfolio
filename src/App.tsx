@@ -1,11 +1,16 @@
 import { useEffect, useState, lazy, Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import SocialBar from "./components/Layout/SocialBar";
 import { Analytics } from "@vercel/analytics/react";
 import Toast from "./components/Toast";
 import Navbar from "./components/Layout/Navbar";
 import LoadingSpinner from "./components/ui/LoadingSpinner";
 import Intro from "./components/Intro";
+import {
+  motion,
+  AnimatePresence,
+  pageTransitionVariants,
+} from "./components/animations/motion";
 
 // Lazy load pages
 const Home = lazy(() => import("./pages/Home"));
@@ -19,6 +24,8 @@ const ParticlesAnimation = lazy(
 );
 
 export default function App() {
+  const location = useLocation();
+
   const isHolidaySeason = () => {
     // Match particleConfig logic: show particles in December only
     return new Date().getMonth() === 11;
@@ -62,12 +69,22 @@ export default function App() {
             <Navbar />
             <SocialBar />
             <Suspense fallback={<LoadingSpinner />}>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/projects" element={<ProjectsPage />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={location.pathname}
+                  variants={pageTransitionVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                >
+                  <Routes location={location}>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/projects" element={<ProjectsPage />} />
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </motion.div>
+              </AnimatePresence>
             </Suspense>
           </div>
         </div>

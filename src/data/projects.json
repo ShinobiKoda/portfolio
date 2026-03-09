@@ -3,6 +3,33 @@
     {
       "stack": [
         "Nextjs",
+        "Figma",
+        "Tailwindcss",
+        "Framer-motion",
+        "Typescript"
+      ],
+      "name": "Noblocks",
+      "description": "Rebuilding the the noblocks homepage",
+      "image": "/images/noblocks.webp",
+      "live": "https://noblocks.xyz/"
+    },
+    {
+      "stack": [
+        "Nextjs",
+        "Figma",
+        "Tailwindcss",
+        "Framer-motion",
+        "Typescript",
+        "RadixUI"
+      ],
+      "name": "Salvage Yard",
+      "description": "Integrate Paystack for payment processing and Polish Cart UI",
+      "image": "/images/salvage-yard.webp",
+      "live": "https://salvageyardstore.com/"
+    },
+    {
+      "stack": [
+        "Nextjs",
         "Tailwindcss",
         "Framer-motion",
         "Typescript",
@@ -29,21 +56,7 @@
       "live": "https://furniro-roan-gamma.vercel.app/",
       "code": "https://github.com/ShinobiKoda/furniro"
     },
-    {
-      "stack": [
-        "Nextjs",
-        "Figma",
-        "Tailwindcss",
-        "Framer-motion",
-        "Typescript",
-        "Supabase"
-      ],
-      "name": "Hiahmi",
-      "description": "An authenticated NFT Webpage",
-      "image": "/images/hihami.webp",
-      "live": "https://hihami.vercel.app/",
-      "code": "https://github.com/ShinobiKoda/hihami"
-    },
+
     {
       "stack": [
         "React+Vite",
@@ -58,35 +71,6 @@
       "image": "/images/yourbank.webp",
       "live": "https://your-bank-six.vercel.app/",
       "code": "https://github.com/ShinobiKoda/your-bank"
-    }
-  ],
-  "contributed_to": [
-    {
-      "stack": [
-        "Nextjs",
-        "Figma",
-        "Tailwindcss",
-        "Framer-motion",
-        "Typescript"
-      ],
-      "name": "Noblocks",
-      "contribution": "Rebuilding the the noblocks homepage",
-      "image": "/images/noblocks.webp",
-      "live": "https://noblocks.xyz/"
-    },
-    {
-      "stack": [
-        "Nextjs",
-        "Figma",
-        "Tailwindcss",
-        "Framer-motion",
-        "Typescript",
-        "RadixUI"
-      ],
-      "name": "Salvage Yard",
-      "contribution": "Integrate Paystack for payment processing and Polish Cart UI",
-      "image": "/images/salvage-yard.webp",
-      "live": "https://salvageyardstore.com/"
     }
   ]
 }
