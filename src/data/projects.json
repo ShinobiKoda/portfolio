@@ -1,7 +1,28 @@
 {
   "personal_projects": [
     {
-      "stack": ["Nextjs", "Figma", "Tailwindcss", "Framer-motion", "Typescript", "Supabase"],
+      "stack": [
+        "Nextjs",
+        "Tailwindcss",
+        "Framer-motion",
+        "Typescript",
+        "Supabase",
+        "Stripe"
+      ],
+      "name": "Nook",
+      "description": "End-to-end rental platform with Stripe-powered rent collection, real-time landlord-tenant messaging, and automated email workflows via Resend.",
+      "image": "/images/nook.png",
+      "live": "https://www.rentwithnook.com/"
+    },
+    {
+      "stack": [
+        "Nextjs",
+        "Figma",
+        "Tailwindcss",
+        "Framer-motion",
+        "Typescript",
+        "Supabase"
+      ],
       "name": "Furniro",
       "description": "A fullstack e-commerce website with supabase backend",
       "image": "/images/furniro.webp",
@@ -9,7 +30,14 @@
       "code": "https://github.com/ShinobiKoda/furniro"
     },
     {
-     "stack": ["Nextjs", "Figma", "Tailwindcss", "Framer-motion", "Typescript", "Supabase"],
+      "stack": [
+        "Nextjs",
+        "Figma",
+        "Tailwindcss",
+        "Framer-motion",
+        "Typescript",
+        "Supabase"
+      ],
       "name": "Hiahmi",
       "description": "An authenticated NFT Webpage",
       "image": "/images/hihami.webp",
@@ -17,7 +45,14 @@
       "code": "https://github.com/ShinobiKoda/hihami"
     },
     {
-      "stack": ["React+Vite", "Figma", "Tailwindcss", "Framer-motion", "Typescript", "Supabase"],
+      "stack": [
+        "React+Vite",
+        "Figma",
+        "Tailwindcss",
+        "Framer-motion",
+        "Typescript",
+        "Supabase"
+      ],
       "name": "YourBank",
       "description": "Landing Page for YourBank Website",
       "image": "/images/yourbank.webp",
@@ -27,14 +62,27 @@
   ],
   "contributed_to": [
     {
-      "stack": ["Nextjs", "Figma", "Tailwindcss", "Framer-motion", "Typescript"],
+      "stack": [
+        "Nextjs",
+        "Figma",
+        "Tailwindcss",
+        "Framer-motion",
+        "Typescript"
+      ],
       "name": "Noblocks",
       "contribution": "Rebuilding the the noblocks homepage",
       "image": "/images/noblocks.webp",
       "live": "https://noblocks.xyz/"
     },
     {
-      "stack": ["Nextjs", "Figma", "Tailwindcss", "Framer-motion", "Typescript", "RadixUI"],
+      "stack": [
+        "Nextjs",
+        "Figma",
+        "Tailwindcss",
+        "Framer-motion",
+        "Typescript",
+        "RadixUI"
+      ],
       "name": "Salvage Yard",
       "contribution": "Integrate Paystack for payment processing and Polish Cart UI",
       "image": "/images/salvage-yard.webp",
