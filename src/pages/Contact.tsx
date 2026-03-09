@@ -53,7 +53,7 @@ const Contact = () => {
   };
   return (
     <div className="w-full">
-      <Header title="contact" description="contact-me" />
+      <Header title="contact" description="Open to remote frontend contracts and full-time roles." />
       <motion.section
         variants={sectionReveal}
         initial="initial"

@@ -381,9 +381,9 @@ const Home = () => {
             <div className="w-full">
               <div className="flex flex-col gap-[27px]">
                 <p className="flex flex-col gap-4 text-(--text-gray) text-base font-normal">
-                  <span>Hello, I&apos;m Praise!</span>
+                  <span>Hello, I'm Praise!</span>
                   <span>
-                    I&pos;m a frontend engineer with 2+ years building
+                    I'm a frontend engineer with 2+ years building
                     production-grade applications for fintech, e-commerce, and
                     enterprise clients. I've shipped features to live products
                     used by real users — including Noblocks, an open-source
@@ -391,7 +391,7 @@ const Home = () => {
                     real-time messaging and Stripe-powered payments.
                   </span>
                   <span>
-                    I&pos;m currently studying Computer Science at FUTA (graduating
+                    I'm currently studying Computer Science at FUTA (graduating
                     2027) and actively taking on remote contracts and freelance
                     projects. I care about performance, clean architecture, and
                     UX that actually works.
