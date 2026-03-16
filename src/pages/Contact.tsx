@@ -15,6 +15,7 @@ import { FaDiscord, FaTelegram } from "react-icons/fa";
 import { useState } from "react";
 import { IoMdMail } from "react-icons/io";
 import Footer from "../components/Layout/Footer";
+import PlayfulMessage from "../components/PlayfulMessage";
 
 const Contact = () => {
   const socials = [
@@ -53,7 +54,11 @@ const Contact = () => {
   };
   return (
     <div className="w-full">
-      <Header title="contact" description="Open to remote frontend contracts and full-time roles." />
+      <Header
+        title="contact"
+        description="Open to remote frontend contracts and full-time roles."
+      />
+      <PlayfulMessage />
       <motion.section
         variants={sectionReveal}
         initial="initial"

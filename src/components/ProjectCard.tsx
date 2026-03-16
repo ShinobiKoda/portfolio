@@ -16,6 +16,8 @@ import {
   SiNextdotjs,
   SiTailwindcss,
   SiSupabase,
+  SiRadixui,
+  SiStripe,
 } from "react-icons/si";
 import { IoLogoFigma } from "react-icons/io5";
 
@@ -111,6 +113,20 @@ const ProjectCard = ({
             key: technology,
             label: "Vite",
             icon: <SiVite size={20} />,
+          });
+          break;
+        case t.includes("radix"):
+          items.push({
+            key: technology,
+            label: "Radix UI",
+            icon: <SiRadixui size={20} />,
+          });
+          break;
+        case t.includes("stripe"):
+          items.push({
+            key: technology,
+            label: "Stripe",
+            icon: <SiStripe size={20} />,
           });
           break;
         default:

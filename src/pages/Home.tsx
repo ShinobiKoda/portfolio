@@ -19,13 +19,33 @@ import { projects } from "../services/FetchProjects";
 import ProjectCard from "../components/ProjectCard";
 import { useState } from "react";
 import ContactForm from "../components/ContactForm";
+import PlayfulMessage from "../components/PlayfulMessage";
 
 const skills = {
-  languages: ["Typescript", "Javascript"],
-  databases: ["REST", "axios", "nodejs"],
-  other: ["HTML", "CSS", "Supabase"],
-  tools: ["VSCode", "Linux", "Figma", "Vercel"],
-  frameworks: ["React", "Nextjs", "Vite", "Express.js", "Tailwindcss"],
+  frontend: [
+    "JavaScript (ES6+)",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "React Native",
+    "Tailwind CSS",
+    "ShadCN",
+  ],
+  backend_data: ["Supabase (Auth/DB/Realtime)", "Stripe API", "Resend"],
+  optimization: [
+    "SEO (Metadata/SSR/SSG)",
+    "Web Vitals",
+    "Responsive Design",
+    "Accessibility (WCAG)",
+  ],
+  tools_workflow: [
+    "Git",
+    "GitHub",
+    "Figma",
+    "Monorepo (Turborepo/Nx)",
+    "Vercel",
+    "Vite",
+  ],
 };
 
 const Home = () => {
@@ -78,9 +98,8 @@ const Home = () => {
             className="text-(--text-gray) text-base font-normal"
             variants={fadeUp}
           >
-            Frontend engineer specializing in Next.js and TypeScript. I build
-            fast, accessible, production-ready web products — from fintech
-            platforms to enterprise dashboards
+            Frontend engineer specializing in Next.js & TypeScript. Crafting
+            fast, accessible, and production-ready web products.
           </motion.p>
 
           <motion.button
@@ -241,23 +260,23 @@ const Home = () => {
           viewport={{ once: true, amount: 0.05 }}
         >
           <motion.div
-            className="w-[349px] h-[282px] bg-center bg-cover"
+            className="w-[349px] h-[282px] bg-center bg-cover hidden lg:block"
             style={{
               backgroundImage: "url('/images/skills-illustration.webp')",
             }}
             variants={fadeUp}
           ></motion.div>
 
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 items-start">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 items-start">
             <motion.div
-              className="border border-(--text-gray) py-2 max-w-[178px] mx-auto"
+              className="border border-(--text-gray) py-2"
               variants={fadeUp}
             >
               <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
-                Languages
+                Frontend
               </h3>
               <div className="w-full p-2 flex items-center flex-wrap gap-2">
-                {skills.languages.map((item) => (
+                {skills.frontend.map((item) => (
                   <motion.span
                     key={item}
                     className="font-normal text-base text-(--text-gray)"
@@ -269,87 +288,65 @@ const Home = () => {
               </div>
             </motion.div>
 
-            <div className="grid grid-row-2 gap-4 max-w-[178px] mx-auto">
-              <motion.div
-                className="border border-(--text-gray) py-2"
-                variants={fadeUp}
-              >
-                <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
-                  APIs
-                </h3>
-                <div className="w-full p-2 flex items-center flex-wrap gap-2">
-                  {skills.databases.map((item) => (
-                    <motion.span
-                      key={item}
-                      className="font-normal text-base text-(--text-gray)"
-                      whileHover={skillItemHover}
-                    >
-                      {item}
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
-              <motion.div
-                className="border border-(--text-gray) py-2"
-                variants={fadeUp}
-              >
-                <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
-                  Other
-                </h3>
-                <div className="w-full p-2 flex items-center flex-wrap gap-2">
-                  {skills.other.map((item) => (
-                    <motion.span
-                      key={item}
-                      className="font-normal text-base text-(--text-gray)"
-                      whileHover={skillItemHover}
-                    >
-                      {item}
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
+            <motion.div
+              className="border border-(--text-gray) py-2"
+              variants={fadeUp}
+            >
+              <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
+                Backend & Data
+              </h3>
+              <div className="w-full p-2 flex items-center flex-wrap gap-2">
+                {skills.backend_data.map((item) => (
+                  <motion.span
+                    key={item}
+                    className="font-normal text-base text-(--text-gray)"
+                    whileHover={skillItemHover}
+                  >
+                    {item}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.div>
 
-            <div className="grid grid-row-2 gap-4 max-w-[178px] mx-auto">
-              <motion.div
-                className="border border-(--text-gray) py-2"
-                variants={fadeUp}
-              >
-                <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
-                  Tools
-                </h3>
-                <div className="w-full p-2 flex items-center flex-wrap gap-2">
-                  {skills.tools.map((item) => (
-                    <motion.span
-                      key={item}
-                      className="font-normal text-base text-(--text-gray)"
-                      whileHover={skillItemHover}
-                    >
-                      {item}
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
-              <motion.div
-                className="border border-(--text-gray) py-2"
-                variants={fadeUp}
-              >
-                <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
-                  Frameworks
-                </h3>
-                <div className="w-full p-2 flex items-center flex-wrap gap-2">
-                  {skills.frameworks.map((item) => (
-                    <motion.span
-                      key={item}
-                      className="font-normal text-base text-(--text-gray)"
-                      whileHover={skillItemHover}
-                    >
-                      {item}
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
+            <motion.div
+              className="border border-(--text-gray) py-2"
+              variants={fadeUp}
+            >
+              <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
+                Optimization
+              </h3>
+              <div className="w-full p-2 flex items-center flex-wrap gap-2">
+                {skills.optimization.map((item) => (
+                  <motion.span
+                    key={item}
+                    className="font-normal text-base text-(--text-gray)"
+                    whileHover={skillItemHover}
+                  >
+                    {item}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="border border-(--text-gray) py-2"
+              variants={fadeUp}
+            >
+              <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
+                Tools & Workflow
+              </h3>
+              <div className="w-full p-2 flex items-center flex-wrap gap-2">
+                {skills.tools_workflow.map((item) => (
+                  <motion.span
+                    key={item}
+                    className="font-normal text-base text-(--text-gray)"
+                    whileHover={skillItemHover}
+                  >
+                    {item}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       </motion.div>
@@ -435,6 +432,7 @@ const Home = () => {
           />
         </div>
 
+        <PlayfulMessage />
         <motion.div
           className="w-full grid grid-cols-1 lg:grid-cols-2 items-start gap-8"
           variants={staggerContainer}

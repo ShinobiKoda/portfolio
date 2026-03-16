@@ -9,7 +9,7 @@
         "Typescript"
       ],
       "name": "Noblocks",
-      "description": "Open-source contributor to a live crypto-to-fiat dApp. Optimized Core Web Vitals and built real-time currency validation and rate-fetching systems ensuring data integrity for cross-border financial transactions.",
+      "description": "Full-stack crypto-to-fiat bridge. Built real-time rate validation and optimized core performance for cross-border liquidity.",
       "image": "/images/noblocks.webp",
       "live": "https://noblocks.xyz/"
     },
@@ -23,7 +23,7 @@
         "RadixUI"
       ],
       "name": "Salvage Yard",
-      "description": "Integrated Paystack payment processing and overhauled the cart UI for a live e-commerce storefront, improving checkout flow and transaction reliability",
+      "description": "E-commerce platform with Paystack integration. Re-engineered the checkout experience and cart architecture for scale.",
       "image": "/images/salvage-yard.webp",
       "live": "https://salvageyardstore.com/"
     },
@@ -37,7 +37,7 @@
         "Stripe"
       ],
       "name": "Nook",
-      "description": "End-to-end rental platform built from scratch — Stripe-powered rent collection, real-time landlord-tenant messaging, and automated email workflows. Full monorepo architecture with Turborepo.",
+      "description": "End-to-end rental ecosystem. Features Stripe-powered payments, landlord-tenant messaging, and automated logistics.",
       "image": "/images/nook.png",
       "live": "https://www.rentwithnook.com/"
     },
@@ -51,7 +51,7 @@
         "Supabase"
       ],
       "name": "Furniro",
-      "description": "Full-stack e-commerce storefront with Supabase backend, featuring product catalog, cart, wishlist, checkout, and blog. Optimized for performance with smooth Framer Motion transitions",
+      "description": "Premium furniture storefront. A performance-first commerce engine built with Supabase and high-fidelity motion design.",
       "image": "/images/furniro.webp",
       "live": "https://furniro-roan-gamma.vercel.app/",
       "code": "https://github.com/ShinobiKoda/furniro"
@@ -67,7 +67,7 @@
         "Supabase"
       ],
       "name": "YourBank",
-      "description": " Responsive landing page for a banking product, built with attention to accessibility, visual hierarchy, and conversion-focused design.",
+      "description": "High-conversion fintech landing page. Focused on semantic architecture, accessibility, and modern visual hierarchy.",
       "image": "/images/yourbank.webp",
       "live": "https://your-bank-six.vercel.app/",
       "code": "https://github.com/ShinobiKoda/your-bank"
