@@ -500,7 +500,7 @@ const Home = () => {
           </div>
         </motion.div>
       )}
-      <div className="mt-[145px]">
+      <div className="mt-auto pt-[145px]">
         <Footer />
       </div>
     </div>

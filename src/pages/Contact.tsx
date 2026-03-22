@@ -53,7 +53,7 @@ const Contact = () => {
     }
   };
   return (
-    <div className="w-full">
+    <div className="w-full min-h-screen flex flex-col">
       <Header
         title="contact"
         description="Open to remote frontend contracts and full-time roles."
@@ -160,7 +160,7 @@ const Contact = () => {
         </motion.div>
       )}
 
-      <div className="mt-[145px] w-full">
+      <div className="mt-auto pt-[145px]">
         <Footer />
       </div>
     </div>

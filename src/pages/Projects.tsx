@@ -49,7 +49,7 @@ const Projects = () => {
         </motion.div>
       </motion.section>
 
-      <div className="mt-[187px]">
+      <div className="mt-auto pt-[145px]">
         <Footer />
       </div>
     </div>
