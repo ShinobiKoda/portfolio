@@ -19,7 +19,6 @@ import { projects } from "../services/FetchProjects";
 import ProjectCard from "../components/ProjectCard";
 import { useState } from "react";
 import ContactForm from "../components/ContactForm";
-import PlayfulMessage from "../components/PlayfulMessage";
 import AnimatedShapes from "../components/AnimatedShapes";
 
 const skills = {
@@ -414,7 +413,6 @@ const Home = () => {
           />
         </div>
 
-        <PlayfulMessage />
         <motion.div
           className="w-full grid grid-cols-1 lg:grid-cols-2 items-start gap-8"
           variants={staggerContainer}
