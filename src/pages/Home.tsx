@@ -20,6 +20,7 @@ import ProjectCard from "../components/ProjectCard";
 import { useState } from "react";
 import ContactForm from "../components/ContactForm";
 import PlayfulMessage from "../components/PlayfulMessage";
+import AnimatedShapes from "../components/AnimatedShapes";
 
 const skills = {
   frontend: [
@@ -54,14 +55,6 @@ const Home = () => {
     visible: false,
   });
 
-  const handleDownloadCV = () => {
-    const link = document.createElement("a");
-    link.href = "/my-cv.pdf";
-    link.download = "my-cv.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
 
   const handleCopy = async (text: string, label: string) => {
     try {
@@ -102,27 +95,21 @@ const Home = () => {
             fast, accessible, and production-ready web products.
           </motion.p>
 
-          <motion.button
-            className="px-4 py-2 border border-(--text-primary) font-medium text-base cursor-pointer text-white"
+          <motion.a
+            href="/my-cv.pdf"
+            download="my-cv.pdf"
+            className="px-4 py-2 border border-(--text-primary) font-medium text-base cursor-pointer text-white inline-block"
             variants={fadeUp}
             whileHover={hoverScale}
             whileTap={{ ...tapPress, transition: tapTransition }}
-            onClick={handleDownloadCV}
           >
             Download CV
-          </motion.button>
+          </motion.a>
         </motion.div>
 
         <div className="px-4 w-full max-w-[469px] mx-auto">
-          <div className="w-full">
-            <img
-              src="/images/hero-img.webp"
-              alt="Hero Image"
-              className="w-full"
-              fetchPriority="high"
-              width="469"
-              height="469"
-            />
+          <div className="w-full flex justify-center">
+            <AnimatedShapes variant="hero" />
           </div>
           <motion.div
             className="p-2 border border-(--text-gray) flex items-center gap-[13px]"
@@ -260,12 +247,11 @@ const Home = () => {
           viewport={{ once: true, amount: 0.05 }}
         >
           <motion.div
-            className="w-[349px] h-[282px] bg-center bg-cover hidden lg:block"
-            style={{
-              backgroundImage: "url('/images/skills-illustration.webp')",
-            }}
+            className="hidden lg:flex items-center justify-center"
             variants={fadeUp}
-          ></motion.div>
+          >
+            <AnimatedShapes variant="skills" />
+          </motion.div>
 
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 items-start">
             <motion.div
@@ -275,11 +261,11 @@ const Home = () => {
               <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
                 Frontend
               </h3>
-              <div className="w-full p-2 flex items-center flex-wrap gap-2">
+              <div className="w-full p-3 flex flex-wrap gap-2">
                 {skills.frontend.map((item) => (
                   <motion.span
                     key={item}
-                    className="font-normal text-base text-(--text-gray)"
+                    className="px-3 py-1 text-sm font-normal text-(--text-gray) border border-(--text-gray)/30 hover:border-(--text-primary)/60 hover:text-(--text-primary) transition-colors duration-200 cursor-default"
                     whileHover={skillItemHover}
                   >
                     {item}
@@ -295,11 +281,11 @@ const Home = () => {
               <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
                 Backend & Data
               </h3>
-              <div className="w-full p-2 flex items-center flex-wrap gap-2">
+              <div className="w-full p-3 flex flex-wrap gap-2">
                 {skills.backend_data.map((item) => (
                   <motion.span
                     key={item}
-                    className="font-normal text-base text-(--text-gray)"
+                    className="px-3 py-1 text-sm font-normal text-(--text-gray) border border-(--text-gray)/30 hover:border-(--text-primary)/60 hover:text-(--text-primary) transition-colors duration-200 cursor-default"
                     whileHover={skillItemHover}
                   >
                     {item}
@@ -315,11 +301,11 @@ const Home = () => {
               <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
                 Optimization
               </h3>
-              <div className="w-full p-2 flex items-center flex-wrap gap-2">
+              <div className="w-full p-3 flex flex-wrap gap-2">
                 {skills.optimization.map((item) => (
                   <motion.span
                     key={item}
-                    className="font-normal text-base text-(--text-gray)"
+                    className="px-3 py-1 text-sm font-normal text-(--text-gray) border border-(--text-gray)/30 hover:border-(--text-primary)/60 hover:text-(--text-primary) transition-colors duration-200 cursor-default"
                     whileHover={skillItemHover}
                   >
                     {item}
@@ -335,11 +321,11 @@ const Home = () => {
               <h3 className="p-2 font-semibold text-base text-white border-b border-(--text-gray)">
                 Tools & Workflow
               </h3>
-              <div className="w-full p-2 flex items-center flex-wrap gap-2">
+              <div className="w-full p-3 flex flex-wrap gap-2">
                 {skills.tools_workflow.map((item) => (
                   <motion.span
                     key={item}
-                    className="font-normal text-base text-(--text-gray)"
+                    className="px-3 py-1 text-sm font-normal text-(--text-gray) border border-(--text-gray)/30 hover:border-(--text-primary)/60 hover:text-(--text-primary) transition-colors duration-200 cursor-default"
                     whileHover={skillItemHover}
                   >
                     {item}
@@ -399,14 +385,10 @@ const Home = () => {
           </motion.div>
 
           <motion.div
-            className="w-full max-w-[343px] mx-auto"
+            className="w-full max-w-[343px] mx-auto flex justify-center"
             variants={fadeUp}
           >
-            <img
-              src="/images/about-me-illustration.webp"
-              alt="About me Illustration"
-              className="object-cover"
-            />
+            <AnimatedShapes variant="about" />
           </motion.div>
         </div>
       </motion.div>

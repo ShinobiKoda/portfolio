@@ -32,13 +32,13 @@ const PlayfulMessage = () => {
   }, [hasShown]);
 
   return (
-    <div ref={ref} className="w-full flex justify-center my-4">
+    <div ref={ref} className="w-full flex justify-center items-center my-4" style={{ minHeight: "40px" }}>
       <AnimatePresence>
         {isVisible && (
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8, transition: { duration: 0.2 } }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0, transition: { duration: 0.2 } }}
             transition={{ duration: 0.35, ease: [0.25, 0, 0.35, 1] }}
             className="border border-(--text-primary) px-5 py-2 flex items-center gap-3"
           >
