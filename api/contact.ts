@@ -5,6 +5,33 @@ import { Resend } from "resend";
 // Use explicit .js extension for ESM runtime after TS transpilation
 import { contactSchema } from "./contactSchema.js";
 
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+const MAX_REQUESTS_PER_WINDOW = 3;
+const ipRequests = new Map<string, { count: number; timestamp: number }>();
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const requestData = ipRequests.get(ip);
+
+  if (!requestData) {
+    ipRequests.set(ip, { count: 1, timestamp: now });
+    return true;
+  }
+
+  // Check if window has expired
+  if (now - requestData.timestamp > RATE_LIMIT_WINDOW_MS) {
+    ipRequests.set(ip, { count: 1, timestamp: now });
+    return true;
+  }
+
+  if (requestData.count >= MAX_REQUESTS_PER_WINDOW) {
+    return false;
+  }
+
+  requestData.count += 1;
+  return true;
+}
+
 function adminEmailTemplate({
   name,
   email,
@@ -85,6 +112,16 @@ function userThankYouTemplate({ name }: { name: string }) {
 export default async function handler(req: any, res: any) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method Not Allowed" });
+  }
+
+  // Extract IP for rate limiting
+  const forwardedFor = req.headers["x-forwarded-for"];
+  const ip = typeof forwardedFor === "string" 
+    ? forwardedFor.split(",")[0] 
+    : (req.socket?.remoteAddress || "unknown");
+
+  if (ip !== "unknown" && !checkRateLimit(ip)) {
+    return res.status(429).json({ error: "Too many requests. Please try again later." });
   }
 
   const parsed = contactSchema.safeParse(req.body);

@@ -22,10 +22,21 @@ export async function sendContact(
     });
 
     if (!res.ok) {
-      const text = await res.text().catch(() => "");
+      let errorMessage = `Request failed: ${res.status} ${res.statusText}`;
+      try {
+        const data = await res.json();
+        if (data.error) {
+          errorMessage = data.error;
+        } else if (data.errors) {
+          errorMessage = JSON.stringify(data.errors);
+        }
+      } catch {
+        const text = await res.text().catch(() => "");
+        if (text) errorMessage = text;
+      }
       return {
         ok: false,
-        message: text || `Request failed: ${res.status} ${res.statusText}`,
+        message: errorMessage,
       };
     }
 
