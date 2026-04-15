@@ -9,7 +9,7 @@
         "Typescript"
       ],
       "name": "Noblocks",
-      "description": "Full-stack crypto-to-fiat bridge. Built real-time rate validation and optimized core performance for cross-border liquidity.",
+      "description": "Architected a high-conversion semantic landing page that ensured 100% cross-device compatibility and a premium visual hierarchy.",
       "image": "/images/noblocks.webp",
       "live": "https://noblocks.xyz/"
     },
@@ -55,6 +55,22 @@
       "image": "/images/furniro.webp",
       "live": "https://furniro-roan-gamma.vercel.app/",
       "code": "https://github.com/ShinobiKoda/furniro"
+    },
+
+     {
+      "stack": [
+        "React+Vite",
+        "Figma",
+        "Tailwindcss",
+        "Framer-motion",
+        "Typescript",
+        "Supabase"
+      ],
+      "name": "EatEasy",
+      "description": "Comprehensive food ordering platform. Features secure user authentication and effortless food ordering from different restaurants with ease.",
+      "image": "/images/eat-easy.png",
+      "live": "https://eat-easy.vercel.app/",
+      "code": "https://github.com/ShinobiKoda/eat-easy"
     },
 
     {

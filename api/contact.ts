@@ -6,7 +6,7 @@ import { Resend } from "resend";
 import { contactSchema } from "./contactSchema.js";
 
 const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
-const MAX_REQUESTS_PER_WINDOW = 3;
+const MAX_REQUESTS_PER_WINDOW = 2;
 const ipRequests = new Map<string, { count: number; timestamp: number }>();
 
 function checkRateLimit(ip: string): boolean {
