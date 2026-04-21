@@ -8,7 +8,7 @@ import {
   tooltipIconVariants,
 } from "./animations/motion";
 import { TbArrowWaveRightDown } from "react-icons/tb";
-import { FaReact } from "react-icons/fa";
+import { FaReact, FaHeart } from "react-icons/fa";
 import {
   SiVite,
   SiTypescript,
@@ -127,6 +127,13 @@ const ProjectCard = ({
             key: technology,
             label: "Stripe",
             icon: <SiStripe size={20} />,
+          });
+          break;
+        case t.includes("lovable"):
+          items.push({
+            key: technology,
+            label: "Lovable",
+            icon: <FaHeart size={20} />,
           });
           break;
         default:

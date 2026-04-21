@@ -44,6 +44,19 @@
     {
       "stack": [
         "Nextjs",
+        "Tailwindcss",
+        "Framer-motion",
+        "Typescript",
+        "Supabase"
+      ],
+      "name": "Chazon",
+      "description": "Decentralized event management platform. Centralizes school activities, enabling students to discover events and organizers to seamlessly post and manage them.",
+      "image": "/images/chazonevents.png",
+      "live": "https://chazonevents.vercel.app/"
+    },
+    {
+      "stack": [
+        "Nextjs",
         "Figma",
         "Tailwindcss",
         "Framer-motion",
@@ -57,7 +70,7 @@
       "code": "https://github.com/ShinobiKoda/furniro"
     },
 
-     {
+    {
       "stack": [
         "React+Vite",
         "Figma",

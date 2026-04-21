@@ -95,8 +95,8 @@ const Home = () => {
           </motion.p>
 
           <motion.a
-            href="/my-cv.pdf"
-            download="my-cv.pdf"
+            href="/Adebiyi_Praise_Resume.pdf"
+            download="Adebiyi_Praise_Resume.pdf"
             className="px-4 py-2 border border-(--text-primary) font-medium text-base cursor-pointer text-white inline-block"
             variants={fadeUp}
             whileHover={hoverScale}
