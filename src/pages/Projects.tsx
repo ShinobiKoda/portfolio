@@ -47,6 +47,7 @@ const Projects = () => {
           <span className="text-white">apps</span>
         </h2>
         <motion.div
+          key={currentPage}
           variants={staggerContainer}
           initial="initial"
           whileInView="animate"
@@ -55,7 +56,7 @@ const Projects = () => {
         >
           {currentProjects.map((project, index) => (
             <ProjectCard
-              key={index}
+              key={project.name || index}
               image={project.image}
               code={project.code}
               live={project.live}
