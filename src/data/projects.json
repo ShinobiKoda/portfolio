@@ -54,21 +54,6 @@
       "image": "/images/chazonevents.png",
       "live": "https://chazonevents.vercel.app/"
     },
-    {
-      "stack": [
-        "Nextjs",
-        "Figma",
-        "Tailwindcss",
-        "Framer-motion",
-        "Typescript",
-        "Supabase"
-      ],
-      "name": "Furniro",
-      "description": "Premium furniture storefront. A performance-first commerce engine built with Supabase and high-fidelity motion design.",
-      "image": "/images/furniro.webp",
-      "live": "https://furniro-roan-gamma.vercel.app/",
-      "code": "https://github.com/ShinobiKoda/furniro"
-    },
 
     {
       "stack": [
@@ -84,6 +69,38 @@
       "image": "/images/eat-easy.png",
       "live": "https://eat-easy.vercel.app/",
       "code": "https://github.com/ShinobiKoda/eat-easy"
+    },
+
+    {
+      "stack": [
+        "React+Vite",
+        "Figma",
+        "Tailwindcss",
+        "Framer-motion",
+        "Typescript",
+        "Supabase"
+      ],
+      "name": "EatEasy Mobile",
+      "description": "A mobile app for eat easy,a comprehensive food ordering platform. Features secure user authentication and effortless food ordering from different restaurants with ease.",
+      "image": "/images/eateasy_mobile.jpg",
+      "live": "https://github.com/ShinobiKoda/eat-easy-mobile/releases/tag/v1.0.0",
+      "code": "https://github.com/ShinobiKoda/eat-easy-mobile"
+    },
+
+    {
+      "stack": [
+        "Nextjs",
+        "Figma",
+        "Tailwindcss",
+        "Framer-motion",
+        "Typescript",
+        "Supabase"
+      ],
+      "name": "Furniro",
+      "description": "Premium furniture storefront. A performance-first commerce engine built with Supabase and high-fidelity motion design.",
+      "image": "/images/furniro.webp",
+      "live": "https://furniro-roan-gamma.vercel.app/",
+      "code": "https://github.com/ShinobiKoda/furniro"
     },
 
     {
