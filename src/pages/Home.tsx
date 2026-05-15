@@ -54,7 +54,6 @@ const Home = () => {
     visible: false,
   });
 
-
   const handleCopy = async (text: string, label: string) => {
     try {
       await navigator.clipboard.writeText(text);
@@ -69,6 +68,8 @@ const Home = () => {
       }, 2000);
     }
   };
+
+
 
   return (
     <div className="w-full h-screen">
@@ -95,8 +96,9 @@ const Home = () => {
           </motion.p>
 
           <motion.a
-            href="/Adebiyi_Praise_Resume.pdf"
-            download="Adebiyi_Praise_Resume.pdf"
+            href="https://docs.google.com/document/d/1LbN04t15DrzI0xknaN_EmXXLXkse9I_H/export?format=pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-4 py-2 border border-(--text-primary) font-medium text-base cursor-pointer text-white inline-block"
             variants={fadeUp}
             whileHover={hoverScale}
