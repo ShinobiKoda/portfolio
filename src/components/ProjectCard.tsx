@@ -7,7 +7,7 @@ import {
   tooltipVariants,
   tooltipIconVariants,
 } from "./animations/motion";
-import { TbArrowWaveRightDown } from "react-icons/tb";
+import { TbArrowWaveRightDown, TbBrandReactNative } from "react-icons/tb";
 import { FaReact, FaHeart } from "react-icons/fa";
 import {
   SiVite,
@@ -64,6 +64,13 @@ const ProjectCard = ({
             key: technology,
             label: "Next.js",
             icon: <SiNextdotjs size={20} />,
+          });
+          break;
+        case t.includes("react native"):
+          items.push({
+            key: technology,
+            label: "React Native",
+            icon: <TbBrandReactNative size={20} />,
           });
           break;
         case t.includes("react"):
