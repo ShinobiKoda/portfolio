@@ -33,13 +33,12 @@
         "Tailwindcss",
         "Framer-motion",
         "Typescript",
-        "Supabase",
-        "Stripe"
+        "Supabase"
       ],
-      "name": "Nook",
-      "description": "End-to-end rental ecosystem. Features Stripe-powered payments, landlord-tenant messaging, and automated logistics.",
-      "image": "/images/nook.png",
-      "live": "https://www.rentwithnook.com/"
+      "name": "Chazon",
+      "description": "Decentralized event management platform. Centralizes school activities, enabling students to discover events and organizers to seamlessly post and manage them.",
+      "image": "/images/chazonevents.png",
+      "live": "https://chazonevents.com/"
     },
     {
       "stack": [
@@ -47,12 +46,13 @@
         "Tailwindcss",
         "Framer-motion",
         "Typescript",
-        "Supabase"
+        "Supabase",
+        "Stripe"
       ],
-      "name": "Chazon",
-      "description": "Decentralized event management platform. Centralizes school activities, enabling students to discover events and organizers to seamlessly post and manage them.",
-      "image": "/images/chazonevents.png",
-      "live": "https://chazonevents.com/"
+      "name": "Nook",
+      "description": "End-to-end rental ecosystem. Features Stripe-powered payments, landlord-tenant messaging, and automated logistics.",
+      "image": "/images/nook.png",
+      "live": "https://www.rentwithnook.com/"
     },
 
     {
