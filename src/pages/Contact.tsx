@@ -55,7 +55,7 @@ const Contact = () => {
     <div className="w-full min-h-screen flex flex-col">
       <Header
         title="contact"
-        description="Open to remote frontend contracts and full-time roles."
+        description="Open to remote contracts and full-time roles."
       />
       <motion.section
         variants={sectionReveal}

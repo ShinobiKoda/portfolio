@@ -85,13 +85,13 @@ const Home = () => {
             variants={fadeUp}
           >
             I'm Adebiyi Praise, <br />
-            <span className="text-(--text-primary)">a front-end developer</span>
+            <span className="text-(--text-primary)">a Full-Stack developer</span>
           </motion.h1>
           <motion.p
             className="text-(--text-gray) text-base font-normal"
             variants={fadeUp}
           >
-            Frontend engineer specializing in Next.js & TypeScript. Crafting
+            Full-Stack engineer specializing in Next.js & TypeScript. Crafting
             fast, accessible, and production-ready web products.
           </motion.p>
 
@@ -124,7 +124,7 @@ const Home = () => {
                 Currently working on
               </span>
               <span className="font-semibold text-base text-white">
-                Mobile App Development
+                Laravel & PHP
               </span>
             </p>
           </motion.div>
@@ -152,7 +152,7 @@ const Home = () => {
             className="font-medium text-base lg:text-2xl text-white text-center"
             variants={fadeUp}
           >
-            The Price of freedom is steep
+            A man who cannot obey himself will be commanded.
           </motion.p>
         </motion.div>
         <motion.div
@@ -367,18 +367,17 @@ const Home = () => {
                 <p className="flex flex-col gap-4 text-(--text-gray) text-base font-normal">
                   <span>Hello, I'm Praise!</span>
                   <span>
-                    I'm a frontend engineer with 2+ years building
+                    I'm a fullstack engineer with 2+ years building
                     production-grade applications for fintech, e-commerce, and
                     enterprise clients. I've shipped features to live products
                     used by real users — including Noblocks, an open-source
                     crypto-to-fiat dApp, and Nook, a full rental platform with
-                    real-time messaging and Stripe-powered payments.
+                    real-time messaging and Stripe-powered payments and Chazon.
                   </span>
                   <span>
                     I'm currently studying Computer Science at FUTA (graduating
                     2027) and actively taking on remote contracts and freelance
-                    projects. I care about performance, clean architecture, and
-                    UX that actually works.
+                    projects.
                   </span>
                 </p>
               </div>
