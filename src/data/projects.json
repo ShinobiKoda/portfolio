@@ -54,6 +54,19 @@
       "image": "/images/nook.png",
       "live": "https://www.rentwithnook.com/"
     },
+    {
+      "stack": [
+        "Nextjs",
+        "Tailwindcss",
+        "Framer-motion",
+        "Typescript",
+        "Supabase"
+      ],
+      "name": "FX Checker",
+      "description": "Check live exchange rates, compare currencies, track historical data, and monitor your conversion logs seamlessly with FX Checker.",
+      "image": "/images/fx-checker.png",
+      "live": "https://fx-checker-pied.vercel.app/"
+    },
 
     {
       "stack": [

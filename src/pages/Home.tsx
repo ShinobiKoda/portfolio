@@ -156,10 +156,10 @@ const Home = () => {
           </motion.p>
         </motion.div>
         <motion.div
-          className="border border-(--text-gray) p-4 w-full max-w-[200px] ml-auto font-normal text-base lg:text-2xl text-white text-nowrap"
+          className="border border-(--text-gray) p-4 w-full max-w-[340px] ml-auto font-normal text-base lg:text-2xl text-white text-nowrap"
           variants={fadeUp}
         >
-          - Zack Fair.
+          - Friedrich Nietzsche.
         </motion.div>
       </motion.div>
 
