@@ -161,11 +161,11 @@ const ProjectCard = ({
 
   return (
     <motion.div
-      className="min-h-[422px] border border-(--text-gray) w-full max-w-[330px] mx-auto"
+      className="min-h-105.5 border border-(--text-gray) w-full max-w-125 mx-auto"
       variants={fadeUp}
       whileHover={cardHover}
     >
-      <div className="w-full h-[200px]">
+      <div className="w-full h-50">
         <img
           src={image}
           alt="Project Image"
@@ -203,7 +203,7 @@ const ProjectCard = ({
           </motion.li>
         ))}
       </ul>
-      <div className="p-4 space-y-[18px]">
+      <div className="p-4 space-y-4.5">
         <h3 className="font-medium text-2xl text-white">{name}</h3>
         {description && (
           <p className="font-normal text-base text-(--text-gray)">

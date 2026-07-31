@@ -40,7 +40,7 @@ const Projects = () => {
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.05 }}
-        className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[68px] space-y-12"
+        className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-17 space-y-12"
       >
         <h2 className="font-medium text-2xl lg:text-[32px]">
           <span className="text-(--text-primary)">#</span>
@@ -106,7 +106,7 @@ const Projects = () => {
         )}
       </motion.section>
 
-      <div className="mt-auto pt-[145px]">
+      <div className="mt-auto pt-36.25">
         <Footer />
       </div>
     </div>
