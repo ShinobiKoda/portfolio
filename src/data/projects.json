@@ -13,23 +13,11 @@
       "image": "/images/chazonevents.png",
       "live": "https://chazonevents.com/"
     },
-    {
-      "stack": [
-        "React+Vite",
-        "Tailwindcss",
-        "Typescript",
-        "Supabase"
-      ],
-      "name": "ShinobiMerch",
-      "description": "Full-stack anime merchandise storefront with a real Supabase-backed catalog, admin dashboard, and WhatsApp-negotiated order flow.",
-      "live": "https://shinobimerch.vercel.app",
-      "image": "/images/shinobimerch.png"
-    },
 
     {
       "stack": ["Laravel", "Blade", "Tailwindcss"],
       "name": "UNILESA Staff Portal",
-      "description": "Staff school portal for UNILESA. Designed and built the full UI, from the public landing page through the internal staff dashboard.",
+      "description": "Staff school portal for UNILESA. Designed and built the full UI, from the public landing page through the internal staff dashboard (IN DEVELOPEMENT).",
       "image": "/images/unilesa-staff-school.png",
       "live": "#",
       "status": "In Development"
@@ -38,7 +26,7 @@
     {
       "stack": ["Laravel", "Blade", "Tailwindcss"],
       "name": "UNILESA Hostel Management",
-      "description": "Hostel management system for UNILESA covering allocation and administration workflows. Designed and built the full UI.",
+      "description": "Hostel management system for UNILESA covering allocation and administration workflows. Designed and built the full UI (IN DEVELOPEMENT).",
       "image": "/images/unilesa-hostel-management.png",
       "live": "#",
       "status": "In Development"
@@ -53,7 +41,7 @@
         "Typescript"
       ],
       "name": "UNILESA Result Management",
-      "description": "Result management system for UNILESA with a React frontend on a Laravel backend. Designed and built the full UI.",
+      "description": "Result management system for UNILESA with a React frontend on a Laravel backend. Designed and built the full UI (IN DEVELOPEMENT).",
       "image": "/images/unilesa-result-management.png",
       "live": "#",
       "status": "In Development"
@@ -70,6 +58,18 @@
       "description": "Architected a high-conversion semantic landing page that ensured 100% cross-device compatibility and a premium visual hierarchy.",
       "image": "/images/noblocks.webp",
       "live": "https://noblocks.xyz/"
+    },
+    {
+      "stack": [
+        "React+Vite",
+        "Tailwindcss",
+        "Typescript",
+        "Supabase"
+      ],
+      "name": "ShinobiMerch",
+      "description": "Full-stack anime merchandise storefront with a real Supabase-backed catalog, admin dashboard, and WhatsApp-negotiated order flow.",
+      "live": "https://shinobimerch.vercel.app",
+      "image": "/images/shinobimerch.png"
     },
     {
       "stack": [
