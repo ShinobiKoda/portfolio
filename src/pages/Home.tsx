@@ -31,7 +31,7 @@ const skills = {
     "Tailwind CSS",
     "ShadCN",
   ],
-  backend_data: ["Supabase (Auth/DB/Realtime)", "Stripe API", "Resend"],
+  backend_data: ["Supabase (Auth/DB/Realtime)", "Stripe API", "Resend", "Laravel"],
   optimization: [
     "SEO (Metadata/SSR/SSG)",
     "Web Vitals",

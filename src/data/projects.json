@@ -23,6 +23,7 @@
       ],
       "name": "ShinobiMerch",
       "description": "Full-stack anime merchandise storefront with a real Supabase-backed catalog, admin dashboard, and WhatsApp-negotiated order flow.",
+      "live": "https://shinobimerch.vercel.app",
       "image": "/images/shinobimerch.png"
     },
 
@@ -31,7 +32,7 @@
       "name": "UNILESA Staff Portal",
       "description": "Staff school portal for UNILESA. Designed and built the full UI, from the public landing page through the internal staff dashboard.",
       "image": "/images/unilesa-staff-school.png",
-      "live": "https://REPLACE_WITH_LANDING_PAGE_URL",
+      "live": "#",
       "status": "In Development"
     },
 
@@ -40,6 +41,7 @@
       "name": "UNILESA Hostel Management",
       "description": "Hostel management system for UNILESA covering allocation and administration workflows. Designed and built the full UI.",
       "image": "/images/unilesa-hostel-management.png",
+      "live": "#",
       "status": "In Development"
     },
 
@@ -54,6 +56,7 @@
       "name": "UNILESA Result Management",
       "description": "Result management system for UNILESA with a React frontend on a Laravel backend. Designed and built the full UI.",
       "image": "/images/unilesa-result-management.png",
+      "live": "#",
       "status": "In Development"
     },
     {
