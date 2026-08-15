@@ -73,9 +73,9 @@ const Home = () => {
 
   return (
     <div className="w-full h-screen">
-      <div className=" w-full px-4 lg:px-8 max-w-5xl mx-auto space-y-6 lg:flex lg:mt-[62px] lg:items-center">
+      <div className=" w-full px-4 lg:px-8 max-w-5xl mx-auto space-y-6 lg:flex lg:mt-15.5 lg:items-center">
         <motion.div
-          className="w-full space-y-[25px] lg:space-y-8"
+          className="w-full space-y-6.25 lg:space-y-8"
           variants={staggerContainer}
           initial="initial"
           animate="animate"
@@ -108,12 +108,12 @@ const Home = () => {
           </motion.a>
         </motion.div>
 
-        <div className="px-4 w-full max-w-[469px] mx-auto">
+        <div className="px-4 w-full max-w-117.25 mx-auto">
           <div className="w-full flex justify-center">
             <AnimatedShapes variant="hero" />
           </div>
           <motion.div
-            className="p-2 border border-(--text-gray) flex items-center gap-[13px]"
+            className="p-2 border border-(--text-gray) flex items-center gap-3.25"
             variants={fadeUp}
             initial="initial"
             animate="animate"
@@ -132,7 +132,7 @@ const Home = () => {
       </div>
 
       <motion.div
-        className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[75px] lg:mt-28"
+        className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-18.75 lg:mt-28"
         variants={sectionReveal}
         initial="initial"
         whileInView="animate"
@@ -142,7 +142,7 @@ const Home = () => {
           className="w-full border border-(--text-gray) p-8 relative"
           variants={fadeUp}
         >
-          <p className="text-(--text-gray) text-[45px] font-bold absolute -top-[21px]">
+          <p className="text-(--text-gray) text-[45px] font-bold absolute -top-5.25">
             "
           </p>
           <p className="text-(--text-gray) text-[45px] font-bold absolute -bottom-12 right-8">
@@ -156,7 +156,7 @@ const Home = () => {
           </motion.p>
         </motion.div>
         <motion.div
-          className="border border-(--text-gray) p-4 w-full max-w-[340px] ml-auto font-normal text-base lg:text-2xl text-white text-nowrap"
+          className="border border-(--text-gray) p-4 w-full max-w-85 ml-auto font-normal text-base lg:text-2xl text-white text-nowrap"
           variants={fadeUp}
         >
           - Friedrich Nietzsche.
@@ -164,7 +164,7 @@ const Home = () => {
       </motion.div>
 
       <motion.div
-        className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[75px] space-y-12"
+        className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-18.75 space-y-12"
         variants={sectionReveal}
         initial="initial"
         whileInView="animate"
@@ -214,19 +214,20 @@ const Home = () => {
               live={project.live}
               code={project.code}
               stack={project.stack}
+              status={project.status}
             />
           ))}
         </motion.div>
       </motion.div>
 
       <motion.div
-        className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[106px] space-y-3"
+        className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-26.5 space-y-3"
         variants={sectionReveal}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.05 }}
       >
-        <div className="flex items-center gap-4 w-full max-w-[391px]">
+        <div className="flex items-center gap-4 w-full max-w-97.75">
           <h2 className="font-medium text-[32px] text-white">
             <span className="text-(--text-primary)">#</span>
             <span>skills</span>
@@ -241,7 +242,7 @@ const Home = () => {
         </div>
 
         <motion.div
-          className="w-full grid grid-cols-1 lg:grid-cols-2 gap-[59px]"
+          className="w-full grid grid-cols-1 lg:grid-cols-2 gap-14.75"
           variants={staggerContainer}
           initial="initial"
           whileInView="animate"
@@ -346,9 +347,9 @@ const Home = () => {
         viewport={{ once: true, amount: 0.05 }}
       >
         <div className="w-full grid grid-cols-1 lg:grid-cols-2">
-          <motion.div className="space-y-[23px]" variants={fadeUp}>
+          <motion.div className="space-y-5.75" variants={fadeUp}>
             <div className="w-full">
-              <div className="flex items-center flex-2 gap-4 w-full max-w-[391px]">
+              <div className="flex items-center flex-2 gap-4 w-full max-w-97.75">
                 <h2 className="font-medium text-[32px] text-white">
                   <span className="text-(--text-primary)">#</span>
                   <span>about-me</span>
@@ -363,7 +364,7 @@ const Home = () => {
               </div>
             </div>
             <div className="w-full">
-              <div className="flex flex-col gap-[27px]">
+              <div className="flex flex-col gap-6.75">
                 <p className="flex flex-col gap-4 text-(--text-gray) text-base font-normal">
                   <span>Hello, I'm Praise!</span>
                   <span>
@@ -385,7 +386,7 @@ const Home = () => {
           </motion.div>
 
           <motion.div
-            className="w-full max-w-[343px] mx-auto flex justify-center"
+            className="w-full max-w-85.75 mx-auto flex justify-center"
             variants={fadeUp}
           >
             <AnimatedShapes variant="about" />
@@ -394,13 +395,13 @@ const Home = () => {
       </motion.div>
 
       <motion.div
-        className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-[75px] space-y-12"
+        className="w-full max-w-5xl mx-auto px-4 lg:px-8 mt-18.75 space-y-12"
         variants={sectionReveal}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.05 }}
       >
-        <div className="flex items-center flex-2 gap-4 w-full max-w-[391px]">
+        <div className="flex items-center flex-2 gap-4 w-full max-w-97.75">
           <h2 className="font-medium text-[32px] text-white">
             <span className="text-(--text-primary)">#</span>
             <span>contacts</span>
@@ -481,7 +482,7 @@ const Home = () => {
           </div>
         </motion.div>
       )}
-      <div className="mt-auto pt-[145px]">
+      <div className="mt-auto pt-36.25">
         <Footer />
       </div>
     </div>

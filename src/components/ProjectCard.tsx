@@ -30,6 +30,7 @@ interface ProjectProps {
   live: string;
   code?: string;
   contribution?: string;
+  status?: string;
 }
 
 const ProjectCard = ({
@@ -40,6 +41,7 @@ const ProjectCard = ({
   live,
   code,
   contribution,
+  status,
 }: ProjectProps) => {
   const getStackItems = () => {
     const items: Array<{ key: string; label: string; icon: ReactNode }> = [];
@@ -230,26 +232,28 @@ const ProjectCard = ({
             {contribution}
           </p>
         )}
-        <div className="flex items-center gap-4">
-          <NavLink
-            to={live}
-            target="_blank"
-            className="border border-(--text-gray) py-2 px-4 font-medium text-base text-white flex items-center gap-1"
-            aria-label={`Live demo of ${name}`}
-          >
-            <span>Live </span> <TbArrowWaveRightDown size={16} />
-          </NavLink>
-          {code && (
+        {status !== 'pending' && (
+          <div className="flex items-center gap-4">
             <NavLink
-              to={code}
+              to={live}
               target="_blank"
               className="border border-(--text-gray) py-2 px-4 font-medium text-base text-white flex items-center gap-1"
-              aria-label={`Source code for ${name}`}
+              aria-label={`Live demo of ${name}`}
             >
-              <span>Code </span> <TbArrowWaveRightDown size={16} />
+              <span>Live </span> <TbArrowWaveRightDown size={16} />
             </NavLink>
-          )}
-        </div>
+            {code && (
+              <NavLink
+                to={code}
+                target="_blank"
+                className="border border-(--text-gray) py-2 px-4 font-medium text-base text-white flex items-center gap-1"
+                aria-label={`Source code for ${name}`}
+              >
+                <span>Code </span> <TbArrowWaveRightDown size={16} />
+              </NavLink>
+            )}
+          </div>
+        )}
       </div>
     </motion.div>
   );

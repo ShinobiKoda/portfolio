@@ -9,7 +9,8 @@ export interface Personal_Projects{
   description: string;
   image: string;
   live: string;
-  code: string
+  code: string;
+  status?: string;
 }
 
 export interface Contributed{

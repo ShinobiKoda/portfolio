@@ -11,27 +11,33 @@
       "name": "Chazon",
       "description": "Decentralized event management platform. Centralizes school activities, enabling students to discover events and organizers to seamlessly post and manage them.",
       "image": "/images/chazonevents.png",
-      "live": "https://chazonevents.com/"
+      "live": "https://chazonevents.com/",
+      "status": "done"
     },
-
     {
-      "stack": ["Laravel", "Blade", "Tailwindcss"],
+      "stack": [
+        "Laravel",
+        "Blade",
+        "Tailwindcss"
+      ],
       "name": "UNILESA Staff Portal",
-      "description": "Staff school portal for UNILESA. Designed and built the full UI, from the public landing page through the internal staff dashboard (IN DEVELOPEMENT).",
+      "description": "Staff school portal for UNILESA. Designed and built the full UI, from the public landing page through the internal staff dashboard.",
       "image": "/images/unilesa-staff-school.png",
       "live": "#",
-      "status": "In Development"
+      "status": "pending"
     },
-
     {
-      "stack": ["Laravel", "Blade", "Tailwindcss"],
+      "stack": [
+        "Laravel",
+        "Blade",
+        "Tailwindcss"
+      ],
       "name": "UNILESA Hostel Management",
-      "description": "Hostel management system for UNILESA covering allocation and administration workflows. Designed and built the full UI (IN DEVELOPEMENT).",
+      "description": "Hostel management system for UNILESA covering allocation and administration workflows. Designed and built the full UI.",
       "image": "/images/unilesa-hostel-management.png",
       "live": "#",
-      "status": "In Development"
+      "status": "pending"
     },
-
     {
       "stack": [
         "React+Vite",
@@ -41,10 +47,10 @@
         "Typescript"
       ],
       "name": "UNILESA Result Management",
-      "description": "Result management system for UNILESA with a React frontend on a Laravel backend. Designed and built the full UI (IN DEVELOPEMENT).",
+      "description": "Result management system for UNILESA with a React frontend on a Laravel backend. Designed and built the full UI.",
       "image": "/images/unilesa-result-management.png",
       "live": "#",
-      "status": "In Development"
+      "status": "pending"
     },
     {
       "stack": [
@@ -57,7 +63,8 @@
       "name": "Noblocks",
       "description": "Architected a high-conversion semantic landing page that ensured 100% cross-device compatibility and a premium visual hierarchy.",
       "image": "/images/noblocks.webp",
-      "live": "https://noblocks.xyz/"
+      "live": "https://noblocks.xyz/",
+      "status": "done"
     },
     {
       "stack": [
@@ -69,7 +76,8 @@
       "name": "ShinobiMerch",
       "description": "Full-stack anime merchandise storefront with a real Supabase-backed catalog, admin dashboard, and WhatsApp-negotiated order flow.",
       "live": "https://shinobimerch.vercel.app",
-      "image": "/images/shinobimerch.png"
+      "image": "/images/shinobimerch.png",
+      "status": "done"
     },
     {
       "stack": [
@@ -83,7 +91,8 @@
       "name": "Salvage Yard",
       "description": "E-commerce platform with Paystack integration. Re-engineered the checkout experience and cart architecture for scale.",
       "image": "/images/salvage-yard.webp",
-      "live": "https://salvageyardstore.com/"
+      "live": "https://salvageyardstore.com/",
+      "status": "done"
     },
     {
       "stack": [
@@ -97,7 +106,8 @@
       "name": "Nook",
       "description": "End-to-end rental ecosystem. Features Stripe-powered payments, landlord-tenant messaging, and automated logistics.",
       "image": "/images/nook.png",
-      "live": "https://www.rentwithnook.com/"
+      "live": "https://www.rentwithnook.com/",
+      "status": "done"
     },
     {
       "stack": [
@@ -110,9 +120,9 @@
       "name": "FX Checker",
       "description": "Check live exchange rates, compare currencies, track historical data, and monitor your conversion logs seamlessly with FX Checker.",
       "image": "/images/fx-checker.png",
-      "live": "https://fx-checker-pied.vercel.app/"
+      "live": "https://fx-checker-pied.vercel.app/",
+      "status": "done"
     },
-
     {
       "stack": [
         "React+Vite",
@@ -126,9 +136,9 @@
       "description": "Comprehensive food ordering platform. Features secure user authentication and effortless food ordering from different restaurants with ease.",
       "image": "/images/eat-easy.png",
       "live": "https://eat-easy.vercel.app/",
-      "code": "https://github.com/ShinobiKoda/eat-easy"
+      "code": "https://github.com/ShinobiKoda/eat-easy",
+      "status": "done"
     },
-
     {
       "stack": [
         "React Native",
@@ -142,9 +152,9 @@
       "description": "A mobile app for eat easy,a comprehensive food ordering platform. Features secure user authentication and effortless food ordering from different restaurants with ease.",
       "image": "/images/eateasy_mobile.jpg",
       "live": "https://github.com/ShinobiKoda/eat-easy-mobile/releases/tag/v1.0.1",
-      "code": "https://github.com/ShinobiKoda/eat-easy-mobile"
+      "code": "https://github.com/ShinobiKoda/eat-easy-mobile",
+      "status": "done"
     },
-
     {
       "stack": [
         "Nextjs",
@@ -158,9 +168,9 @@
       "description": "Premium furniture storefront. A performance-first commerce engine built with Supabase and high-fidelity motion design.",
       "image": "/images/furniro.webp",
       "live": "https://furniro-roan-gamma.vercel.app/",
-      "code": "https://github.com/ShinobiKoda/furniro"
+      "code": "https://github.com/ShinobiKoda/furniro",
+      "status": "done"
     },
-
     {
       "stack": [
         "React+Vite",
@@ -174,7 +184,8 @@
       "description": "High-conversion fintech landing page. Focused on semantic architecture, accessibility, and modern visual hierarchy.",
       "image": "/images/yourbank.webp",
       "live": "https://your-bank-six.vercel.app/",
-      "code": "https://github.com/ShinobiKoda/your-bank"
+      "code": "https://github.com/ShinobiKoda/your-bank",
+      "status": "done"
     }
   ]
 }
