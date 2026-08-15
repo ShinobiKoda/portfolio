@@ -3,6 +3,62 @@
     {
       "stack": [
         "Nextjs",
+        "Tailwindcss",
+        "Framer-motion",
+        "Typescript",
+        "Supabase"
+      ],
+      "name": "Chazon",
+      "description": "Decentralized event management platform. Centralizes school activities, enabling students to discover events and organizers to seamlessly post and manage them.",
+      "image": "/images/chazonevents.png",
+      "live": "https://chazonevents.com/"
+    },
+    {
+      "stack": [
+        "TanStack Start",
+        "Tailwindcss",
+        "Typescript",
+        "Supabase",
+        "Cloudflare Workers"
+      ],
+      "name": "ShinobiMerch",
+      "description": "Full-stack anime merchandise storefront with a real Supabase-backed catalog, admin dashboard, and WhatsApp-negotiated order flow.",
+      "image": "/images/shinobimerch.png"
+    },
+
+    {
+      "stack": ["Laravel", "Blade", "Tailwindcss"],
+      "name": "UNILESA Staff Portal",
+      "description": "Staff school portal for UNILESA. Designed and built the full UI, from the public landing page through the internal staff dashboard.",
+      "image": "/images/unilesa-staff-school.png",
+      "live": "https://REPLACE_WITH_LANDING_PAGE_URL",
+      "status": "In Development"
+    },
+
+    {
+      "stack": ["Laravel", "Blade", "Tailwindcss"],
+      "name": "UNILESA Hostel Management",
+      "description": "Hostel management system for UNILESA covering allocation and administration workflows. Designed and built the full UI.",
+      "image": "/images/unilesa-hostel-management.png",
+      "status": "In Development"
+    },
+
+    {
+      "stack": [
+        "React+Vite",
+        "Framer-motion",
+        "Laravel",
+        "Tailwindcss",
+        "Typescript"
+      ],
+      "name": "UNILESA Result Management",
+      "description": "Result management system for UNILESA with a React frontend on a Laravel backend. Designed and built the full UI.",
+      "image": "/images/unilesa-result-management.png",
+      "status": "In Development"
+    },
+    {
+      "stack": [
+        "Nextjs",
         "Figma",
         "Tailwindcss",
         "Framer-motion",
@@ -26,19 +82,6 @@
       "description": "E-commerce platform with Paystack integration. Re-engineered the checkout experience and cart architecture for scale.",
       "image": "/images/salvage-yard.webp",
       "live": "https://salvageyardstore.com/"
-    },
-    {
-      "stack": [
-        "Nextjs",
-        "Tailwindcss",
-        "Framer-motion",
-        "Typescript",
-        "Supabase"
-      ],
-      "name": "Chazon",
-      "description": "Decentralized event management platform. Centralizes school activities, enabling students to discover events and organizers to seamlessly post and manage them.",
-      "image": "/images/chazonevents.png",
-      "live": "https://chazonevents.com/"
     },
     {
       "stack": [

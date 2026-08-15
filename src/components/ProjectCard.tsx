@@ -7,7 +7,7 @@ import {
   tooltipVariants,
   tooltipIconVariants,
 } from "./animations/motion";
-import { TbArrowWaveRightDown, TbBrandReactNative } from "react-icons/tb";
+import { TbArrowWaveRightDown, TbBrandReactNative, TbBlade } from "react-icons/tb";
 import { FaReact, FaHeart } from "react-icons/fa";
 import {
   SiVite,
@@ -18,6 +18,7 @@ import {
   SiSupabase,
   SiRadixui,
   SiStripe,
+  SiLaravel,
 } from "react-icons/si";
 import { IoLogoFigma } from "react-icons/io5";
 
@@ -134,6 +135,20 @@ const ProjectCard = ({
             key: technology,
             label: "Stripe",
             icon: <SiStripe size={20} />,
+          });
+          break;
+        case t.includes("laravel"):
+          items.push({
+            key: technology,
+            label: "Laravel",
+            icon: <SiLaravel size={20} />,
+          });
+          break;
+        case t.includes("blade"):
+          items.push({
+            key: technology,
+            label: "Blade",
+            icon: <TbBlade size={20} />,
           });
           break;
         case t.includes("lovable"):
