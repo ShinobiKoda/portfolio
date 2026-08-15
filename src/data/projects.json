@@ -15,11 +15,10 @@
     },
     {
       "stack": [
-        "TanStack Start",
+        "React+Vite",
         "Tailwindcss",
         "Typescript",
-        "Supabase",
-        "Cloudflare Workers"
+        "Supabase"
       ],
       "name": "ShinobiMerch",
       "description": "Full-stack anime merchandise storefront with a real Supabase-backed catalog, admin dashboard, and WhatsApp-negotiated order flow.",
