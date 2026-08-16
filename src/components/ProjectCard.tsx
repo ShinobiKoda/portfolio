@@ -224,7 +224,7 @@ const ProjectCard = ({
         <h3 className="font-medium text-2xl text-white">{name}</h3>
         {description && (
           <p className="font-normal text-base text-(--text-gray)">
-            {description}
+            {description} {status == "pending" ? <span>(In progress)</span> : ""}
           </p>
         )}
         {contribution && (
