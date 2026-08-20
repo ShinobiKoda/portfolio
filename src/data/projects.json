@@ -16,10 +16,43 @@
     },
     {
       "stack": [
-        "Laravel",
-        "Blade",
-        "Tailwindcss"
+        "Nextjs",
+        "Tailwindcss",
+        "Framer-motion",
+        "Typescript",
+        "Supabase",
+        "Stripe"
       ],
+      "name": "Nook",
+      "description": "End-to-end rental ecosystem. Features Stripe-powered payments, landlord-tenant messaging, and automated logistics.",
+      "image": "/images/nook.png",
+      "live": "https://www.rentwithnook.com/",
+      "status": "done"
+    },
+    {
+      "stack": [
+        "Nextjs",
+        "Figma",
+        "Tailwindcss",
+        "Framer-motion",
+        "Typescript"
+      ],
+      "name": "Noblocks",
+      "description": "Architected a high-conversion semantic landing page that ensured 100% cross-device compatibility and a premium visual hierarchy.",
+      "image": "/images/noblocks.webp",
+      "live": "https://noblocks.xyz/",
+      "status": "done"
+    },
+    {
+      "stack": ["React+Vite", "Tailwindcss", "Typescript", "Supabase"],
+      "name": "ShinobiMerch",
+      "description": "Full-stack anime merchandise storefront with a real Supabase-backed catalog, admin dashboard, and WhatsApp-negotiated order flow.",
+      "live": "https://shinobimerch.vercel.app",
+      "image": "/images/shinobimerch.png",
+      "status": "done"
+    },
+    {
+      "stack": ["Laravel", "Blade", "Tailwindcss"],
       "name": "UNILESA Staff School Portal",
       "description": "Staff school portal for UNILESA. Designed and built the full UI, from the public landing page through the internal staff dashboard.",
       "image": "/images/unilesa-staff-school.png",
@@ -27,11 +60,7 @@
       "status": "pending"
     },
     {
-      "stack": [
-        "Laravel",
-        "Blade",
-        "Tailwindcss"
-      ],
+      "stack": ["Laravel", "Blade", "Tailwindcss"],
       "name": "UNILESA Hostel Management",
       "description": "Hostel management system for UNILESA covering allocation and administration workflows. Designed and built the full UI.",
       "image": "/images/unilesa-hostel-management.png",
@@ -52,63 +81,7 @@
       "live": "#",
       "status": "pending"
     },
-    {
-      "stack": [
-        "Nextjs",
-        "Figma",
-        "Tailwindcss",
-        "Framer-motion",
-        "Typescript"
-      ],
-      "name": "Noblocks",
-      "description": "Architected a high-conversion semantic landing page that ensured 100% cross-device compatibility and a premium visual hierarchy.",
-      "image": "/images/noblocks.webp",
-      "live": "https://noblocks.xyz/",
-      "status": "done"
-    },
-    {
-      "stack": [
-        "React+Vite",
-        "Tailwindcss",
-        "Typescript",
-        "Supabase"
-      ],
-      "name": "ShinobiMerch",
-      "description": "Full-stack anime merchandise storefront with a real Supabase-backed catalog, admin dashboard, and WhatsApp-negotiated order flow.",
-      "live": "https://shinobimerch.vercel.app",
-      "image": "/images/shinobimerch.png",
-      "status": "done"
-    },
-    {
-      "stack": [
-        "Nextjs",
-        "Figma",
-        "Tailwindcss",
-        "Framer-motion",
-        "Typescript",
-        "RadixUI"
-      ],
-      "name": "Salvage Yard",
-      "description": "E-commerce platform with Paystack integration. Re-engineered the checkout experience and cart architecture for scale.",
-      "image": "/images/salvage-yard.webp",
-      "live": "https://salvageyardstore.com/",
-      "status": "done"
-    },
-    {
-      "stack": [
-        "Nextjs",
-        "Tailwindcss",
-        "Framer-motion",
-        "Typescript",
-        "Supabase",
-        "Stripe"
-      ],
-      "name": "Nook",
-      "description": "End-to-end rental ecosystem. Features Stripe-powered payments, landlord-tenant messaging, and automated logistics.",
-      "image": "/images/nook.png",
-      "live": "https://www.rentwithnook.com/",
-      "status": "done"
-    },
+
     {
       "stack": [
         "Nextjs",
