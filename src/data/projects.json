@@ -44,44 +44,53 @@
       "status": "done"
     },
     {
-      "stack": ["React+Vite", "Tailwindcss", "Typescript", "Supabase"],
+      "stack": [
+        "Laravel",
+        "Tailwindcss"
+      ],
+      "name": "UNILESA Staff School Portal",
+      "description": "Staff school portal for UNILESA. Designed and built the full entire system, from the public landing page through the internal staff dashboard (Waiting to go live).",
+      "image": "/images/unilesa-staff-school.png",
+      "live": "https://staffschool.unilesa.edu.ng",
+      "status": "done"
+    },
+    {
+      "stack": [
+        "Laravel",
+        "Tailwindcss"
+      ],
+      "name": "UNILESA Hostel Management",
+      "description": "Hostel management system for UNILESA covering allocation and administration workflows. Designed and built the full UI (Waiting to go live).",
+      "image": "/images/unilesa-hostel-management.png",
+      "live": "https://hostel.unilesa.edu.ng",
+      "status": "done"
+    },
+    {
+      "stack": [
+        "HTML",
+        "CSS",
+        "Javascript",
+        "Tailwindcss"
+      ],
+      "name": "UNILESA Pan African Application Portal",
+      "description": "POST UTME Application Portal for Pan African College of Education in partnership with the University of Ilesa.",
+      "image": "/images/pan-african.png",
+      "live": "https://applications.pan-african.unilesa.edu.ng/",
+      "status": "done"
+    },
+    {
+      "stack": [
+        "React+Vite",
+        "Tailwindcss",
+        "Typescript",
+        "Supabase"
+      ],
       "name": "ShinobiMerch",
       "description": "Full-stack anime merchandise storefront with a real Supabase-backed catalog, admin dashboard, and WhatsApp-negotiated order flow.",
       "live": "https://shinobimerch.vercel.app",
       "image": "/images/shinobimerch.png",
       "status": "done"
     },
-    {
-      "stack": ["Laravel", "Blade", "Tailwindcss"],
-      "name": "UNILESA Staff School Portal",
-      "description": "Staff school portal for UNILESA. Designed and built the full UI, from the public landing page through the internal staff dashboard.",
-      "image": "/images/unilesa-staff-school.png",
-      "live": "#",
-      "status": "pending"
-    },
-    {
-      "stack": ["Laravel", "Blade", "Tailwindcss"],
-      "name": "UNILESA Hostel Management",
-      "description": "Hostel management system for UNILESA covering allocation and administration workflows. Designed and built the full UI.",
-      "image": "/images/unilesa-hostel-management.png",
-      "live": "#",
-      "status": "pending"
-    },
-    {
-      "stack": [
-        "React+Vite",
-        "Framer-motion",
-        "Laravel",
-        "Tailwindcss",
-        "Typescript"
-      ],
-      "name": "UNILESA Result Management",
-      "description": "Result management system for UNILESA with a React frontend on a Laravel backend. Designed and built the full UI.",
-      "image": "/images/unilesa-result-management.png",
-      "live": "#",
-      "status": "pending"
-    },
-
     {
       "stack": [
         "Nextjs",
@@ -126,22 +135,6 @@
       "image": "/images/eateasy_mobile.jpg",
       "live": "https://github.com/ShinobiKoda/eat-easy-mobile/releases/tag/v1.0.1",
       "code": "https://github.com/ShinobiKoda/eat-easy-mobile",
-      "status": "done"
-    },
-    {
-      "stack": [
-        "Nextjs",
-        "Figma",
-        "Tailwindcss",
-        "Framer-motion",
-        "Typescript",
-        "Supabase"
-      ],
-      "name": "Furniro",
-      "description": "Premium furniture storefront. A performance-first commerce engine built with Supabase and high-fidelity motion design.",
-      "image": "/images/furniro.webp",
-      "live": "https://furniro-roan-gamma.vercel.app/",
-      "code": "https://github.com/ShinobiKoda/furniro",
       "status": "done"
     },
     {

@@ -54,7 +54,7 @@ const Footer = () => {
               </p>
             </div>
             <p className="font-normal text-base text-white">
-              Front-end developer
+              Full-Stack developer
             </p>
           </motion.div>
 

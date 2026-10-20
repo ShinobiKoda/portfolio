@@ -19,6 +19,9 @@ import {
   SiRadixui,
   SiStripe,
   SiLaravel,
+  SiHtml5,
+  SiCss3,
+  SiJavascript
 } from "react-icons/si";
 import { IoLogoFigma } from "react-icons/io5";
 
@@ -158,6 +161,27 @@ const ProjectCard = ({
             key: technology,
             label: "Lovable",
             icon: <FaHeart size={20} />,
+          });
+          break;
+        case t.includes("html"):
+          items.push({
+            key: technology,
+            label: "HTML",
+            icon: <SiHtml5 size={20} />,
+          });
+          break;
+        case t.includes("css"):
+          items.push({
+            key: technology,
+            label: "Css",
+            icon: <SiCss3 size={20} />,
+          });
+          break;
+        case t.includes("javascript"):
+          items.push({
+            key: technology,
+            label: "Javascript",
+            icon: <SiJavascript size={20} />,
           });
           break;
         default:
